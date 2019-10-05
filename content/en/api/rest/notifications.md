@@ -12,11 +12,11 @@ Notifications concerning the user.
 
 Returns array of [Notification]({{< relref "entities.md#notification" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -35,7 +35,7 @@ Returns array of [Notification]({{< relref "entities.md#notification" >}})
 
 Returns [Notification]({{< relref "entities.md#notification" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
 
@@ -47,7 +47,7 @@ Returns [Notification]({{< relref "entities.md#notification" >}})
 
 Delete all notifications from the server.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:notifications" version="0.0.0" >}}
 
@@ -59,11 +59,11 @@ Add a Web Push API subscription to receive notifications. See also: [Web Push AP
 
 Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -80,7 +80,7 @@ Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
 Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
@@ -90,11 +90,11 @@ Update current Web Push API subscription. Only the `data` part can be updated, e
 
 Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -108,6 +108,6 @@ Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
 Remove the current Web Push API subscription.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}

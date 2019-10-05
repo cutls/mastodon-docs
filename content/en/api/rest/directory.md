@@ -12,11 +12,11 @@ Accounts listed on Profile Directory
 
 Returns [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="No" user="No" scope="read read:accounts" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|

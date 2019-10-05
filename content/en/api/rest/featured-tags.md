@@ -12,7 +12,7 @@ Track unread notification count across sessions
 
 Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="3.0.0" >}}
 
@@ -20,11 +20,11 @@ Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
 
 Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|

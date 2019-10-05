@@ -12,7 +12,7 @@ Get scheduled statuses.
 
 Returns array of [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.7.0" >}}
 
@@ -22,7 +22,7 @@ Get scheduled status.
 
 Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.7.0" >}}
 
@@ -32,11 +32,11 @@ Update Scheduled status. Only `scheduled_at` can be changed. To change the conte
 
 Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="2.7.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -46,6 +46,6 @@ Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
 Remove Scheduled status.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="2.7.0" >}}

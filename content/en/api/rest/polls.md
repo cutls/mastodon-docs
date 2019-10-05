@@ -10,7 +10,7 @@ menu:
 
 Returns [Poll]({{< relref "entities.md#poll" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="2.8.0" >}}
 
@@ -20,12 +20,12 @@ Vote on a poll.
 
 Returns [Poll]({{< relref "entities.md#poll" >}})
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
 | `choices` | Array of choice indices | Required |
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="2.8.0" >}}

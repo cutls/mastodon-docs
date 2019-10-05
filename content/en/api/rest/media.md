@@ -12,11 +12,11 @@ Upload a media attachment that can be used with a new status.
 
 Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -30,11 +30,11 @@ Update a media attachment. Can only be done before the media is attached to a st
 
 Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|

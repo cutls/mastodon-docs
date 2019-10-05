@@ -12,11 +12,11 @@ Accounts the user has blocked.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read:blocks follow" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -32,7 +32,7 @@ Block an account.
 
 Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:blocks follow" version="0.0.0" >}}
 
@@ -42,6 +42,6 @@ Unblock an account.
 
 Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:blocks follow" version="0.0.0" >}}

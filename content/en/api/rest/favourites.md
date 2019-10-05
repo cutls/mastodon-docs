@@ -12,11 +12,11 @@ Statuses the user has favourited.
 
 Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:favourites" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -32,7 +32,7 @@ Favourite a status.
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:favourites" version="0.0.0" >}}
 

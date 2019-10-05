@@ -12,6 +12,6 @@ Preferences about the logined user.
 
 Returns [Preferences]({{< relref "entities.md#preferences" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" version="2.8.0" >}}

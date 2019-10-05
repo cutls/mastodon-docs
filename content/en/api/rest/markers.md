@@ -12,11 +12,11 @@ Track unread notification count across sessions
 
 Returns [Markers]({{< relref "entities.md#markers" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -26,11 +26,11 @@ Returns [Markers]({{< relref "entities.md#markers" >}})
 
 Returns [Markers]({{< relref "entities.md#markers" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|

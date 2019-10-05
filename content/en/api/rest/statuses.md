@@ -10,7 +10,7 @@ menu:
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
@@ -20,7 +20,7 @@ What the status replies to, and replies to it.
 
 Returns [Context]({{< relref "entities.md#context" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
@@ -34,11 +34,11 @@ Accounts that reblogged the status.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -54,11 +54,11 @@ Accounts that favourited the status.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -77,11 +77,11 @@ Returns [Status]({{< relref "entities.md#status" >}})
 When `scheduled_at` option is present,
 Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}}) 
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Added in|
 |----|-----------|:------:|:------:|
@@ -126,7 +126,7 @@ This option was added since v2.7.0.
 
 Remove a status. The status may still be available a short while after the call.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
@@ -136,11 +136,11 @@ Reblog a status.
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -152,7 +152,7 @@ Undo the reblog of a status.
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
@@ -162,7 +162,7 @@ Pin user's own status to user's profile.
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}
 
@@ -172,6 +172,6 @@ Remove pinned status from user's profile.
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}

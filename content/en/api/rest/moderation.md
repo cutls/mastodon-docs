@@ -10,11 +10,11 @@ menu:
 
 Returns [Local users]({{< relref "entities.md#local-users" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -36,7 +36,7 @@ Returns [Local users]({{< relref "entities.md#local-users" >}})
 
 Returns [Local users]({{< relref "entities.md#local-users" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
 
@@ -44,7 +44,7 @@ Returns [Local users]({{< relref "entities.md#local-users" >}})
 
 Re-enable
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
@@ -52,7 +52,7 @@ Re-enable
 
 Approve pending account
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
@@ -60,7 +60,7 @@ Approve pending account
 
 Reject pending account
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
@@ -68,7 +68,7 @@ Reject pending account
 
 Unsilence account
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
@@ -76,7 +76,7 @@ Unsilence account
 
 Unsuspend account
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
@@ -84,11 +84,11 @@ Unsuspend account
 
 Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:reports" version="2.9.1" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -104,7 +104,7 @@ Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
 
 Assign report to self
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
@@ -112,7 +112,7 @@ Assign report to self
 
 Unassign report from self
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
@@ -120,7 +120,7 @@ Unassign report from self
 
 Re-open report
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
@@ -128,7 +128,7 @@ Re-open report
 
 Close report
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
@@ -136,11 +136,11 @@ Close report
 
 Perform a moderation action on an account
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|

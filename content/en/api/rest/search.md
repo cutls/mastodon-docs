@@ -14,11 +14,11 @@ Search for content in accounts, statuses and hashtags.
 
 Returns [Results]({{< relref "entities.md#results" >}})
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:search" version="2.4.1" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|

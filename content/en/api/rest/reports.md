@@ -10,11 +10,11 @@ menu:
 
 Report an account.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:reports" version="1.1.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|

@@ -12,11 +12,11 @@ Domains the user has blocked.
 
 Returns array of string.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:blocks follow" version="1.4.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -30,11 +30,11 @@ Returns array of string.
 
 Block a domain to hide all public posts from it, all notifications from it, and remove all followers from it.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:blocks follow" version="1.4.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -44,11 +44,11 @@ Block a domain to hide all public posts from it, all notifications from it, and 
 
 Remove a domain block.
 
-### 基本情報
+### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:blocks follow" version="1.4.0" >}}
 
-### パラメーター
+### Parameters
 
 |Name|Description|Required|
 |----|-----------|:------:|
