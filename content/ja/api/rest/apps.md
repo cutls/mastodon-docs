@@ -12,11 +12,11 @@ Create a new application to obtain OAuth2 credentials.
 
 Returns [App]({{< relref "entities.md#app" >}}) with `client_id` and `client_secret`
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="No" user="No" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -33,6 +33,6 @@ Confirm that the app's OAuth2 credentials work.
 
 Returns [App]({{< relref "entities.md#app" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="No" version="2.0.0" >}}

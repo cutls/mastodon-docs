@@ -1,11 +1,13 @@
 ---
-title: Guidelines
-description: Guidelines that app developers for Mastodon should follow
+title: ガイドライン
+description: Mastodonアプリ開発者が従うべきガイドラインです
 menu:
   docs:
     parent: api
     weight: -1
 ---
+
+> 翻訳をお願いします。
 
 ## Login
 

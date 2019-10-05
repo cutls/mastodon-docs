@@ -1,4 +1,4 @@
-baseURL = "https://nostalgic-liskov-d0a3a9.netlify.com"
+baseURL = "https://docs.toot.app"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Mastodon documentation"

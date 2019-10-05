@@ -12,7 +12,7 @@ Accounts the user had past positive interactions with, but is not following yet.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read" version="2.4.3" >}}
 
@@ -20,6 +20,6 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 Remove account from suggestions.
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read" version="2.4.3" >}}

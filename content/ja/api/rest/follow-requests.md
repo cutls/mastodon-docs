@@ -12,11 +12,11 @@ Accounts that have requested to follow the user.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:follows follow" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -30,7 +30,9 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 Allow the account to follow the user.
 
-### Resource information
+Returns [Relationship]({{< relref "entities.md#relationship" >}})
+
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
@@ -38,6 +40,6 @@ Allow the account to follow the user.
 
 Do not allow the account to follow the user.
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}

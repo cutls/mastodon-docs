@@ -12,11 +12,11 @@ Accounts the user has muted.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read:mutes follow" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -32,11 +32,11 @@ Mute an account.
 
 Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:mutes follow" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -48,7 +48,7 @@ Unmute an account.
 
 Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:mutes follow" version="0.0.0" >}}
 
@@ -58,7 +58,7 @@ Mute the conversation the status is part of, to no longer be notified about it.
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:mutes" version="1.4.2" >}}
 
@@ -68,6 +68,6 @@ Unmute the conversation the status is part of.
 
 Returns [Status]({{< relref "entities.md#status" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:mutes" version="1.4.2" >}}

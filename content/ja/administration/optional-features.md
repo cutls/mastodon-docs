@@ -1,11 +1,13 @@
 ---
-title: Optional features
-description: How to enable Mastodon's optional features
+title: 追加機能
+description: Mastodonの追加機能を有効化する方法
 menu:
   docs:
     parent: administration
     weight: 5
 ---
+> 翻訳をお願いします。
+
 
 ## Full-text search
 

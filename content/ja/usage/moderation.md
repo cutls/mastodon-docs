@@ -1,5 +1,5 @@
 ---
-title: Moderation
+title: For Moderatiors
 description: Overview of moderation tools on Mastodon
 menu:
   docs:

@@ -1,11 +1,13 @@
 ---
-title: Post-installation steps
-description: What to do after the installation of Mastodon is complete
+title: インストール後の手順
+description: Mastodonのインストールが完了した後にやること
 menu:
   docs:
     parent: administration
     weight: 3
 ---
+
+> 翻訳をお願いします。
 
 ## Using the command-line interface
 

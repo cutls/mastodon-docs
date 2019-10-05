@@ -12,7 +12,7 @@ Accounts the user chose to endorse.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:account" version="2.5.0" >}}
 
@@ -26,7 +26,7 @@ Endorse an account, i.e. choose to feature the account on the user's public prof
 
 Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="2.5.0" >}}
 
@@ -36,6 +36,6 @@ Undo endorse of an account.
 
 Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="2.5.0" >}}

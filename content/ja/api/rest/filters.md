@@ -12,7 +12,7 @@ Text filters the user has configured that potentially must be applied client-sid
 
 Returns array of [Filter]({{< relref "entities.md#filter" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:filters" version="2.4.3" >}}
 
@@ -22,11 +22,11 @@ Create a new filter.
 
 Returns [Filter]({{< relref "entities.md#filter" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -42,7 +42,7 @@ A text filter.
 
 Returns [Filter]({{< relref "entities.md#filter" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:filters" version="2.4.3" >}}
 
@@ -52,11 +52,11 @@ Update a text filter.
 
 Returns [Filter]({{< relref "entities.md#filter" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -70,6 +70,6 @@ Returns [Filter]({{< relref "entities.md#filter" >}})
 
 Delete a text filter.
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}

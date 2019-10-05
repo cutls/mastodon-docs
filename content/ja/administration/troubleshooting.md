@@ -1,11 +1,13 @@
 ---
-title: Troubleshooting
-description: How to figure out what's wrong with your Mastodon installation
+title: トラブルシューティング
+description: Mastodonインストールで困ったときは
 menu:
   docs:
     parent: administration
     weight: 99
 ---
+
+> 翻訳をお願いします。
 
 **I see an error page that says something went wrong. How do I find out what's wrong?**
 

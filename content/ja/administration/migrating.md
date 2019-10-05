@@ -1,11 +1,13 @@
 ---
-title: Migrating servers
-description: How to migrate a Mastodon instance to a new server
+title: サーバーのマイグレーション
+description: Mastodonのサーバーを新しいものへマイグレーションする方法
 menu:
   docs:
     parent: administration
     weight: 6
 ---
+
+> 翻訳をお願いします。
 
 Sometimes, for various reasons, you may want to migrate your Mastodon instance from one server to another. Fortunately this is not too difficult of a process, although it may result in some downtime.
 

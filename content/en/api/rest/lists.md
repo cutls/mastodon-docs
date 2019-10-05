@@ -12,7 +12,7 @@ User's lists.
 
 Returns array of [List]({{< relref "entities.md#list" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
@@ -22,7 +22,7 @@ User's lists that a given account is part of.
 
 Returns array of [List]({{< relref "entities.md#list" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
@@ -32,11 +32,11 @@ Accounts that are in a given list.
 
 Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -52,7 +52,7 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 Returns [List]({{< relref "entities.md#list" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
@@ -62,11 +62,11 @@ Create a new list.
 
 Returns [List]({{< relref "entities.md#list" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -78,11 +78,11 @@ Update a list.
 
 Returns [List]({{< relref "entities.md#list" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -92,7 +92,7 @@ Returns [List]({{< relref "entities.md#list" >}})
 
 Remove a list.
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
@@ -102,11 +102,11 @@ Add accounts to a list.
 
 > Only accounts already followed by the user can be added to a list.
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -116,11 +116,11 @@ Add accounts to a list.
 
 Remove accounts from a list.
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|

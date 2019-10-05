@@ -1,11 +1,13 @@
 ---
 title: Streaming API
-description: How to use Mastodon's streaming API for live, real-time updates
+description: リアルタイムアップデートを提供するStreaming APIへの接続方法
 menu:
   docs:
     parent: api
     weight: 4
 ---
+
+> 翻訳をお願いします。
 
 Your application can use a [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) endpoint to receive updates in real-time. Server-sent events is an incredibly simple transport method that relies entirely on chunked-encoding transfer, i.e. the HTTP connection is kept open and receives new data periodically.
 

@@ -1,31 +1,33 @@
 ---
-title: Configuration
-description: Overview of Mastodon's configuration options
+title: 環境設定(.env.production)
+description: .env.productionの設定方法
 menu:
   docs:
     parent: administration
     weight: 2
 ---
 
+> 翻訳をお願いします。
+
 Mastodon uses environment variables as its configuration.
 
 For convenience, it can read them from a flat file called `.env.production` in the Mastodon directory, but they can always be overridden by a specific process. For example, systemd service files can read environment variables from an `EnvironmentFile` or from inline definitions with `Environment`, so you can have different configuration parameters for specific services. They can also be specified when calling Mastodon from the command line.
 
-## Basic
-### Federation
+## 基本
+### 連合
 
 - `LOCAL_DOMAIN`
 - `WEB_DOMAIN`
 - `ALTERNATE_DOMAINS`
 
-### Secrets
+### 秘密鍵
 
 - `SECRET_KEY_BASE`
 - `OTP_SECRET`
 - `VAPID_PRIVATE_KEY`
 - `VAPID_PUBLIC_KEY`
 
-### Deployment
+### デプロイ
 
 - `RAILS_ENV`
 - `RAILS_SERVE_STATIC_FILES`
@@ -36,7 +38,7 @@ For convenience, it can read them from a flat file called `.env.production` in t
 - `NODE_ENV`
 - `BIND`
 
-### Scaling options
+### スケーリング
 
 - `WEB_CONCURRENCY`
 - `MAX_THREADS`
@@ -44,7 +46,7 @@ For convenience, it can read them from a flat file called `.env.production` in t
 - `STREAMING_API_BASE_URL`
 - `STREAMING_CLUSTER_NUM`
 
-## Database connections
+## データベース
 ### PostgreSQL
 
 - `DB_HOST`
@@ -77,7 +79,7 @@ For convenience, it can read them from a flat file called `.env.production` in t
 - `STATSD_ADDR`
 - `STATSD_NAMESPACE`
 
-## Limits
+## 制限
 
 - `SINGLE_USER_MODE`
 - `EMAIL_DOMAIN_WHITELIST`
@@ -100,17 +102,17 @@ For convenience, it can read them from a flat file called `.env.production` in t
 - `SMTP_ENABLE_STARTTLS_AUTO`
 - `SMTP_TLS`
 
-## File storage
+## ファイルストレージ
 
 - `CDN_HOST`
 - `S3_ALIAS_HOST`
 
-### Local file storage
+### ローカルのファイルストレージ
 
 - `PAPERCLIP_ROOT_PATH`
 - `PAPERCLIP_ROOT_URL`
 
-### Amazon S3 and compatible
+### Amazon S3とその互換オブジェクトストレージ
 
 - `S3_ENABLED`
 - `S3_BUCKET`
@@ -136,7 +138,7 @@ For convenience, it can read them from a flat file called `.env.production` in t
 - `SWIFT_DOMAIN_NAME`
 - `SWIFT_CACHE_TTL`
 
-## External authentication
+## 外部認証
 
 - `OAUTH_REDIRECT_AT_SIGN_IN`
 
@@ -206,11 +208,11 @@ For convenience, it can read them from a flat file called `.env.production` in t
 - `SAML_ATTRIBUTES_STATEMENTS_VERIFIED`
 - `SAML_ATTRIBUTES_STATEMENTS_VERIFIED_EMAIL`
 
-## Hidden services
+## 秘匿サービス
 
 - `http_proxy`
 - `ALLOW_ACCESS_TO_HIDDEN_SERVICE`
 
-## Other
+## その他
 
 - `SKIP_POST_DEPLOYMENT_MIGRATIONS`

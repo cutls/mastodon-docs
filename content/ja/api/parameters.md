@@ -1,19 +1,19 @@
 ---
-title: Parameters
-description: Specifics of parameter passing to the Mastodon API
+title: パラメーター
+description: Mastodon APIを使用するためのパラメーター指定方法
 menu:
   docs:
     parent: api
     weight: 3
 ---
 
-## Parameter format
+## パラメーターの形式
 
-Query strings, form data, and JSON submitted via POST body is equally understood by the API. It is expected that query strings are used for GET requests, and form data or JSON is used for all other requests.
+POSTで送信されたクエリ文字列、フォームデータ、JSONは、全てAPIによって同様に理解されます。GETリクエストにはクエリ文字列が使用され、他のリクエストにはフォームデータまたはJSONが使用されることが想定されています。
 
-## Arrays
+## Array(配列)
 
-An array parameter must encoded using bracket notation, e.g. `array[0]=foo&array[1]=bar` would be translated into:
+配列パラメーターは、ブラケット表記を使用してエンコードする必要があります。たとえば、`array[0]=foo&array[1]=bar`は次のように解釈されます。
 
 ```ruby
 array = [
@@ -22,17 +22,17 @@ array = [
 ]
 ```
 
-## Booleans
+## Booleans(ブール演算子)
 
-A boolean value is considered false for the values `0`, `f`, `F`, `false`, `FALSE`, `off`, `OFF`, considered to not be provided for empty strings, and considered to be true for all other values.
+ブール演算子は、空の文字列や`0`, `f`, `F`, `false`, `FALSE`, `off`, `OFF`のとき偽とみなされ、他は全て真とみなされます。
 
-## Files
+## ファイル
 
-File uploads must be encoded using `multipart/form-data`.
+`multipart/form-data`でエンコードしてアップロードしてください。
 
-## Nested parameters
+## ネストされたパラメーター
 
-Some parameters need to be nested. For that, bracket notation must also be used. For example, `source[privacy]=public&source[language]=en` would be translated into:
+一部のパラメーターはネストする必要があります。そのためには、ブラケット表記を使用します。たとえば、`source[privacy]=public&source[language]=en`は次のように解釈されます。
 
 ```ruby
 source = {
@@ -41,4 +41,4 @@ source = {
 }
 ```
 
-This can be combined with arrays as well.
+配列と組み合わせて使用できます。

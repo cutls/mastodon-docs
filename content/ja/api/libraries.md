@@ -1,6 +1,6 @@
 ---
-title: Libraries
-description: List of libraries that work with the Mastodon API in various programming languages
+title: ライブラリ
+description: Mastodon APIにアクセスするための各言語のライブラリ
 menu:
   docs:
     parent: api

@@ -12,11 +12,11 @@ Statuses from accounts the user follows.
 
 Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -34,11 +34,11 @@ Conversations for an account
 
 Returns array of [Conversation]({{< relref "entities.md#conversation" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.6.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -57,13 +57,13 @@ Public statuses known to the server.
 
 Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 (3.0.0 and above) If timeline preview is turned off by Admin, it requires authentication.
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -84,11 +84,11 @@ Public statuses known to the server marked with a given hashtag.
 
 Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -109,11 +109,11 @@ Statuses from accounts on a given list.
 
 Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.1.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|

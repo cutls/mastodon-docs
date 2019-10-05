@@ -12,6 +12,6 @@ Information about the server.
 
 Returns [Instance]({{< relref "entities.md#instance" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="No" user="No" version="0.0.0" >}}

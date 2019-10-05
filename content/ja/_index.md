@@ -1,8 +1,8 @@
 ---
-title: Mastodonドキュメント
+title: Mastodon documentation
 ---
 
-Mastodonドキュメントへようこそ！
+Welcome to the Mastodon documentation!
 
 <div style="margin-bottom: 26px">
   {{< youtube "IPSbNdBmWKE" >}}

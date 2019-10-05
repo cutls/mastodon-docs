@@ -1,11 +1,13 @@
 ---
-title: Upgrading to a new release
-description: How to upgrade Mastodon to a newer version
+title: Mastodonのアップデート
+description: Mastodonを新しいバージョンへアップデートする
 menu:
   docs:
     parent: administration
     weight: 5
 ---
+
+> 翻訳をお願いします。
 
 When a new version of Mastodon comes out, it appears on the [GitHub releases page](https://github.com/tootsuite/mastodon/releases). Please mind that running unreleased code from the `master` branch, while possible, is not recommended.
 

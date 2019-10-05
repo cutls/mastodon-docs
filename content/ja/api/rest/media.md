@@ -12,16 +12,16 @@ Upload a media attachment that can be used with a new status.
 
 Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
 | `file` | Media file encoded using `multipart/form-data` | Required |
-| `description` | A plain-text description of the media for accessibility (max 420 chars) | Optional |
+| `description` | A plain-text description of the media for accessibility (max 1500 chars) | Optional |
 | `focus` | Two floating points, comma-delimited. See [focal points](#focal-points) | Optional |
 
 ## PUT /api/v1/media/:id
@@ -30,15 +30,15 @@ Update a media attachment. Can only be done before the media is attached to a st
 
 Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `description` | A plain-text description of the media for accessibility (max 420 chars) | Optional |
+| `description` | A plain-text description of the media for accessibility (max 1500 chars) | Optional |
 | `focus` | Two floating points, comma-delimited. See [focal points](#focal-points) | Optional |
 
 ## Focal points

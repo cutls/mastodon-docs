@@ -12,6 +12,6 @@ Custom emojis that are available on the server.
 
 Returns array of [Emoji]({{< relref "entities.md#emoji" >}})
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="No" user="No" version="2.0.0" >}}

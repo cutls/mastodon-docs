@@ -1,13 +1,13 @@
 ---
-title: Permissions
-description: Overview of OAuth 2 access scopes in Mastodon
+title: 権限
+description: MastodonのOAuth 2アクセススコープついて
 menu:
   docs:
     parent: api
     weight: 2
 ---
 
-The API is divided up into access scopes:
+スコープ
 
 |Scope|Parent(s)|Added in|
 |:----|---------|:------:|
@@ -38,12 +38,12 @@ The API is divided up into access scopes:
 |`follow`||0.9.0|
 |`push`||2.4.0|
 
-The scopes are hierarchical, i.e. if you have access to `read`, you automatically have access to `read:accounts`. **It is recommended that you request as little as possible for your application.**
+スコープは階層的です。つまり、`read`にアクセスできる場合、`read:accounts`は自動的に適用されます。**アプリケーションはユーザーに対してできるだけ少ない要求を行うようにすべきです**
 
-Multiple scopes can be requested at the same time: During app creation with the `scopes` param, and during the authorization phase with the `scope` query param (space-separate the scopes).
+複数のスコープを同時に要求できます。パラメーターを使用してアプリを作成するとき`scopes`、OAuthで認証するときは`scope`クエリパラメーターを使用します(スコープをスペースで区切ります)。
 
-> **Note:** Mind the `scope` vs `scopes` difference. This is because `scope` is a standard OAuth parameter name, so it is used in the OAuth methods. Mastodon's own REST API uses the more appropriate `scopes`.
+> **注意** `scope`と`scopes`の違いに気をつけてください。`scope`は標準的なOAuthのパラメーター名でOAuthメソッド中はこれを使いますが、MastodonのAPIではより適切な`scopes`が用いられます。
 
-If you do not specify a `scope` in your authorization request, or a `scopes` in your app creation request, the resulting access token / app will default to `read` access.
+`scope`が認証時に無かったり、`scopes`がアプリケーション登録時に無い場合は`read`として扱われます。
 
-The set of scopes saved during app creation must include all the scopes that you will request in the authorization request, otherwise authorization will fail.
+アプリの作成中に保存されるスコープのセットには、認証リクエストでリクエストするすべてのスコープが含まれている必要があります。そうでない場合、認証は失敗します。

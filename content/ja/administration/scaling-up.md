@@ -1,11 +1,13 @@
 ---
-title: Scaling up
-description: How to scale Mastodon horizontally to handle more requests
+title: スケールアップ
+description: 多くのリクエストを捌けるように水平にスケーリング
 menu:
   docs:
     parent: administration
     weight: 4
 ---
+
+> 翻訳をお願いします。
 
 ## Managing concurrency
 

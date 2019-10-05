@@ -8,15 +8,15 @@ menu:
 
 ## GET /api/v1/accounts/:id
 
-Returns [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="No" user="No" scope="read read:accounts" version="0.0.0" >}}
 
 ## POST /api/v1/accounts
 
-Returns [Token]({{< relref "entities.md#token" >}})
+[Token]({{< relref "entities.md#token" >}})を返します。
 
 The method is available to apps with a token obtained via the client credentials grant. It creates a user and account records, as well as an access token for the app that initiated the request. The user is unconfirmed, and an e-mail is sent as usual.
 
@@ -24,11 +24,11 @@ The method returns the access token, which the app should save for later. The RE
 
 The method is rate-limited by IP to 5 requests per 30 minutes.
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="No" scope="write write:accounts" version="2.7.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -44,9 +44,9 @@ The `agreement` parameter must be set to true after presenting the local rules, 
 
 User's own account.
 
-Returns [Account]({{< relref "entities.md#account" >}}) with an extra [`source` attribute]({{< relref "entities.md#source" >}}).
+[Account]({{< relref "entities.md#account" >}}に[`source` attribute]({{< relref "entities.md#source" >}})が付いたものを返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
 
@@ -54,13 +54,13 @@ Returns [Account]({{< relref "entities.md#account" >}}) with an extra [`source` 
 
 Update user's own account.
 
-Returns [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -73,18 +73,20 @@ Returns [Account]({{< relref "entities.md#account" >}})
 | `source[sensitive]`| Whether to mark statuses as sensitive by default | Optional |
 | `source[language]` | Override language on statuses by default (ISO6391) | Optional |
 | `fields_attributes` | Profile metadata (max. 4) | Optional |
+| `discoverable` | Boolean: whether you are shown on profile directory | Optional |
+| `bot ` | Boolean: whether you are bot | Optional |
 
 ## GET /api/v1/accounts/:id/followers
 
 Accounts which follow the given account.
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -98,13 +100,13 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 Accounts which the given account is following.
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})配列を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -118,13 +120,13 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 An account's statuses.
 
-Returns array of [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})の配列を返します。
 
-### Resource information
+### 基本情報
 
-{{< api_method_info auth="Yes" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|Added in|
 |----|-----------|:------:|:-----:|:------:|
@@ -136,6 +138,7 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 | `min_id` | Return results immediately newer than ID | Optional | | |
 | `limit` | Maximum number of results | Optional | 20 | | |
 | `exclude_reblogs` | Skip statuses that are reblogs of other statuses | Optional | false | 2.7.0 |
+| `tagged` | Filtering by hashtag without `#` | Optional || 2.8.0 |
 
 ### Pagination
 
@@ -145,13 +148,13 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 Follow an account.
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
@@ -161,9 +164,9 @@ Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
 Unfollow an account.
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
@@ -171,13 +174,13 @@ Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
 Relationship of the user to the given accounts in regards to following, blocking, muting, etc.
 
-Returns array of [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})の配列を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:follows" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
@@ -187,13 +190,13 @@ Returns array of [Relationship]({{< relref "entities.md#relationship" >}})
 
 Search for matching accounts by username, domain and display name.
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
-### Resource information
+### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
 
-### Parameters
+### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
