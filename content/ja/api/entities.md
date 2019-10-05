@@ -70,7 +70,6 @@ menu:
 |---------|-----------|:------:|:------:|
 | `name` | String |{{< no >}}|0.9.9|
 | `website` | String (URL) |{{< yes >}}|0.9.9|
-| `vapid_key` | String |{{< no >}}|2.7.2|
 
 ## Attachment
 
@@ -84,7 +83,6 @@ menu:
 | `text_url` | String (URL) |{{< yes >}}|0.6.0|
 | `meta` | [Hash](#meta) |{{< yes >}}|1.5.0|
 | `description` | String |{{< yes >}}|2.0.0|
-| `blurhash` | String |{{< no >}}|2.8.1|
 
 ### Type
 
@@ -95,11 +93,9 @@ menu:
 
 ### Meta
 
-Images may contain `width`, `height`, `size`, `aspect` at subtrees `small` and `original`.
+May contain subtrees `small` and `original`.
 
-Videos (including GIFV) may contain `aspect`, `audio_bitrate`, `audio_channels`, `audio_encode`, `duration`(Number: sec) and `length`(String), `fps`(Number), `width`, `height`, `size`, `duration`. At `original`, it may contain `duration`, `frame_rate`, `width`, `height` and `bitrate`. At `small`, it may contain `width` , `height`, `aspect`, `size`
-
-And audio may contain `audio_bitrate`, `audio_channels`, `audio_encode`, `duration`(Number: sec) and `length`(String). 
+Images may contain `width`, `height`, `size`, `aspect`, while videos (including GIFV) may contain `width`, `height`, `frame_rate`, `duration` and `bitrate`.
 
 There may be another top-level object, `focus` with the coordinates `x` and `y`. These coordinates can be used for smart thumbnail cropping, [see this for reference](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point).
 
@@ -126,7 +122,6 @@ There may be another top-level object, `focus` with the coordinates `x` and `y`.
 - `photo`
 - `video`
 - `rich`
-- `audio`
 
 ## Context
 
@@ -139,7 +134,6 @@ There may be another top-level object, `focus` with the coordinates `x` and `y`.
 
 |Attribute|Type|Nullable|Added in|
 |---------|-----------|:------:|:------:|
-| `category` | String |{{< yes >}}|3.0.0|
 | `shortcode` | String |{{< no >}}|2.0.0|
 | `static_url` | String (URL) |{{< no >}}|2.0.0|
 | `url` | String (URL) |{{< no >}}|2.0.0|
@@ -152,15 +146,6 @@ The most important part of an error response is the HTTP status code. Standard s
 |Attribute|Type|Nullable|Added in|
 |---------|-----------|:------:|:------:|
 | `error` | String |{{< no >}}|0.6.0|
-
-## Featured Tag
-
-|Attribute|Type|Nullable|Added in|
-|---------|-----------|:------:|:------:|
-| `id` | String |{{< no >}}|3.0.0|
-| `last_status_at` | String (Datetime) |{{< yes >}}|3.0.0|
-| `name` | String |{{< no >}}|3.0.0|
-| `status_count` | Number |{{< no >}}|3.0.0|
 
 ## Filter
 
@@ -204,9 +189,6 @@ Please check `app/javascript/mastodon/selectors/index.js` and `app/lib/feed_mana
 | `stats` | [Hash](#stats) |{{< no >}}|1.6.0|
 | `languages` | Array of String (ISO 639, Part 1-5) |{{< no >}}|2.3.0|
 | `contact_account` | [Account](#account) |{{< yes >}}|2.3.0|
-| `registrations` | Boolean |{{< no >}}|2.7.2|
-| `short_description` | String |{{< no >}}|2.9.2|
-| `approval_required` | Boolean |{{< no >}}|2.9.2|
 
 ### URLs
 
@@ -228,59 +210,6 @@ Please check `app/javascript/mastodon/selectors/index.js` and `app/lib/feed_mana
 |---------|-----------|:------:|:------:|
 | `id` | String |{{< no >}}|2.1.0|
 | `title` | String |{{< no >}}|2.1.0|
-
-## Local users
-
-For Moderation API
-
-|Attribute|Type|Nullable|Added in|
-|---------|-----------|:------:|:------:|
-| `id` | String |{{< no >}}|2.9.1|
-| `username` | String |{{< no >}}|2.9.1|
-| `created_at` | String |{{< no >}}|2.9.1|
-| `email` | String |{{< no >}}|2.9.1|
-| `role` | String |{{< no >}}|2.9.1|
-| `ip` | String |{{< no >}}|2.9.1|
-| `confirmed` | Boolean |{{< no >}}|2.9.1|
-| `suspended` | Boolean |{{< no >}}|2.9.1|
-| `silenced` | Boolean |{{< no >}}|2.9.1|
-| `disabled` | Boolean |{{< no >}}|2.9.1|
-| `approved` | Boolean |{{< no >}}|2.9.1|
-| `account` | [Account](#account) |{{< no >}}|2.9.1|
-| `locale`*1 | Boolean |{{< yes >}}|2.9.1|
-| `invite_request`*1 | Boolean |{{< yes >}}|2.9.1|
-| `created_by_application_id`*1 | Boolean |{{< yes >}}|2.9.1|
-| `invited_by_account_id`*1 | Boolean |{{< yes >}}|2.9.1|
-
-**\*1** only on account data included by moderation reports.
-
-## Local reports
-
-For Moderation API
-
-|Attribute|Type|Nullable|Added in|
-|---------|-----------|:------:|:------:|
-| `id` | String |{{< no >}}|2.9.1|
-| `action_taken` | Boolean |{{< no >}}|2.9.1|
-| `comment` | String |{{< yes >}}|2.9.1|
-| `created_at` | String (Datetime) |{{< no >}}|2.9.1|
-| `updated_at` | String (Datetime) |{{< no >}}|2.9.1|
-| `account_id` | String (Datetime) |{{< no >}}|2.9.1|
-| `account` | [Local users](#local-users) |{{< no >}}|2.9.1|
-| `target_account` | [Local users](#local-users) |{{< no >}}|2.9.1|
-| `assigned_account_id` | String |{{< yes >}}|2.9.1|
-| `action_taken_by_account_id` | String |{{< yes >}}|2.9.1|
-| `statuses` | Array of [Status](#status) |{{< yes >}}|2.9.1|
-
-## Markers
-
-In either `home` or `notifications`, return like this:  
-
-|Attribute|Type|Nullable|Added in|
-|---------|-----------|:------:|:------:|
-| `last_read_id` | String |{{< no >}}|3.0.0|
-| `updated_at` |String (Datetime) |{{< no >}}|3.0.0|
-| `version` | Number |{{< no >}}|3.0.0|
 
 ## Mention
 
@@ -309,16 +238,6 @@ In either `home` or `notifications`, return like this:
 - `favourite`
 - `poll`
 
-## Preferences
-
-|Attribute|Type|Nullable|Added in|
-|---------|-----------|:------:|:------:|
-| `posting:default:language` | String (language) |{{< no >}}|2.8.0|
-| `posting:default:sensitive` | Boolean |{{< no >}}|2.8.0|
-| `posting:default:visibility` | String (`public` and so on) |{{< no >}}|2.8.0|
-| `reading:expand:media` | Boolean |{{< no >}}|2.8.0|
-| `reading:expand:spoilers` | Boolean |{{< yes >}}|2.8.0|
-
 ## Poll
 
 |Attribute|Type|Nullable|Added in|
@@ -330,7 +249,6 @@ In either `home` or `notifications`, return like this:
 | `votes_count` | Number |{{< no >}}|2.8.0|
 | `options` | Array of [Poll option](#poll-option) |{{< no >}}|2.8.0|
 | `voted` | Boolean |{{< yes >}}|2.8.0|
-| `own_votes` | Array of the choices(Number: 0-3) |{{< yes >}}|3.0.0|
 
 ### Poll option
 
@@ -359,7 +277,6 @@ In either `home` or `notifications`, return like this:
 | `id` | String |{{< no >}}|0.6.0|
 | `following` | Boolean |{{< no >}}|0.6.0|
 | `followed_by` | Boolean |{{< no >}}|0.6.0|
-| `blocked_by` | Boolean |{{< no >}}|2.8.0|
 | `blocking` | Boolean |{{< no >}}|0.6.0|
 | `muting` | Boolean |{{< no >}}|1.1.0|
 | `muting_notifications` | Boolean |{{< no >}}|2.1.0|
@@ -407,9 +324,6 @@ In either `home` or `notifications`, return like this:
 | `application` | [Application](#application) |{{< no >}}|0.9.9|
 | `language` | String (ISO6391) |{{< yes >}}|1.4.0|
 | `pinned` | Boolean |{{< yes >}}|1.6.0|
-| `text` | String |{{< no >}}|2.9.0|
-
-**`text` is only returned at DELETE /api/v1/statuses/:id**
 
 ### Visibility
 

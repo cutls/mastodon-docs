@@ -28,6 +28,8 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 ## GET /api/v1/conversations
 
+**v1/timelines/direct has been already removed.**
+
 Conversations for an account
 
 Returns array of [Conversation]({{< relref "entities.md#conversation" >}})
@@ -58,6 +60,8 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 ### Resource information
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+
+(3.0.0 and above) If timeline preview is turned off by Admin, it requires authentication.
 
 ### Parameters
 

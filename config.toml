@@ -13,37 +13,33 @@ enableGitInfo = true
     contentDir = "content/en"
     languageName = "English"
     weight = 1
-  [languages.pl]
-    contentDir = "content/pl"
-    languageName = "Polski"
+  [languages.ja]
+    contentDir = "content/ja"
+    languageName = "日本語"
     weight = 1
-  [languages.fr]
-    contentDir = "content/fr"
-    languageName = "Français"
-    weight = 1
-    [languages.fr.menu]
-	[[languages.fr.menu.docs]]
-	   name = "Guide d'utilisation"
+    [languages.ja.menu]
+	[[languages.ja.menu.docs]]
+	   name = "ユーザーガイド"
 	   weight = 1
     	   identifier = "usage"
            url = "/usage/"
-	[[languages.fr.menu.docs]]
-	   name = "Guide d'administration"
+	[[languages.ja.menu.docs]]
+	   name = "管理者ガイド"
 	   weight = 2
 	   identifier = "administration"
 	   url = "/administration/"
-	[[languages.fr.menu.docs]]
-	   name = "Guide de développement"
+	[[languages.ja.menu.docs]]
+	   name = "開発ガイド"
 	   weight = 3
 	   identifier = "development"
 	   url = "/development/"
-	[[languages.fr.menu.docs]]
-	   name = "Aperçu de l'API"
+	[[languages.ja.menu.docs]]
+	   name = "APIガイド"
 	   weight = 4
 	   identifier = "api"
 	   url = "/api/"
-	[[languages.fr.menu.docs]]
-	   name = "API REST"
+	[[languages.ja.menu.docs]]
+	   name = "REST API一覧"
 	   weight = 5
 	   identifier = "rest-api"
 	   url = "/api/rest/"

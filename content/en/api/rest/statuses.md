@@ -26,13 +26,7 @@ Returns [Context]({{< relref "entities.md#context" >}})
 
 ## GET /api/v1/statuses/:id/card
 
-Link preview card for a status, if available.
-
-Returns [Card]({{< relref "entities.md#card" >}})
-
-### Resource information
-
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+**This API has been already removed.**
 
 ## GET /api/v1/statuses/:id/reblogged_by
 
@@ -145,6 +139,12 @@ Returns [Status]({{< relref "entities.md#status" >}})
 ### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+
+### Parameters
+
+|Name|Description|Required|Default|
+|----|-----------|:------:|:-----:|
+| `visibility` | `public`, `unlisted` or `private` | Optional ||
 
 ## POST /api/v1/statuses/:id/unreblog
 

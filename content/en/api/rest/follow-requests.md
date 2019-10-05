@@ -30,6 +30,8 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 Allow the account to follow the user.
 
+Returns [Relationship]({{< relref "entities.md#relationship" >}})
+
 ### Resource information
 
 {{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}

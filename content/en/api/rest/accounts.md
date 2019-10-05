@@ -73,6 +73,8 @@ Returns [Account]({{< relref "entities.md#account" >}})
 | `source[sensitive]`| Whether to mark statuses as sensitive by default | Optional |
 | `source[language]` | Override language on statuses by default (ISO6391) | Optional |
 | `fields_attributes` | Profile metadata (max. 4) | Optional |
+| `discoverable` | Boolean: whether you are shown on profile directory | Optional |
+| `bot ` | Boolean: whether you are bot | Optional |
 
 ## GET /api/v1/accounts/:id/followers
 
@@ -122,7 +124,7 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 ### Resource information
 
-{{< api_method_info auth="Yes" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ### Parameters
 
@@ -136,6 +138,7 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 | `min_id` | Return results immediately newer than ID | Optional | | |
 | `limit` | Maximum number of results | Optional | 20 | | |
 | `exclude_reblogs` | Skip statuses that are reblogs of other statuses | Optional | false | 2.7.0 |
+| `tagged` | Filtering by hashtag without `#` | Optional || 2.8.0 |
 
 ### Pagination
 

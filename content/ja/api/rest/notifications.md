@@ -41,7 +41,11 @@ Returns [Notification]({{< relref "entities.md#notification" >}})
 
 ## POST /api/v1/notifications/:id/dismiss
 
-**This API removed at v3.0.0**
+Delete a single notification from the server.
+
+### Resource information
+
+{{< api_method_info auth="Yes" user="Yes" scope="write write:notifications" version="0.0.0" >}}
 
 ## POST /api/v1/notifications/clear
 
