@@ -347,7 +347,7 @@ main img {
   border-radius: 4px;
   box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.35);
 }
-main img.emoji {
+img.emoji {
   display: inline;
   margin: 0 auto;
   border-radius: 0;
@@ -476,15 +476,9 @@ main iframe {
 }
 
 .mascot {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 60px;
-}
-@media screen and (max-width: 600px) {
-  .mascot {
-    display: none;
-  }
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 30px;
 }
 
 #TableOfContents {
