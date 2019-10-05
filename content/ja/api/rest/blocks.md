@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/blocks
 
-Accounts the user has blocked.
+ブロックしている一覧
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -20,7 +20,7 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | 結果の表示個数 | Optional | 40 |
 
 ### Pagination
 
@@ -28,9 +28,9 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 ## POST /api/v1/accounts/:id/block
 
-Block an account.
+アカウントをブロック
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
 ### 基本情報
 
@@ -38,9 +38,9 @@ Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
 ## POST /api/v1/accounts/:id/unblock
 
-Unblock an account.
+アカウントのブロックを解除
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
 ### 基本情報
 

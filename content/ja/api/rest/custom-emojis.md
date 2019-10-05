@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/custom_emojis
 
-Custom emojis that are available on the server.
+サーバーのカスタム絵文字一覧
 
-Returns array of [Emoji]({{< relref "entities.md#emoji" >}})
+[Emoji]({{< relref "entities.md#emoji" >}})の配列を返します。
 
 ### 基本情報
 

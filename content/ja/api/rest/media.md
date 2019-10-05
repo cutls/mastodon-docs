@@ -8,9 +8,9 @@ menu:
 
 ## POST /api/v1/media
 
-Upload a media attachment that can be used with a new status.
+メディアをアップロード
 
-Returns [Attachment]({{< relref "entities.md#attachment" >}})
+[Attachment]({{< relref "entities.md#attachment" >}})を返します。
 
 ### 基本情報
 
@@ -20,15 +20,15 @@ Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `file` | Media file encoded using `multipart/form-data` | Required |
-| `description` | A plain-text description of the media for accessibility (max 1500 chars) | Optional |
-| `focus` | Two floating points, comma-delimited. See [focal points](#focal-points) | Optional |
+| `file` | `multipart/form-data`でエンコードされたファイル | Required |
+| `description` | 1500字までの説明文字列 | Optional |
+| `focus` | 画像の焦点。参照[focal points](#focal-points) | Optional |
 
 ## PUT /api/v1/media/:id
 
-Update a media attachment. Can only be done before the media is attached to a status.
+メディアをの情報を更新
 
-Returns [Attachment]({{< relref "entities.md#attachment" >}})
+[Attachment]({{< relref "entities.md#attachment" >}})を返します。
 
 ### 基本情報
 
@@ -38,9 +38,10 @@ Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `description` | A plain-text description of the media for accessibility (max 1500 chars) | Optional |
-| `focus` | Two floating points, comma-delimited. See [focal points](#focal-points) | Optional |
+| `description` | 1500字までの説明文字列 | Optional |
+| `focus` | 画像の焦点。参照[focal points](#focal-points) | Optional |
 
-## Focal points
+## 焦点
 
-Server-side preview images are never cropped, to support a variety of apps and user interfaces. Therefore, the cropping must be done by those apps. To crop intelligently, focal points can be used to ensure a certain section of the image is always within the cropped viewport. [See this for how to let users select focal point coordinates](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point).
+サーバーでは一さの画像のクロップは行いません。アプリやユーザーの自由度を高めるためです。そのため、クリッピングはクライアントが行ってください。焦点を使用して、画像の特定の場所が常にトリミングされた範囲内にあるようにします。
+確認: [See this for how to let users select focal point coordinates](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point).

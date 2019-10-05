@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/suggestions
 
-Accounts the user had past positive interactions with, but is not following yet.
+過去の関わり合いを数値化して上から表示
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -18,7 +18,7 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 ## DELETE /api/v1/suggestions/:account_id
 
-Remove account from suggestions.
+アカウントをフォローサジェストから除外
 
 ### 基本情報
 

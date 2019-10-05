@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/directory
 
-Accounts listed on Profile Directory
+プロフィールディレクトリを返します。
 
-Returns [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -20,6 +20,6 @@ Returns [Account]({{< relref "entities.md#account" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `order` | `active` or `new` | Optional | `active` |
-| `local` | Return results newer than ID | Optional | `false` |
-| `offset` | Offset in the results | Optional ||
+| `order` | `active`(活動順) か `new`(新規登録順) | Optional | `active` |
+| `local` | 表示アカウントをローカルに限定する | Optional | `false` |
+| `offset` | 結果のオフセット | Optional ||

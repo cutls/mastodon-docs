@@ -8,23 +8,23 @@ menu:
 
 ## GET /api/v1/endorsements
 
-Accounts the user chose to endorse.
+プロフィールに紹介する
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
 {{< api_method_info auth="Yes" user="Yes" scope="read read:account" version="2.5.0" >}}
 
-### Pagination
+### ページネーション
 
 {{< api_pagination >}}
 
 ## POST /api/v1/accounts/:id/pin
 
-Endorse an account, i.e. choose to feature the account on the user's public profile.
+アカウントの公開ページで表示される紹介ユーザーに登録
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
 ### 基本情報
 
@@ -32,9 +32,9 @@ Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
 ## POST /api/v1/accounts/:id/unpin
 
-Undo endorse of an account.
+ユーザーを登録解除
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
 ### 基本情報
 

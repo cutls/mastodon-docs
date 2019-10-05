@@ -6,11 +6,11 @@ menu:
     weight: 10
 ---
 
-Track unread notification count across sessions
+公開プロフィール等に表示されるピン留めされたタグを管理
 
 ## GET /api/v1/featured_tags
 
-Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
+[Featured Tag]({{< relref "entities.md#featured-tag" >}})を返します。
 
 ### 基本情報
 
@@ -18,7 +18,7 @@ Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
 
 ## POST /api/v1/featured_tags
 
-Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
+[Featured Tag]({{< relref "entities.md#featured-tag" >}})を返します。
 
 ### 基本情報
 
@@ -28,4 +28,4 @@ Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `name` | Tag(String) without `#` | Required ||
+| `name` | タグ名(`#`なし) | Required ||

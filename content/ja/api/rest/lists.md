@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/lists
 
-User's lists.
+リスト一覧
 
-Returns array of [List]({{< relref "entities.md#list" >}})
+[List]({{< relref "entities.md#list" >}})の配列を返します。
 
 ### 基本情報
 
@@ -18,9 +18,9 @@ Returns array of [List]({{< relref "entities.md#list" >}})
 
 ## GET /api/v1/accounts/:id/lists
 
-User's lists that a given account is part of.
+そのユーザーが含まれている自分のリストを表示
 
-Returns array of [List]({{< relref "entities.md#list" >}})
+ [List]({{< relref "entities.md#list" >}})の配列を返します。
 
 ### 基本情報
 
@@ -28,9 +28,9 @@ Returns array of [List]({{< relref "entities.md#list" >}})
 
 ## GET /api/v1/lists/:id/accounts
 
-Accounts that are in a given list.
+そのリストに入っているユーザーの一覧
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -40,7 +40,7 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | 結果の表示個数 | Optional | 40 |
 
 ### Pagination
 
@@ -50,7 +50,7 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 ## GET /api/v1/lists/:id
 
-Returns [List]({{< relref "entities.md#list" >}})
+[List]({{< relref "entities.md#list" >}})を返します。
 
 ### 基本情報
 
@@ -58,9 +58,9 @@ Returns [List]({{< relref "entities.md#list" >}})
 
 ## POST /api/v1/lists
 
-Create a new list.
+リストを作成
 
-Returns [List]({{< relref "entities.md#list" >}})
+[List]({{< relref "entities.md#list" >}})を返します。
 
 ### 基本情報
 
@@ -70,13 +70,13 @@ Returns [List]({{< relref "entities.md#list" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `title` | The title of the list | Required |
+| `title` | リストのタイトル | Required |
 
 ## PUT /api/v1/lists/:id
 
-Update a list.
+リストを更新
 
-Returns [List]({{< relref "entities.md#list" >}})
+[List]({{< relref "entities.md#list" >}})を返します。
 
 ### 基本情報
 
@@ -90,7 +90,7 @@ Returns [List]({{< relref "entities.md#list" >}})
 
 ## DELETE /api/v1/lists/:id
 
-Remove a list.
+リストを削除
 
 ### 基本情報
 
@@ -98,9 +98,9 @@ Remove a list.
 
 ## POST /api/v1/lists/:id/accounts
 
-Add accounts to a list.
+リストにアカウントを追加
 
-> Only accounts already followed by the user can be added to a list.
+> まずフォローする必要があります。未フォロー状態ではリストに入れることはできません。
 
 ### 基本情報
 
@@ -110,11 +110,11 @@ Add accounts to a list.
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `account_ids` | Array of account IDs | Required |
+| `account_ids` | アカウントのIDの配列 | Required |
 
 ## DELETE /api/v1/lists/:id/accounts
 
-Remove accounts from a list.
+アカウントをリストから消去
 
 ### 基本情報
 
@@ -124,4 +124,4 @@ Remove accounts from a list.
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `account_ids` | Array of account IDs | Required |
+| `account_ids` | アカウントのIDの配列 | Required |

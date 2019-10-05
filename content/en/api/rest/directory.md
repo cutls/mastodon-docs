@@ -10,7 +10,7 @@ menu:
 
 Accounts listed on Profile Directory
 
-Returns [Account]({{< relref "entities.md#account" >}})
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
 ### Resource information
 
@@ -21,5 +21,5 @@ Returns [Account]({{< relref "entities.md#account" >}})
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
 | `order` | `active` or `new` | Optional | `active` |
-| `local` | Return results newer than ID | Optional | `false` |
+| `local` | Show only local users | Optional | `false` |
 | `offset` | Offset in the results | Optional ||

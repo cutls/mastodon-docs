@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/filters
 
-Text filters the user has configured that potentially must be applied client-side.
+文字列の含まれるトゥートを除外する機能。**クライアント側で処理される必要があります。**
 
-Returns array of [Filter]({{< relref "entities.md#filter" >}})
+[Filter]({{< relref "entities.md#filter" >}})の配列を返します。
 
 ### 基本情報
 
@@ -18,9 +18,9 @@ Returns array of [Filter]({{< relref "entities.md#filter" >}})
 
 ## POST /api/v1/filters
 
-Create a new filter.
+フィルターを作成
 
-Returns [Filter]({{< relref "entities.md#filter" >}})
+[Filter]({{< relref "entities.md#filter" >}})を返します。
 
 ### 基本情報
 
@@ -30,17 +30,17 @@ Returns [Filter]({{< relref "entities.md#filter" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `phrase` | Keyword or phrase to filter | Required |
-| `context` | Array of strings that means filtering context. Each string is one of `home`, `notifications`, `public`, `thread`. At least one context must be specified. | Required |
-| `irreversible` | Irreversible filtering will only work in `home` and `notifications` contexts by fully dropping the records. Otherwise, filtering is up to the client. | Optional |
-| `whole_word` | Whether to consider word boundaries when matching | Optional |
-| `expires_in` | Number that indicates seconds. Filter will be expire in seconds after API processed. Leave blank for no expiration | Optional |
+| `phrase` | フィルター語句 | Required |
+| `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | Required |
+| `irreversible` | `home` や `notifications` で、サーバー側で語句の含まれるトゥートを返さないようにする。**クライアント処理不要** | Optional |
+| `whole_word` | ラテン系の言葉で、単語の周りのスペースを一語として扱うか | Optional |
+| `expires_in` | 0より長い有効期限の秒数(0や空白なら無期限) | Optional |
 
 ## GET /api/v1/filters/:id
 
-A text filter.
+フィルター一覧
 
-Returns [Filter]({{< relref "entities.md#filter" >}})
+[Filter]({{< relref "entities.md#filter" >}})を返します。
 
 ### 基本情報
 
@@ -48,9 +48,9 @@ Returns [Filter]({{< relref "entities.md#filter" >}})
 
 ## PUT /api/v1/filters/:id
 
-Update a text filter.
+フィルター更新
 
-Returns [Filter]({{< relref "entities.md#filter" >}})
+[Filter]({{< relref "entities.md#filter" >}})を返します。
 
 ### 基本情報
 
@@ -60,15 +60,15 @@ Returns [Filter]({{< relref "entities.md#filter" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `phrase` | Keyword or phrase to filter | Required |
-| `context` | Array of strings that means filtering context. Each string is one of `home`, `notifications`, `public`, `thread`. At least one context must be specified. | Required |
-| `irreversible` | Irreversible filtering will only work in `home` and `notifications` contexts by fully dropping the records. Otherwise, filtering is up to the client. | Optional |
-| `whole_word` | Whether to consider word boundaries when matching | Optional |
-| `expires_in` | Number that indicates seconds. Filter will be expire in seconds after API processed. Leave blank to not change | Optional |
+| `phrase` | フィルター語句 | Optional |
+| `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | Optional |
+| `irreversible` | `home` や `notifications` で、サーバー側で語句の含まれるトゥートを返さないようにする。**クライアント処理不要** | Optional |
+| `whole_word` | ラテン系の言葉で、単語の周りのスペースを一語として扱うか | Optional |
+| `expires_in` | 0より長い有効期限の秒数(0や空白なら無期限) | Optional |
 
 ## DELETE /api/v1/filters/:id
 
-Delete a text filter.
+フィルター削除
 
 ### 基本情報
 

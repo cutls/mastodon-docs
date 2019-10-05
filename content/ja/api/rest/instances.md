@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/instance
 
-Information about the server.
+サーバーの情報を取得
 
-Returns [Instance]({{< relref "entities.md#instance" >}})
+[Instance]({{< relref "entities.md#instance" >}})を返します。
 
 ### 基本情報
 

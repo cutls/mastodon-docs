@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/follow_requests
 
-Accounts that have requested to follow the user.
+自分に来ているフォローリクエスト一覧
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -20,17 +20,17 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` |結果の表示個数 | Optional | 40 |
 
-### Pagination
+### ページネーション
 
 {{< api_pagination >}}
 
 ## POST /api/v1/follow_requests/:id/authorize
 
-Allow the account to follow the user.
+フォローリクエストの受理(フォローされます)
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
 ### 基本情報
 
@@ -38,7 +38,7 @@ Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
 ## POST /api/v1/follow_requests/:id/reject
 
-Do not allow the account to follow the user.
+フォローリクエストの拒否
 
 ### 基本情報
 

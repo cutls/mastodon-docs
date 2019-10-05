@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/favourites
 
-Statuses the user has favourited.
+自分のお気に入り登録した一覧
 
-Returns array of [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})の配列を返します。
 
 ### 基本情報
 
@@ -20,7 +20,7 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 20 |
+| `limit` | 結果の表示個数 | Optional | 20 |
 
 ### Pagination
 
@@ -28,9 +28,9 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 ## POST /api/v1/statuses/:id/favourite
 
-Favourite a status.
+トゥートをお気に入り登録
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 
@@ -38,6 +38,7 @@ Returns [Status]({{< relref "entities.md#status" >}})
 
 ## POST /api/v1/statuses/:id/unfavourite
 
-Undo the favourite of a status.
+お気に入り登録を解除
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
+

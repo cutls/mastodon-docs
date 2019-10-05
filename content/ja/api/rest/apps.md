@@ -8,9 +8,9 @@ menu:
 
 ## POST /api/v1/apps
 
-Create a new application to obtain OAuth2 credentials.
+OAuth 2のためにアプリを作成
 
-Returns [App]({{< relref "entities.md#app" >}}) with `client_id` and `client_secret`
+[App]({{< relref "entities.md#app" >}})に`client_id` と `client_secret`が付いたものを返します。
 
 ### 基本情報
 
@@ -20,18 +20,18 @@ Returns [App]({{< relref "entities.md#app" >}}) with `client_id` and `client_sec
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `client_name` | Name of your application | Required |
-| `redirect_uris` | Where the user should be redirected after authorization | Required |
-| `scopes` | Space separated list of [scopes]({{< relref "permissions.md" >}}) | Required |
-| `website` | URL to the homepage of your app | Optional |
+| `client_name` | アプリ名 | Required |
+| `redirect_uris` | リダイレクトするURL | Required |
+| `scopes` | [scopes]({{< relref "permissions.md" >}})のスペース区切り | Required |
+| `website` | アプリのWebサイト | Optional |
 
-> To display the authorization code to the end-user instead of redirecting to a web page, use `urn:ietf:wg:oauth:2.0:oob` in `redirect_uris`
+> `redirect_uris`に`urn:ietf:wg:oauth:2.0:oob`と指定すると、コードをコピーして認証します。
 
 ## GET /api/v1/apps/verify_credentials
 
-Confirm that the app's OAuth2 credentials work.
+使っているアプリ情報を表示
 
-Returns [App]({{< relref "entities.md#app" >}})
+[App]({{< relref "entities.md#app" >}})を返します。
 
 ### 基本情報
 

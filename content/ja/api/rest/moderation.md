@@ -8,7 +8,7 @@ menu:
 
 ## GET /api/v1/admin/accounts
 
-Returns [Local users]({{< relref "entities.md#local-users" >}})
+[Local users]({{< relref "entities.md#local-users" >}})を返します。
 
 ### 基本情報
 
@@ -18,19 +18,19 @@ Returns [Local users]({{< relref "entities.md#local-users" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `local` | Locals or not(including remotes) | Optional |
-| `remote` | Remotes or not(including locals)| Optional |
-| `by_domain` | Domain | Optional |
-| `active` | Boolean | Optional |
-| `pending` | Boolean | Optional |
-| `disabled` | Boolean | Optional |
-| `silenced` | Boolean | Optional |
-| `suspended` | Boolean | Optional |
-| `username` | Username(without @) | Optional |
-| `display_name` | Display name | Optional |
-| `email` | Email address | Optional |
-| `ip` | IP address | Optional |
-| `staff` | Boolean | Optional |
+| `local` | ローカルのユーザー | Optional |
+| `remote` | リモートのユーザー | Optional |
+| `by_domain` | ドメインで絞り込む | Optional |
+| `active` | このアカウントはBANしていないか | Optional |
+| `pending` | 処理中 | Optional |
+| `disabled` | 活動停止中 | Optional |
+| `silenced` | サイレンス中 | Optional |
+| `suspended` | 追い出されたか | Optional |
+| `username` | ユーザー名 | Optional |
+| `display_name` | SNS上の名前 | Optional |
+| `email` | メールアドレス | Optional |
+| `ip` | IP アドレス | Optional |
+| `staff` | スタッフかどうか | Optional |
 
 ## GET /api/v1/admin/accounts/:id
 
@@ -82,7 +82,7 @@ Unsuspend account
 
 ## GET /api/v1/admin/reports
 
-Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
+[Local Reports]({{< relref "entities.md#local-reports" >}})を返します。
 
 ### 基本情報
 

@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/domain_blocks
 
-Domains the user has blocked.
+ユーザーがブロックしているドメイン
 
-Returns array of string.
+ドメイン文字列の配列を返します。
 
 ### 基本情報
 
@@ -20,7 +20,7 @@ Returns array of string.
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | 結果の表示個数 | Optional | 40 |
 
 ### Pagination
 
@@ -28,7 +28,7 @@ Returns array of string.
 
 ## POST /api/v1/domain_blocks
 
-Block a domain to hide all public posts from it, all notifications from it, and remove all followers from it.
+ドメインブロックに追加。そのサーバーの全ての公開投稿や通知、フォロワーを排除できます。
 
 ### 基本情報
 
@@ -38,11 +38,11 @@ Block a domain to hide all public posts from it, all notifications from it, and 
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `domain` | Domain to block| Required |
+| `domain` | ブロックするドメイン | Required |
 
 ## DELETE /api/v1/domain_blocks
 
-Remove a domain block.
+ドメインブロックを解除
 
 ### 基本情報
 
@@ -52,4 +52,4 @@ Remove a domain block.
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `domain` | Domain to unblock| Required |
+| `domain` | ブロックを解除するドメイン | Required |

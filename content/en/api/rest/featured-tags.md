@@ -6,7 +6,6 @@ menu:
     weight: 10
 ---
 
-Track unread notification count across sessions
 
 ## GET /api/v1/featured_tags
 

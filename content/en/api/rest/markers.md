@@ -32,6 +32,8 @@ Returns [Markers]({{< relref "entities.md#markers" >}})
 
 ### Parameters
 
+Either `notification` or `home` is required, POSTing both of them is also OK. 
+
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
 | `notification` | Set id(String) of last read toot on `last_read_id` | Required ||

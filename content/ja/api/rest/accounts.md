@@ -18,11 +18,11 @@ menu:
 
 [Token]({{< relref "entities.md#token" >}})を返します。
 
-The method is available to apps with a token obtained via the client credentials grant. It creates a user and account records, as well as an access token for the app that initiated the request. The user is unconfirmed, and an e-mail is sent as usual.
+クライアント資格情報の付与によって取得されたトークンを使用してアプリで使用できます。ユーザーは未確認で、通常どおり電子メールが送信されます。
 
-The method returns the access token, which the app should save for later. The REST API is not available to users with unconfirmed accounts, so the app must be smart to wait for the user to click a link in their e-mail inbox.
+アクセストークンを返します。アクセストークンはアプリが保存する必要がありますが、未確認となっているため、REST APIは使用できません。アプリは、ユーザーが電子メールのリンクをクリックするのを待つ必要があります。
 
-The method is rate-limited by IP to 5 requests per 30 minutes.
+IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
@@ -32,17 +32,17 @@ The method is rate-limited by IP to 5 requests per 30 minutes.
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `username` | User name | Required |
-| `email` | E-mail address | Required |
-| `password` | Password text | Required |
-| `agreement` | Agreement to local rules, terms of use, privacy policy (Bool) | Required |
-| `locale` | The language of the e-mail to be sent first | Required |
+| `username` | ユーザー名 | Required |
+| `email` | メールアドレス | Required |
+| `password` | パスワード | Required |
+| `agreement` | 規約に同意したか(Boolean) | Required |
+| `locale` | メールの送信言語 | Required |
 
-The `agreement` parameter must be set to true after presenting the local rules, terms of use, privacy policy for the user and obtaining consent.
+`agreement`は当然規約(ローカルルール, 利用規約, プライバシーポリシー)を表示してからtrueに設定すべきです。
 
 ## GET /api/v1/accounts/verify_credentials
 
-User's own account.
+ユーザー自身のアカウントの認証情報を返します。
 
 [Account]({{< relref "entities.md#account" >}}に[`source` attribute]({{< relref "entities.md#source" >}})が付いたものを返します。
 
@@ -52,7 +52,7 @@ User's own account.
 
 ## PATCH /api/v1/accounts/update_credentials
 
-Update user's own account.
+ユーザー自身のアカウントの認証情報を更新します。
 
 [Account]({{< relref "entities.md#account" >}})を返します。
 
@@ -64,21 +64,21 @@ Update user's own account.
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `display_name` | Display name | Optional |
-| `note` | Biography | Optional |
-| `avatar` | Avatar encoded using `multipart/form-data` | Optional |
-| `header` | Header image encoded using `multipart/form-data` | Optional |
-| `locked` | Enable follow requests | Optional |
-| `source[privacy]` | Default post privacy preference | Optional |
-| `source[sensitive]`| Whether to mark statuses as sensitive by default | Optional |
-| `source[language]` | Override language on statuses by default (ISO6391) | Optional |
-| `fields_attributes` | Profile metadata (max. 4) | Optional |
-| `discoverable` | Boolean: whether you are shown on profile directory | Optional |
-| `bot ` | Boolean: whether you are bot | Optional |
+| `display_name` | 名前 | Optional |
+| `note` | 自己紹介 | Optional |
+| `avatar` | アバター(プロフィール画像) `multipart/form-data`で送信 | Optional |
+| `header` | ヘッダー画像 `multipart/form-data`で送信 | Optional |
+| `locked` | 鍵をかけるか | Optional |
+| `source[privacy]` | 規定の公開範囲 | Optional |
+| `source[sensitive]`| 常に画像を閲覧注意として投稿するか | Optional |
+| `source[language]` | ISO6391で表したデフォルトの投稿言語(APIで上書き可) | Optional |
+| `fields_attributes` | フィールド(4つまで) | Optional |
+| `discoverable` | Boolean: プロフィールディレクトリに表示するか | Optional |
+| `bot ` | Boolean: botかどうか | Optional |
 
 ## GET /api/v1/accounts/:id/followers
 
-Accounts which follow the given account.
+フォロワー一覧
 
 [Account]({{< relref "entities.md#account" >}})を返します。
 
@@ -90,7 +90,7 @@ Accounts which follow the given account.
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | 結果の表示個数 | Optional | 40 |
 
 ### Pagination
 
@@ -98,7 +98,7 @@ Accounts which follow the given account.
 
 ## GET /api/v1/accounts/:id/following
 
-Accounts which the given account is following.
+フォロー(フォロイー)一覧
 
 [Account]({{< relref "entities.md#account" >}})配列を返します。
 
@@ -110,7 +110,7 @@ Accounts which the given account is following.
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | 結果の表示個数 | Optional | 40 |
 
 ### Pagination
 
@@ -118,9 +118,9 @@ Accounts which the given account is following.
 
 ## GET /api/v1/accounts/:id/statuses
 
-An account's statuses.
+投稿一覧
 
-[Status]({{< relref "entities.md#status" >}})の配列を返します。
+[Status]({{< relref "entities.md#status" >}})配列を返します。
 
 ### 基本情報
 
@@ -130,23 +130,23 @@ An account's statuses.
 
 |Name|Description|Required|Default|Added in|
 |----|-----------|:------:|:-----:|:------:|
-| `only_media` | Only return statuses that have media attachments | Optional | false | |
-| `pinned` | Only return statuses that have been pinned | Optional | false | |
-| `exclude_replies` | Skip statuses that reply to other statuses | Optional | false | |
-| `max_id` | Return results older than ID | Optional | | |
-| `since_id` | Return results newer than ID | Optional | | |
-| `min_id` | Return results immediately newer than ID | Optional | | |
-| `limit` | Maximum number of results | Optional | 20 | | |
-| `exclude_reblogs` | Skip statuses that are reblogs of other statuses | Optional | false | 2.7.0 |
-| `tagged` | Filtering by hashtag without `#` | Optional || 2.8.0 |
+| `only_media` | メディアのあるトゥートのみ | Optional | false | |
+| `pinned` | ピン留めされた投稿のみ | Optional | false | |
+| `exclude_replies` | リプライのある投稿は表示しない | Optional | false | |
+| `max_id` | これより前のトゥート | Optional | | |
+| `since_id` | これより後のトゥート(最新から) | Optional | | |
+| `min_id` | これより後のトゥート(最古から) | Optional | | |
+| `limit` | 結果の表示個数 | Optional | 20 | | |
+| `exclude_reblogs` | ブースト除外 | Optional | false | 2.7.0 |
+| `tagged` | このタグの付いた投稿のみ表示(`#`なし) | Optional || 2.8.0 |
 
-### Pagination
+### ページネーション
 
 {{< api_dynamic_pagination >}}
 
 ## POST /api/v1/accounts/:id/follow
 
-Follow an account.
+アカウントのフォロー
 
 [Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
@@ -158,7 +158,7 @@ Follow an account.
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `reblogs` | Whether the followed account's reblogs will show up in the home timeline | Optional | true |
+| `reblogs` | ホームタイムラインにこのユーザーのブーストを表示する | Optional | true |
 
 ## POST /api/v1/accounts/:id/unfollow
 
@@ -172,7 +172,7 @@ Unfollow an account.
 
 ## GET /api/v1/accounts/relationships
 
-Relationship of the user to the given accounts in regards to following, blocking, muting, etc.
+そのユーザーと自分とのフォローなどの関係(複数指定可能)
 
 [Relationship]({{< relref "entities.md#relationship" >}})の配列を返します。
 
@@ -184,11 +184,11 @@ Relationship of the user to the given accounts in regards to following, blocking
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `id` | Array of account IDs | Required |
+| `id` | アカウントのIDの配列 | Required |
 
 ## GET /api/v1/accounts/search
 
-Search for matching accounts by username, domain and display name.
+指定した条件に一致するアカウントを表示
 
 [Account]({{< relref "entities.md#account" >}})の配列を返します。
 
@@ -200,7 +200,7 @@ Search for matching accounts by username, domain and display name.
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `q` | What to search for | Required ||
-| `limit` | Maximum number of results | Optional | 40 |
-| `resolve` | Attempt WebFinger look-up | Optional | false |
-| `following` | Only who the user is following | Optional | false |
+| `q` | 検索語句| Required ||
+| `limit` | 結果の表示個数 | Optional | 40 |
+| `resolve` | WebFinger解決をする | Optional | false |
+| `following` | フォローしているユーザーだけから検索 | Optional | false |

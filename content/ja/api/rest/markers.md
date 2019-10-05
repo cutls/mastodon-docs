@@ -6,11 +6,11 @@ menu:
     weight: 10
 ---
 
-Track unread notification count across sessions
+未読管理マーカー
 
 ## GET /api/v1/markers
 
-Returns [Markers]({{< relref "entities.md#markers" >}})
+[Markers]({{< relref "entities.md#markers" >}})を返します。
 
 ### 基本情報
 
@@ -20,11 +20,11 @@ Returns [Markers]({{< relref "entities.md#markers" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `timeline` | `home` or `notifications` | Required ||
+| `timeline` | `home` か `notifications` | Required ||
 
 ## POST /api/v1/markers
 
-Returns [Markers]({{< relref "entities.md#markers" >}})
+[Markers]({{< relref "entities.md#markers" >}})を返します。
 
 ### 基本情報
 
@@ -32,7 +32,9 @@ Returns [Markers]({{< relref "entities.md#markers" >}})
 
 ### パラメーター
 
+最低でも2つのいずれかが必要です。
+
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `notification` | Set id(String) of last read toot on `last_read_id` | Required ||
-| `home` | Set id(String) of last read toot on `last_read_id` | Required ||
+| `notification` | `last_read_id`に最後に読んだトゥートのID | Required) ||
+| `home` | `last_read_id`に最後に読んだ通知のID | Required ||
