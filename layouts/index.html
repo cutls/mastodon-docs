@@ -1,18 +1,20 @@
 {{ define "title"}} Mastodon documentation {{end}}
 
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  <img class="emoji" draggable="false" alt="⚠️" src="https://twemoji.maxcdn.com/v/12.1.3/72x72/26a0.png">This is Cutls's fork, unoffical documents.
+<h1>{{ .Title }}</h1>
+<img class="emoji" draggable="false" alt="⚠️" src="https://twemoji.maxcdn.com/v/12.1.3/72x72/26a0.png">This is Cutls's
+fork, unoffical documents. <img class="emoji" draggable="false" alt="⚠️"
+  src="https://twemoji.maxcdn.com/v/12.1.3/72x72/26a0.png">
 
-  <div class="e-content">
-    {{ .Content }}
+<div class="e-content">
+  {{ .Content }}
 
-    <p><i class="fas fa-language"></i> <strong>Available languages:</strong></p>
+  <p><i class="fas fa-language"></i> <strong>Available languages:</strong></p>
 
-    <ul>
-      {{ range $.Site.Home.AllTranslations }}
-        <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-      {{ end }}
-    </ul>
-  </div>
+  <ul>
+    {{ range $.Site.Home.AllTranslations }}
+    <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+    {{ end }}
+  </ul>
+</div>
 {{ end }}
