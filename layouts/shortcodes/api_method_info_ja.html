@@ -1,0 +1,31 @@
+<table>
+    <tbody>
+      <tr>
+        <th style="text-align: left">レスポンスの形式</th>
+        <td>JSON</td>
+      </tr>
+  
+      <tr>
+        <th style="text-align: left">認証の要不要</th>
+        <td>{{ .Get "auth" }}</td>
+      </tr>
+  
+      <tr>
+        <th style="text-align: left">ユーザーの要不要</th>
+        <td>{{ .Get "user" }}</td>
+      </tr>
+  
+      {{ with .Get "scope" }}
+        <tr>
+          <th style="text-align: left">スコープ</th>
+          <td>{{range split . " "}}<code>{{ . }}</code> {{ end }}</td>
+        </tr>
+      {{ end }}
+  
+      <tr>
+        <th style="text-align: left">実装バージョン</th>
+        <td>{{ .Get "version" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

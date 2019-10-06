@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read:mutes follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read:mutes follow" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -24,7 +24,7 @@ menu:
 
 ### ページネーション
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## POST /api/v1/accounts/:id/mute
 
@@ -34,7 +34,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write:mutes follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write:mutes follow" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -50,7 +50,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write:mutes follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write:mutes follow" version="0.0.0" >}}
 
 ## POST /api/v1/statuses/:id/mute
 
@@ -60,7 +60,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:mutes" version="1.4.2" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:mutes" version="1.4.2" >}}
 
 ## POST /api/v1/statuses/:id/unmute
 
@@ -70,4 +70,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:mutes" version="1.4.2" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:mutes" version="1.4.2" >}}

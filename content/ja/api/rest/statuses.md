@@ -12,7 +12,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ## GET /api/v1/statuses/:id/context
 
@@ -22,7 +22,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ## GET /api/v1/statuses/:id/card
 
@@ -36,7 +36,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -46,7 +46,7 @@ menu:
 
 ### Pagination
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## GET /api/v1/statuses/:id/favourited_by
 
@@ -56,7 +56,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -66,7 +66,7 @@ menu:
 
 ### Pagination
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## POST /api/v1/statuses
 
@@ -79,7 +79,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -129,7 +129,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
 ## POST /api/v1/statuses/:id/reblog
 
@@ -139,7 +139,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -157,7 +157,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
 ## POST /api/v1/statuses/:id/pin
 
@@ -167,7 +167,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}
 
 ## POST /api/v1/statuses/:id/unpin
 
@@ -177,4 +177,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}

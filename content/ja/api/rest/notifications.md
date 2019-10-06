@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -29,7 +29,7 @@ menu:
 
 ### Pagination
 
-{{< api_dynamic_pagination >}}
+{{< api_dynamic_pagination_ja >}}
 
 ## GET /api/v1/notifications/:id
 
@@ -37,7 +37,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
 
 ## POST /api/v1/notifications/:id/dismiss
 
@@ -49,7 +49,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:notifications" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:notifications" version="0.0.0" >}}
 
 ## POST /api/v1/push/subscription
 
@@ -61,7 +61,7 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
 ### パラメーター
 
@@ -82,7 +82,7 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
 ## PUT /api/v1/push/subscription
 
@@ -92,7 +92,7 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
 ### パラメーター
 
@@ -110,4 +110,4 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}

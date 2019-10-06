@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read" version="2.4.3" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read" version="2.4.3" >}}
 
 ## DELETE /api/v1/suggestions/:account_id
 
@@ -22,4 +22,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read" version="2.4.3" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read" version="2.4.3" >}}

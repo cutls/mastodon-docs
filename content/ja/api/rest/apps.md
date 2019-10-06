@@ -14,7 +14,7 @@ OAuth 2のためにアプリを作成
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -35,4 +35,4 @@ OAuth 2のためにアプリを作成
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="No" version="2.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="No" version="2.0.0" >}}

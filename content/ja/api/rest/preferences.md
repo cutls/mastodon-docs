@@ -14,4 +14,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" version="2.8.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" version="2.8.0" >}}

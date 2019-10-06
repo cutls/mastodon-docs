@@ -14,11 +14,11 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:account" version="2.5.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:account" version="2.5.0" >}}
 
 ### ページネーション
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## POST /api/v1/accounts/:id/pin
 
@@ -28,7 +28,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="2.5.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="2.5.0" >}}
 
 ## POST /api/v1/accounts/:id/unpin
 
@@ -38,4 +38,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="2.5.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="2.5.0" >}}

@@ -12,7 +12,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
 
 ### パラメーター
 
@@ -38,7 +38,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/enable
 
@@ -46,7 +46,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/approve
 
@@ -54,7 +54,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/reject
 
@@ -62,7 +62,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/unsilence
 
@@ -70,7 +70,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/unsuspend
 
@@ -78,7 +78,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## GET /api/v1/admin/reports
 
@@ -86,7 +86,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:reports" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:read admin:read:reports" version="2.9.1" >}}
 
 ### パラメーター
 
@@ -106,7 +106,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/reports/:id/unassign
 
@@ -114,7 +114,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/reports/:id/reopen
 
@@ -122,7 +122,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/reports/:id/resolve
 
@@ -130,7 +130,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/action
 
@@ -138,7 +138,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ### パラメーター
 

@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:follows follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:follows follow" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -24,7 +24,7 @@ menu:
 
 ### ページネーション
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## POST /api/v1/follow_requests/:id/authorize
 
@@ -34,7 +34,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
 ## POST /api/v1/follow_requests/:id/reject
 
@@ -42,4 +42,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}

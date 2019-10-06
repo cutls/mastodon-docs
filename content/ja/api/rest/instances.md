@@ -14,4 +14,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" version="0.0.0" >}}

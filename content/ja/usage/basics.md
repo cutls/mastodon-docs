@@ -1,68 +1,76 @@
 ---
-title: Basics
-description: Overview of Mastodon's basic functionality
+title: 基本的な使い方
+description: 基本的な使い方
 menu:
   docs:
     parent: usage
     weight: 1
 ---
-## Sign up
+## サインアップ(新規登録)
 
-You have to choose a server to sign up on, like you would choose an e-mail provider, or a World of Warcraft realm for your new character. The server will be hosting your account and your home feed.
+メールのプロバイダを選んだり、最初にプロデュースするアイドルを選択するように、まず新規登録するサーバーを選ばなければなりません。プロデュースしたアイドルがやがて自分の全てになるように、そのサーバーはあなたのアカウントの情報全てを保存します。
 
-You can [browse a list of servers by categories and languages on joinmastodon.org](https://joinmastodon.org/#getting-started).
+[joinmastodon.org](https://joinmastodon.org/#getting-started)では欧州圏が中心であるものの厳格で、持続性のある調和のとれた言論を保証するサーバー一覧を提供しています。万人におすすめできるサーバーというものは存在しえないので、様々なサーバーを覗いてみるのもよいでしょう。
 
-## Edit profile
-### Picture, name and bio
+## プロフィールを編集
+### 名前やアバター、自己紹介
 
-- You can upload a profile picture
-- You can upload a header image for your profile
-- You can set a display name different to your username
-- You can write about yourself in the bio
-- You can mention people and use hashtags and custom emoji in your bio
+- プロフィール画像(アバター)を設定できます。
+- ヘッダー画像(横長かつ大きい画像)を設定できます。
+- ユーザーネームとは違う、好きな名前を付けることができます。日本語やカスタム絵文字なども使用できます。
+- あなたのことを自己紹介に書いていきます。
+- 自己紹介文には、他人のアカウントやハッシュタグ、カスタム絵文字が使用できます。
 
-### Profile metadata
+### プロフィールのフィールド(補足情報)
 
-Profile metadata is a way to add extra information to your profile that is easy to skim. You have 4 rows where you can define the label and the value. For example:
+フィールドには4つまで「ラベル」と「内容」を組み合わせたリストを付けることができます。
 
-|Label|Content|
+|ラベル|内容|
 |-----|-------|
-|Age|25|
-|Country|Germany|
-|Pronouns|he/him|
+|年齢|25|
+|Twitter|@Twitter|
+|Love|デレマス|
+|担当|新田美波|
 
-It's completely up to you what you put there. The content can contain mentions, hashtags, custom emojis and links.
+自由に書いてください。内容には他のアカウントやハッシュタグ、カスタム絵文字、リンクを使用できます。
 
-### Link verification
+### リンクの所持証明
 
-If you put a link in your profile metadata, Mastodon checks if the linked page links back to your Mastodon profile. If so, you get a verification checkmark next to that link, since you are confirmed as the owner.
+フィールドに書いたリンクが自分のものであるかを証明することができます。Mastodonはそのリンクに自動でアクセスし、`href="https://mastodon.tld/@alice" rel="me"`が付いたaタグを探します。`href`にはあなたのMastodonのアドレス(`https://(あなたの居るサーバーのドメイン)/@(あなたの名前))`)が指定されている必要があります。`rel="me"`がないタグには反応しません。そのようなタグがある場合、そのリンクの所有者と認定され、そのリンクの横に確認チェックマークが表示されます。
 
-Behind the scenes, Mastodon checks for the `rel="me"` attribute on the link back. Likewise, Mastodon puts `rel="me"` on the links within profile metadata.
+つまり、`@alice@mastodon.tld`さんがフィールドに`https://example.com/aboutme.html`と指定した場合、`about.html`に以下のようなタグが含まれていれば認定されます。`a`タグと`href`属性と`rel="me"`属性以外は自由に指定してください。
 
-## Posting
-### Text
+`<a href="https://mastodon.tld/@alice" rel="me">Mastodon</a>`
 
-- You can use up to 500 characters
-- You can mention other people like `@alice` or `@alice@example.com`
-- When mentioning other people, the domain part of their username is not counted
-- If you post links, they must begin with `http://` or `https://`
-- When posting links, all links are counted as 23 characters, no matter how long
-- You can use hashtags like `#example` so others can find your post by that tag
-- You can add a content warning to your post
-- The content warning is plain text. It does not support mentions, hashtags or links
+## 投稿
+### テキスト
 
-### Media
+- 通常、500文字まで入力できます。
+- `@alice`(同じサーバー)や `@alice@example.com`(別のサーバー)と入力すれば他のユーザーにメンション(言及)することができます。
+- 他人をメンションするとき、ユーザーネームのドメイン部分(`@example.com`)はカウントされません。
+- リンクは`http://`または`https://`から始めてください。
+- リンクを投稿した場合、そのリンクが何文字であっても23文字とカウントされます。
+- `#example`のようなハッシュタグを入力しておくと、他の人の`#example`が付いた投稿を簡単に確認でき、また他の人からそのトゥートを見つけてもらえる可能性が高まります。
+- コンテントワーニングを指定できます。これは警告文で、指定されている場合警告文のみ表示され、内容を表示するためにはその警告文の隣の「見る」を押す必要があります。
+- 警告文は長いトゥートや政治的、R18なトゥートに適用されることがありますが、明確な規定はありません。また、文字数はコンテンツ本体と合計してカウントされます。
+- 警告文はプレーンテキストであり、リンクやハッシュタグ、アカウント名を含むことはできません。
+- 警告文のあるトゥートに返信すると、自動で警告文が付与されます。
 
-- You can upload PNG and JPG images
-- Uploaded GIFs are converted to soundless MP4s like on Imgur/Gfycat (GIFV)
-- You can also directly upload soundless MP4s and WebMs (GIFV)
-- You can upload videos in the MP4, WebM or MOV format
-- Upload limit for images is 8 MB
-- Upload limit for videos is 40 MB
-- Images with a surface area larger than 1280² pixels are downsized
-- All media in a post can be hidden behind a spoiler
+### メディア
 
-### Custom emoji
+- PNGとJPGを画像として投稿できます。最大4枚まで同時に投稿できます。
+- GIFアニメーションは無音MP4となります。Imgur/Gfycatと同じ挙動です。
+- MP4やWebMもGIFVとして投稿できます。同時に複数投稿できません。
+- MP4, WebM, MOVを動画として投稿できます。同時に複数投稿できません。
+- 画像は8MBまで投稿できます。
+- 動画は40MBまで投稿されます。
+- 長辺が1280pxを超える画像はダウンサイズされます。
+- 警告文が指定されている場合、メディアも隠されます。
+- 閲覧注意として画像を指定すると、ぼかして表示されます。
+- 警告文が設定されている場合、画像も閲覧注意になります。
 
-- Each server offers a set of custom emoji you can use, like on Discord
-- You can use an emoji using its shortcode like `:thounking:`
+### カスタム絵文字
+
+- Discordのように各々のサーバーが好きなカスタム絵文字を追加できます。
+- 外部サーバーからの投稿のカスタム絵文字もそのまま表示されますが、使うことはできません。
+- `:thounking:`といった形でカスタム絵文字は表現されます。

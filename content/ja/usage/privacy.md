@@ -1,75 +1,75 @@
 ---
-title: Privacy
-overview: Overview of privacy-related features on Mastodon and their implications
+title: プライバシー
+overview: Mastodonのプライバシーに関する機能の説明
 menu:
   docs:
     parent: usage
     weight: 3
 ---
 
-## Publishing levels
+## 投稿範囲
 
-|Level|Public timelines|Permalink|Profile view|Home feeds|
+|投稿範囲|連合/ローカル|ブースト|プロフィールでの表示|ホームタイムライン|
 |-----|:--------------:|:-------:|:----------:|:--------:|
-|Public|{{< yes >}}|{{< yes >}}|{{< yes >}}|{{< yes >}}|
-|Unlisted|{{< no >}}|{{< yes >}}|{{< yes >}}|{{< yes >}}|
-|Followers-only|{{< no >}}|{{< no >}}|{{< no >}}|{{< yes >}}|
-|Direct|{{< no >}}|{{< no >}}|{{< no >}}|{{< no >}}|
+|Public(公開)|{{< yes >}}|{{< yes >}}|{{< yes >}}|{{< yes >}}|
+|Unlisted(未収載)|{{< no >}}|{{< yes >}}|{{< yes >}}|{{< yes >}}|
+|Followers-only(フォロワー限定)|{{< no >}}|{{< no >}}|{{< no >}}|{{< yes >}}|
+|Direct(ダイレクト)|{{< no >}}|{{< no >}}|{{< no >}}|{{< no >}}|
 
-No matter which level, every mentioned user can see the message in their notifications.
+公開範囲がいずれであっても、通知には表示されます。
 
-**Do not share dangerous and sensitive information over direct messages**. Mastodon is not an encrypted messaging app like Signal or Wire, the database administrators of the sender's and recipient's servers have access to the text. Use them with the same caution as you would use forum PMs, Discord PMs and Twitter DMs.
+**ダイレクトメッセージで機密情報を送信しないでください！**MastodonはSignalやWireのような暗号化メッセージングを提供するアプリではありません。送信, 受信双方のデータベース管理者は送受信されたテキストにアクセス可能です。フォーラムやDiscordのPMやTwiiterのDMと同じように使用してください。
 
-## Account locking
+## アカウントに鍵をかける
 
-To effectively publish private (followers-only) posts, you must lock your account--otherwise, anyone could follow you to view older posts. Locking your account on Mastodon does one thing: Adds an authorization step to the process of following you.
+フォロワー限定の投稿を効果的に限定公開するには、アカウントもロックする必要があります。そうしないと、誰でもあなたをフォローするだけで古い投稿を表示できます。Mastodonでアカウントをロックすると、あなたをフォローするときに認証が必要となります。
 
-Once locked, before someone can become your follower, you will receive a follow request, which you can either accept or reject.
+ロックすると、フォロワーになる前にフォローリクエストを受信し、あなた自身が許可または拒否を選びます。
 
-Please mind that post privacy on Mastodon is per-post, rather than account-wide, and as such there is no way to instantly make past public posts private.
+Mastodonの公開範囲はアカウントごとというより投稿ごとに指定するものです。一度公開として投稿したものを即座にプライベート(限定公開)にすることはできません。
 
-## Blocking and muting
-### Hiding boosts
+## ブロックとミュート
+### ブーストミュート
 
-If you hide boosts from someone, you won't see their boosts in your home feed.
+ブーストをミュートすると、ホームタイムラインにそのユーザーが行ったブーストは表示されなくなります。
 
-### Muting
+### ミュート
 
-When muting, you have the option to mute notifications from them or not. Muting without muting notifications hides the user from your view:
+ミュートする際、そのユーザーからの通知もまとめてミュートするかどうかを選択できます、通知はミュートせずにアカウントをミュートするとこのようになります。
 
-- You won't see the user in your home feed
-- You won't see other people boosting the user
-- You won't see other people mentioning the user
-- You won't see the user in public timelines
+- ホームタイムラインにはそのユーザーのトゥートは表示されません。
+- 他のフォローしている誰かがそのユーザーのトゥートをブーストしても表示されません。
+- そのユーザーに言及(メンション)している他のユーザーのトゥートは表示されません。
+- 連合, ローカル, ハッシュタグタイムラインにそのユーザーのトゥートは表示されません。
 
-If you choose to also mute notifications from them, you will additionally not see notifications from that user.
+通知もミュートした場合、そのユーザーからの通知も表示されなくなります。
 
-The user has no way of knowing they have been muted.
+相手にはあなたがミュートしていることを知る手段はありません。
 
-### Blocking
+### ブロック
 
-Blocking hides a user from your view:
+ブロックした場合このようになります。
 
-- You won't see the user in your home feed
-- You won't see other people boosting the user
-- You won't see other people mentioning the user
-- You won't see the user in public timelines
-- You won't see notifications from that user
+- ホームタイムラインにはそのユーザーのトゥートは表示されません。
+- 他のフォローしている誰かがそのユーザーのトゥートをブーストしても表示されません。
+- そのユーザーに言及(メンション)している他のユーザーのトゥートは表示されません。
+- 連合, ローカル, ハッシュタグタイムラインにそのユーザーのトゥートは表示されません。
+- そのユーザーからの通知は表示されません。
 
-Additionally, on the blocked user's side:
+ブロックされたユーザーは
 
-- The user is forced to unfollow you
-- The user cannot follow you
-- The user won't see other people's boosts of you
-- The user won't see you in public timelines
+- 強制的に相互にフォローが解除されます。
+- あなたをフォローできなくなります。
+- 他のユーザーによるあなたのトゥートのブーストも表示されません。
+- 連合, ローカル, ハッシュタグタイムラインにあなたのトゥートは表示されません。
 
-If you and the blocked user are on the same server, the blocked user will not be able to view your posts on your profile while logged in.
+もし同じサーバー内でブロックした場合ブロックされたユーザーはあなたのことを「ログインしている間は」見ることができません。
 
-### Hiding an entire server
+### サーバー全体を非表示にする
 
-If you hide an entire server:
+サーバー全体を非表示にするとこのようになります。
 
-- You will not see posts from that server on the public timelines
-- You won't see other people's boosts of that server in your home feed
-- You won't see notifications from that server
-- You will lose any followers that you might have had on that server
+- 連合タイムラインにそのサーバーのトゥートは表示されません。
+- そのサーバーのトゥートが他のユーザーによってブーストされても表示されません。
+- そのサーバーのユーザーからの通知は受け取りません。
+- そのサーバー内のユーザーのフォロー関係は全て失われます。

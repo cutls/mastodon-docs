@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -36,7 +36,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.6.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="2.6.0" >}}
 
 ### パラメーター
 
@@ -49,7 +49,7 @@ menu:
 
 ### ページネーション
 
-{{< api_dynamic_pagination >}}
+{{< api_dynamic_pagination_ja >}}
 
 ## GET /api/v1/timelines/public
 
@@ -59,7 +59,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 3.0.0以降では、タイムラインプレビューをオンにしていないと認証なしでは見ることができません。  
 ローカルタイムラインを表示するには`local`を`true`にしてください。
@@ -77,7 +77,7 @@ menu:
 
 ### ページネーション
 
-{{< api_dynamic_pagination >}}
+{{< api_dynamic_pagination_ja >}}
 
 ## GET /api/v1/timelines/tag/:hashtag
 
@@ -87,7 +87,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -102,7 +102,7 @@ menu:
 
 ### Pagination
 
-{{< api_dynamic_pagination >}}
+{{< api_dynamic_pagination_ja >}}
 
 ## GET /api/v1/timelines/list/:list_id
 
@@ -112,7 +112,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="2.1.0" >}}
 
 ### パラメーター
 
@@ -125,4 +125,4 @@ menu:
 
 ### ページネーション
 
-{{< api_dynamic_pagination >}}
+{{< api_dynamic_pagination_ja >}}

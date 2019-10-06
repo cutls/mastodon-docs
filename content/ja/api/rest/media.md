@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -32,7 +32,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
 ### パラメーター
 

@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="3.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:accounts" version="3.0.0" >}}
 
 ## POST /api/v1/featured_tags
 
@@ -22,7 +22,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="3.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="3.0.0" >}}
 
 ### パラメーター
 

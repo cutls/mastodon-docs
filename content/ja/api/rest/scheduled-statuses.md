@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.7.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="2.7.0" >}}
 
 ## GET /api/v1/scheduled_statuses/:id
 
@@ -24,7 +24,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.7.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="2.7.0" >}}
 
 ## PUT /api/v1/scheduled_statuses/:id
 
@@ -34,7 +34,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="2.7.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="2.7.0" >}}
 
 ### パラメーター
 
@@ -48,4 +48,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="2.7.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="2.7.0" >}}

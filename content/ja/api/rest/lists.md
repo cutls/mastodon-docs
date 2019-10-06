@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
 ## GET /api/v1/accounts/:id/lists
 
@@ -24,7 +24,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
 ## GET /api/v1/lists/:id/accounts
 
@@ -34,7 +34,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
 ### パラメーター
 
@@ -46,7 +46,7 @@ menu:
 
 >If you specify a `limit` of `0` in the query, all accounts will be returned without pagination. Otherwise, standard account pagination rules apply.
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## GET /api/v1/lists/:id
 
@@ -54,7 +54,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:lists" version="2.1.0" >}}
 
 ## POST /api/v1/lists
 
@@ -64,7 +64,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
 ### パラメーター
 
@@ -80,7 +80,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
 ### パラメーター
 
@@ -94,7 +94,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
 ## POST /api/v1/lists/:id/accounts
 
@@ -104,7 +104,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
 ### パラメーター
 
@@ -118,7 +118,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:lists" version="2.1.0" >}}
 
 ### パラメーター
 

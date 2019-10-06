@@ -12,7 +12,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:accounts" version="0.0.0" >}}
 
 ## POST /api/v1/accounts
 
@@ -26,7 +26,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="No" scope="write write:accounts" version="2.7.0" >}}
+{{< api_method_info_ja auth="Yes" user="No" scope="write write:accounts" version="2.7.0" >}}
 
 ### パラメーター
 
@@ -48,7 +48,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
 
 ## PATCH /api/v1/accounts/update_credentials
 
@@ -58,7 +58,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -84,7 +84,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -94,7 +94,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### Pagination
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## GET /api/v1/accounts/:id/following
 
@@ -104,7 +104,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -114,7 +114,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### Pagination
 
-{{< api_pagination >}}
+{{< api_pagination_ja >}}
 
 ## GET /api/v1/accounts/:id/statuses
 
@@ -124,7 +124,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -142,7 +142,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### ページネーション
 
-{{< api_dynamic_pagination >}}
+{{< api_dynamic_pagination_ja >}}
 
 ## POST /api/v1/accounts/:id/follow
 
@@ -152,7 +152,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -168,7 +168,7 @@ Unfollow an account.
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
 ## GET /api/v1/accounts/relationships
 
@@ -178,7 +178,7 @@ Unfollow an account.
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:follows" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:follows" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -194,7 +194,7 @@ Unfollow an account.
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
 
 ### パラメーター
 
@@ -213,4 +213,4 @@ Unfollow an account.
 
 ### 基本情報
 
-{{< api_method_info auth="No" user="Yes" scope="read read:statuses" version="2.8.0" >}}
+{{< api_method_info_ja auth="No" user="Yes" scope="read read:statuses" version="2.8.0" >}}

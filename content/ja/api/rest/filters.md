@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:filters" version="2.4.3" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:filters" version="2.4.3" >}}
 
 ## POST /api/v1/filters
 
@@ -24,7 +24,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
 
 ### パラメーター
 
@@ -44,7 +44,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:filters" version="2.4.3" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:filters" version="2.4.3" >}}
 
 ## PUT /api/v1/filters/:id
 
@@ -54,7 +54,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
 
 ### パラメーター
 
@@ -72,4 +72,4 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:filters" version="2.4.3" >}}
