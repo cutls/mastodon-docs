@@ -30,11 +30,11 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `phrase` | フィルター語句 | Required |
-| `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | Required |
-| `irreversible` | `home` や `notifications` で、サーバー側で語句の含まれるトゥートを返さないようにする。**クライアント処理不要** | Optional |
-| `whole_word` | ラテン系の言葉で、単語の周りのスペースを一語として扱うか | Optional |
-| `expires_in` | 0より長い有効期限の秒数(0や空白なら無期限) | Optional |
+| `phrase` | フィルター語句 | 必須 |
+| `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | 必須 |
+| `irreversible` | `home` や `notifications` で、サーバー側で語句の含まれるトゥートを返さないようにする。**クライアント処理不要** | 任意 |
+| `whole_word` | ラテン系の言葉で、単語の周りのスペースを一語として扱うか | 任意 |
+| `expires_in` | 0より長い有効期限の秒数(0や空白なら無期限) | 任意 |
 
 ## GET /api/v1/filters/:id
 
@@ -60,11 +60,11 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `phrase` | フィルター語句 | Optional |
-| `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | Optional |
-| `irreversible` | `home` や `notifications` で、サーバー側で語句の含まれるトゥートを返さないようにする。**クライアント処理不要** | Optional |
-| `whole_word` | ラテン系の言葉で、単語の周りのスペースを一語として扱うか | Optional |
-| `expires_in` | 0より長い有効期限の秒数(0や空白なら無期限) | Optional |
+| `phrase` | フィルター語句 | 任意 |
+| `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | 任意 |
+| `irreversible` | `home` や `notifications` で、サーバー側で語句の含まれるトゥートを返さないようにする。**クライアント処理不要** | 任意 |
+| `whole_word` | ラテン系の言葉で、単語の周りのスペースを一語として扱うか | 任意 |
+| `expires_in` | 0より長い有効期限の秒数(0や空白なら無期限) | 任意 |
 
 ## DELETE /api/v1/filters/:id
 

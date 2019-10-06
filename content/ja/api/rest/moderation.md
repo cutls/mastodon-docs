@@ -18,19 +18,19 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `local` | ローカルのユーザー | Optional |
-| `remote` | リモートのユーザー | Optional |
-| `by_domain` | ドメインで絞り込む | Optional |
-| `active` | このアカウントはBANしていないか | Optional |
-| `pending` | 処理中 | Optional |
-| `disabled` | 活動停止中 | Optional |
-| `silenced` | サイレンス中 | Optional |
-| `suspended` | 追い出されたか | Optional |
-| `username` | ユーザー名 | Optional |
-| `display_name` | SNS上の名前 | Optional |
-| `email` | メールアドレス | Optional |
-| `ip` | IP アドレス | Optional |
-| `staff` | スタッフかどうか | Optional |
+| `local` | ローカルのユーザー | 任意 |
+| `remote` | リモートのユーザー | 任意 |
+| `by_domain` | ドメインで絞り込む | 任意 |
+| `active` | このアカウントはBANしていないか | 任意 |
+| `pending` | 処理中 | 任意 |
+| `disabled` | 活動停止中 | 任意 |
+| `silenced` | サイレンス中 | 任意 |
+| `suspended` | 追い出されたか | 任意 |
+| `username` | ユーザー名 | 任意 |
+| `display_name` | SNS上の名前 | 任意 |
+| `email` | メールアドレス | 任意 |
+| `ip` | IP アドレス | 任意 |
+| `staff` | スタッフかどうか | 任意 |
 
 ## GET /api/v1/admin/accounts/:id
 
@@ -92,9 +92,9 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `resolved` | Boolean | Optional |
-| `account_id` | String (報告者) | Optional |
-| `target_account_id` | String (被報告者) | Optional |
+| `resolved` | Boolean | 任意 |
+| `account_id` | String (報告者) | 任意 |
+| `target_account_id` | String (被報告者) | 任意 |
 
 ## GET /api/v1/admin/reports/:id
 
@@ -144,8 +144,8 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `type` | `silence` か `suspend` | Optional |
-| `report_id` | String | Optional |
-| `warning_preset_id` | String | Optional |
-| `text` | String | Optional |
-| `send_email_notification` | Boolean | Optional |
+| `type` | `silence` か `suspend` | 任意 |
+| `report_id` | String | 任意 |
+| `warning_preset_id` | String | 任意 |
+| `text` | String | 任意 |
+| `send_email_notification` | Boolean | 任意 |

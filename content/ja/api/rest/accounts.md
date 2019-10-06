@@ -32,11 +32,11 @@ IPアドレスによって30分毎5回に制限されています。
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `username` | ユーザー名 | Required |
-| `email` | メールアドレス | Required |
-| `password` | パスワード | Required |
-| `agreement` | 規約に同意したか(Boolean) | Required |
-| `locale` | メールの送信言語 | Required |
+| `username` | ユーザー名 | 必須 |
+| `email` | メールアドレス | 必須 |
+| `password` | パスワード | 必須 |
+| `agreement` | 規約に同意したか(Boolean) | 必須 |
+| `locale` | メールの送信言語 | 必須 |
 
 `agreement`は当然規約(ローカルルール, 利用規約, プライバシーポリシー)を表示してからtrueに設定すべきです。
 
@@ -64,17 +64,17 @@ IPアドレスによって30分毎5回に制限されています。
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `display_name` | 名前 | Optional |
-| `note` | 自己紹介 | Optional |
-| `avatar` | アバター(プロフィール画像) `multipart/form-data`で送信 | Optional |
-| `header` | ヘッダー画像 `multipart/form-data`で送信 | Optional |
-| `locked` | 鍵をかけるか | Optional |
-| `source[privacy]` | 規定の公開範囲 | Optional |
-| `source[sensitive]`| 常に画像を閲覧注意として投稿するか | Optional |
-| `source[language]` | ISO6391で表したデフォルトの投稿言語(APIで上書き可) | Optional |
-| `fields_attributes` | フィールド(4つまで) | Optional |
-| `discoverable` | Boolean: プロフィールディレクトリに表示するか | Optional |
-| `bot ` | Boolean: botかどうか | Optional |
+| `display_name` | 名前 | 任意 |
+| `note` | 自己紹介 | 任意 |
+| `avatar` | アバター(プロフィール画像) `multipart/form-data`で送信 | 任意 |
+| `header` | ヘッダー画像 `multipart/form-data`で送信 | 任意 |
+| `locked` | 鍵をかけるか | 任意 |
+| `source[privacy]` | 規定の公開範囲 | 任意 |
+| `source[sensitive]`| 常に画像を閲覧注意として投稿するか | 任意 |
+| `source[language]` | ISO6391で表したデフォルトの投稿言語(APIで上書き可) | 任意 |
+| `fields_attributes` | フィールド(4つまで) | 任意 |
+| `discoverable` | Boolean: プロフィールディレクトリに表示するか | 任意 |
+| `bot ` | Boolean: botかどうか | 任意 |
 
 ## GET /api/v1/accounts/:id/followers
 
@@ -90,7 +90,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `limit` | 結果の表示個数 | Optional | 40 |
+| `limit` | 結果の表示個数 | 任意 | 40 |
 
 ### Pagination
 
@@ -110,7 +110,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `limit` | 結果の表示個数 | Optional | 40 |
+| `limit` | 結果の表示個数 | 任意 | 40 |
 
 ### Pagination
 
@@ -130,15 +130,15 @@ IPアドレスによって30分毎5回に制限されています。
 
 |名称|説明|必須|デフォルト値|実装バージョン|
 |----|-----------|:------:|:-----:|:------:|
-| `only_media` | メディアのあるトゥートのみ | Optional | false | |
-| `pinned` | ピン留めされた投稿のみ | Optional | false | |
-| `exclude_replies` | リプライのある投稿は表示しない | Optional | false | |
-| `max_id` | これより前のトゥート | Optional | | |
-| `since_id` | これより後のトゥート(最新から) | Optional | | |
-| `min_id` | これより後のトゥート(最古から) | Optional | | |
-| `limit` | 結果の表示個数 | Optional | 20 | | |
-| `exclude_reblogs` | ブースト除外 | Optional | false | 2.7.0 |
-| `tagged` | このタグの付いた投稿のみ表示(`#`なし) | Optional || 2.8.0 |
+| `only_media` | メディアのあるトゥートのみ | 任意 | false | |
+| `pinned` | ピン留めされた投稿のみ | 任意 | false | |
+| `exclude_replies` | リプライのある投稿は表示しない | 任意 | false | |
+| `max_id` | これより前のトゥート | 任意 | | |
+| `since_id` | これより後のトゥート(最新から) | 任意 | | |
+| `min_id` | これより後のトゥート(最古から) | 任意 | | |
+| `limit` | 結果の表示個数 | 任意 | 20 | | |
+| `exclude_reblogs` | ブースト除外 | 任意 | false | 2.7.0 |
+| `tagged` | このタグの付いた投稿のみ表示(`#`なし) | 任意 || 2.8.0 |
 
 ### ページネーション
 
@@ -158,7 +158,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `reblogs` | ホームタイムラインにこのユーザーのブーストを表示する | Optional | true |
+| `reblogs` | ホームタイムラインにこのユーザーのブーストを表示する | 任意 | true |
 
 ## POST /api/v1/accounts/:id/unfollow
 
@@ -184,7 +184,7 @@ Unfollow an account.
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `id` | アカウントのIDの配列 | Required |
+| `id` | アカウントのIDの配列 | 必須 |
 
 ## GET /api/v1/accounts/search
 
@@ -200,10 +200,10 @@ Unfollow an account.
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `q` | 検索語句| Required ||
-| `limit` | 結果の表示個数 | Optional | 40 |
-| `resolve` | WebFinger解決をする | Optional | false |
-| `following` | フォローしているユーザーだけから検索 | Optional | false |
+| `q` | 検索語句| 必須 ||
+| `limit` | 結果の表示個数 | 任意 | 40 |
+| `resolve` | WebFinger解決をする | 任意 | false |
+| `following` | フォローしているユーザーだけから検索 | 任意 | false |
 
 ## GET /api/v1/accounts/:id/identity_proofs
 

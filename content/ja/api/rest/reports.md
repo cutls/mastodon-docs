@@ -18,7 +18,7 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `account_id` | アカウントを報告するときID指定 | Required |
-| `status_ids` | トゥートを報告するときID配列指定 | Optional |
-| `comment` | 1000文字以内で説明 | Optional |
-| `forward` | リモートアカウントの時、相手のAdminにも報告を送信するか | Optional |
+| `account_id` | アカウントを報告するときID指定 | 必須 |
+| `status_ids` | トゥートを報告するときID配列指定 | 任意 |
+| `comment` | 1000文字以内で説明 | 任意 |
+| `forward` | リモートアカウントの時、相手のAdminにも報告を送信するか | 任意 |

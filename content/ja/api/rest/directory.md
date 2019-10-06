@@ -20,6 +20,6 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `order` | `active`(活動順) か `new`(新規登録順) | Optional | `active` |
-| `local` | 表示アカウントをローカルに限定する | Optional | `false` |
-| `offset` | 結果のオフセット | Optional ||
+| `order` | `active`(活動順) か `new`(新規登録順) | 任意 | `active` |
+| `local` | 表示アカウントをローカルに限定する | 任意 | `false` |
+| `offset` | 結果のオフセット | 任意 ||

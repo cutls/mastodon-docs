@@ -20,9 +20,9 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `file` | `multipart/form-data`でエンコードされたファイル | Required |
-| `description` | 1500字までの説明文字列 | Optional |
-| `focus` | 画像の焦点。参照[focal points](#focal-points) | Optional |
+| `file` | `multipart/form-data`でエンコードされたファイル | 必須 |
+| `description` | 1500字までの説明文字列 | 任意 |
+| `focus` | 画像の焦点。参照[focal points](#focal-points) | 任意 |
 
 ## PUT /api/v1/media/:id
 
@@ -38,8 +38,8 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `description` | 1500字までの説明文字列 | Optional |
-| `focus` | 画像の焦点。参照[focal points](#focal-points) | Optional |
+| `description` | 1500字までの説明文字列 | 任意 |
+| `focus` | 画像の焦点。参照[focal points](#focal-points) | 任意 |
 
 ## 焦点
 

@@ -42,7 +42,7 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | Maximum number of results | 任意 | 40 |
 
 ### Pagination
 
@@ -62,7 +62,7 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | Maximum number of results | 任意 | 40 |
 
 ### Pagination
 
@@ -86,14 +86,14 @@ menu:
 |名称|説明|必須|実装バージョン|
 |----|-----------|:------:|:------:|
 | `status` | 投稿内容(500文字以内) | Optional\* |
-| `in_reply_to_id` | このトゥートに返信(ID) | Optional |
+| `in_reply_to_id` | このトゥートに返信(ID) | 任意 |
 | `media_ids` | 添付するメディアのidを指定 | Optional\* |
 | `poll` | アンケートを添付(以下を参照) | Optional\* |2.8.0|
-| `sensitive` | 添付画像を閲覧注意として設定 | Optional |
-| `spoiler_text` | コンテントワーニング文字列を設定(statusと合わせて500以内) | Optional |
-| `visibility` | 公開範囲: `direct`, `private`, `unlisted` `public` | Optional |
-| `scheduled_at` | ISO 8601で指定した時間に投稿 | Optional |2.7.0|
-| `language` | ISO 639-2で指定した言語として投稿 | Optional |
+| `sensitive` | 添付画像を閲覧注意として設定 | 任意 |
+| `spoiler_text` | コンテントワーニング文字列を設定(statusと合わせて500以内) | 任意 |
+| `visibility` | 公開範囲: `direct`, `private`, `unlisted` `public` | 任意 |
+| `scheduled_at` | ISO 8601で指定した時間に投稿 | 任意 |2.7.0|
+| `language` | ISO 639-2で指定した言語として投稿 | 任意 |
 
 > `status` か `media_ids`のどちらかは必ず指定してください。ただし、アンケートは`media_ids`と組み合わせられないため`status`が必須です。
 
@@ -101,10 +101,10 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `poll[options]` | 選択肢(文字列)の配列 | Required |
-| `poll[expires_in]` | 有効期限(300秒以上の秒) | Required |
-| `poll[multiple]` | 複数選択を許可するか | Optional |
-| `poll[hide_totals]` | 投票が終わるまで票数を隠すかどうか | Optional |
+| `poll[options]` | 選択肢(文字列)の配列 | 必須 |
+| `poll[expires_in]` | 有効期限(300秒以上の秒) | 必須 |
+| `poll[multiple]` | 複数選択を許可するか | 任意 |
+| `poll[hide_totals]` | 投票が終わるまで票数を隠すかどうか | 任意 |
 
 ### 冪等性
 
@@ -147,7 +147,7 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `visibility` | `public`, `unlisted` or `private` | Optional ||
+| `visibility` | `public`, `unlisted` or `private` | 任意 ||
 
 ## POST /api/v1/statuses/:id/unreblog
 

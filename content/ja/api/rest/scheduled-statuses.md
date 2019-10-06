@@ -40,7 +40,7 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `scheduled_at` | ISO 8601での日付指定 | Optional |
+| `scheduled_at` | ISO 8601での日付指定 | 任意 |
 
 ## DELETE /api/v1/scheduled_statuses/:id
 

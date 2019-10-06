@@ -24,7 +24,7 @@ Returns [Poll]({{< relref "entities.md#poll" >}})
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `choices` | 選択肢の番号(0-3)の配列 | Required |
+| `choices` | 選択肢の番号(0-3)の配列 | 必須 |
 
 ### 基本情報
 

@@ -22,12 +22,12 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `q` | 検索語句 | Required ||
-| `limit` | 結果の表示個数 | Optional | 40 |
-| `resolve` | WebFinger解決をする | Optional | false |
-| `following` | フォローしているユーザーだけから検索 | Optional | false |
-| `offset` | 結果のオフセット | Optional | 0 |
-| `type` | `accounts`, `statuses` or `hashtags`でフィルター | Optional ||
-| `max_id` | これより前の結果 | Optional ||
-| `min_id` | これのすぐ後のトゥート(古い方から) | Optional ||
-| `account_id` | | Optional |  |
+| `q` | 検索語句 | 必須 ||
+| `limit` | 結果の表示個数 | 任意 | 40 |
+| `resolve` | WebFinger解決をする | 任意 | false |
+| `following` | フォローしているユーザーだけから検索 | 任意 | false |
+| `offset` | 結果のオフセット | 任意 | 0 |
+| `type` | `accounts`, `statuses` or `hashtags`でフィルター | 任意 ||
+| `max_id` | これより前の結果 | 任意 ||
+| `min_id` | これのすぐ後のトゥート(古い方から) | 任意 ||
+| `account_id` | | 任意 |  |

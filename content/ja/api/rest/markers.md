@@ -20,7 +20,7 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `timeline` | `home` か `notifications` | Required ||
+| `timeline` | `home` か `notifications` | 必須 ||
 
 ## POST /api/v1/markers
 
@@ -37,4 +37,4 @@ menu:
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `notification` | `last_read_id`に最後に読んだトゥートのID | Required) ||
-| `home` | `last_read_id`に最後に読んだ通知のID | Required ||
+| `home` | `last_read_id`に最後に読んだ通知のID | 必須 ||

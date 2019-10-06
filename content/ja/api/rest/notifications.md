@@ -20,12 +20,12 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `max_id` | これより前のトゥート | Optional ||
-| `since_id` | これより後のトゥート(最新から) | Optional ||
-| `min_id` | これより後のトゥート(最古から) | Optional ||
-| `limit` | 結果の表示個数 | Optional | 20 |
-| `exclude_types` | 表示しないタイプの配列(e.g. `follow`, `favourite`, `reblog`, `mention`) | Optional ||
-| `account_id` | そのアカウントからの通知に限定 | Optional ||
+| `max_id` | これより前のトゥート | 任意 ||
+| `since_id` | これより後のトゥート(最新から) | 任意 ||
+| `min_id` | これより後のトゥート(最古から) | 任意 ||
+| `limit` | 結果の表示個数 | 任意 | 20 |
+| `exclude_types` | 表示しないタイプの配列(e.g. `follow`, `favourite`, `reblog`, `mention`) | 任意 ||
+| `account_id` | そのアカウントからの通知に限定 | 任意 ||
 
 ### Pagination
 
@@ -67,14 +67,14 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `subscription[endpoint]` | hookされるURL | Required |
-| `subscription[keys][p256dh]` | User agent public key. 'prime256v1'曲線をBase 64エンコードしたもの | Required |
-| `subscription[keys][auth]` | Auth secret. 16バイトのランダム文字列をBase 64エンコードしたもの | Required |
-| `data[alerts][follow]` | フォロー時にhookするか | Optional |
-| `data[alerts][favourite]` | お気に入り登録時にhookするか | Optional |
-| `data[alerts][reblog]` | ブースト時にhookするか  | Optional |
-| `data[alerts][mention]` | メンション時にhookするか  | Optional |
-| `data[alerts][poll]` | 通知完了時にhookするか  | Optional |
+| `subscription[endpoint]` | hookされるURL | 必須 |
+| `subscription[keys][p256dh]` | User agent public key. 'prime256v1'曲線をBase 64エンコードしたもの | 必須 |
+| `subscription[keys][auth]` | Auth secret. 16バイトのランダム文字列をBase 64エンコードしたもの | 必須 |
+| `data[alerts][follow]` | フォロー時にhookするか | 任意 |
+| `data[alerts][favourite]` | お気に入り登録時にhookするか | 任意 |
+| `data[alerts][reblog]` | ブースト時にhookするか  | 任意 |
+| `data[alerts][mention]` | メンション時にhookするか  | 任意 |
+| `data[alerts][poll]` | 通知完了時にhookするか  | 任意 |
 
 ## GET /api/v1/push/subscription
 
@@ -98,11 +98,11 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `data[alerts][follow]` | フォロー時にhookするか | Optional |
-| `data[alerts][favourite]` | お気に入り登録時にhookするか | Optional |
-| `data[alerts][reblog]` | ブースト時にhookするか  | Optional |
-| `data[alerts][mention]` | メンション時にhookするか  | Optional |
-| `data[alerts][poll]` | 通知完了時にhookするか  | Optional |
+| `data[alerts][follow]` | フォロー時にhookするか | 任意 |
+| `data[alerts][favourite]` | お気に入り登録時にhookするか | 任意 |
+| `data[alerts][reblog]` | ブースト時にhookするか  | 任意 |
+| `data[alerts][mention]` | メンション時にhookするか  | 任意 |
+| `data[alerts][poll]` | 通知完了時にhookするか  | 任意 |
 
 ## DELETE /api/v1/push/subscription
 

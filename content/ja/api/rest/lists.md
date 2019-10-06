@@ -40,7 +40,7 @@ menu:
 
 |名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
-| `limit` | 結果の表示個数 | Optional | 40 |
+| `limit` | 結果の表示個数 | 任意 | 40 |
 
 ### Pagination
 
@@ -70,7 +70,7 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `title` | リストのタイトル | Required |
+| `title` | リストのタイトル | 必須 |
 
 ## PUT /api/v1/lists/:id
 
@@ -86,7 +86,7 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `title` | The title of the list | Required |
+| `title` | The title of the list | 必須 |
 
 ## DELETE /api/v1/lists/:id
 
@@ -110,7 +110,7 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `account_ids` | アカウントのIDの配列 | Required |
+| `account_ids` | アカウントのIDの配列 | 必須 |
 
 ## DELETE /api/v1/lists/:id/accounts
 
@@ -124,4 +124,4 @@ menu:
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `account_ids` | アカウントのIDの配列 | Required |
+| `account_ids` | アカウントのIDの配列 | 必須 |

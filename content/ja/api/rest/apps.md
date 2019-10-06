@@ -20,10 +20,10 @@ OAuth 2のためにアプリを作成
 
 |名称|説明|必須|
 |----|-----------|:------:|
-| `client_name` | アプリ名 | Required |
-| `redirect_uris` | リダイレクトするURL | Required |
-| `scopes` | [scopes]({{< relref "permissions.md" >}})のスペース区切り | Required |
-| `website` | アプリのWebサイト | Optional |
+| `client_name` | アプリ名 | 必須 |
+| `redirect_uris` | リダイレクトするURL | 必須 |
+| `scopes` | [scopes]({{< relref "permissions.md" >}})のスペース区切り | 必須 |
+| `website` | アプリのWebサイト | 任意 |
 
 > `redirect_uris`に`urn:ietf:wg:oauth:2.0:oob`と指定すると、コードをコピーして認証します。
 
