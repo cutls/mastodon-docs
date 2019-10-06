@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/mutes
 
-Accounts the user has muted.
+ミュート一覧
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -20,17 +20,17 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | Optional | 40 |
+| `limit` | 結果の表示個数 | Optional | 40 |
 
-### Pagination
+### ページネーション
 
 {{< api_pagination >}}
 
 ## POST /api/v1/accounts/:id/mute
 
-Mute an account.
+アカウントをミュート
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
 ### 基本情報
 
@@ -40,13 +40,13 @@ Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `notifications` | Whether the mute will mute notifications or not | Optional | true |
+| `notifications` | 通知をミュートするかどうか | Optional | true |
 
 ## POST /api/v1/accounts/:id/unmute
 
-Unmute an account.
+ミュートを解除
 
-Returns [Relationship]({{< relref "entities.md#relationship" >}})
+[Relationship]({{< relref "entities.md#relationship" >}})を返します。
 
 ### 基本情報
 
@@ -54,9 +54,9 @@ Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
 ## POST /api/v1/statuses/:id/mute
 
-Mute the conversation the status is part of, to no longer be notified about it.
+特定の会話の通知をオフにします
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 
@@ -64,9 +64,9 @@ Returns [Status]({{< relref "entities.md#status" >}})
 
 ## POST /api/v1/statuses/:id/unmute
 
-Unmute the conversation the status is part of.
+「特定の会話の通知をオフ」を解除します
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 

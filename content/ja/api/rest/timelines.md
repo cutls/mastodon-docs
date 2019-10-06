@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/timelines/home
 
-Statuses from accounts the user follows.
+フォローしているユーザーのトゥートを時系列に返します。
 
-Returns array of [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})の配列を返します。
 
 ### 基本情報
 
@@ -20,19 +20,19 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `max_id` | Return results older than ID | Optional ||
-| `since_id` | Return results newer than ID | Optional ||
-| `min_id` | Return results immediately newer than ID | Optional ||
-| `limit` | Maximum number of results | Optional | 20 |
+| `max_id` | これより前のトゥート | Optional | | |
+| `since_id` | これより後のトゥート(最新から) | Optional | | |
+| `min_id` | これより後のトゥート(最古から) | Optional | | |
+| `limit` | 結果の表示個数 | Optional | 20 | | |
 
 
 ## GET /api/v1/conversations
 
-**v1/timelines/direct has been already removed.**
+**v1/timelines/direct は削除されました**
 
-Conversations for an account
+会話を表示
 
-Returns array of [Conversation]({{< relref "entities.md#conversation" >}})
+[Conversation]({{< relref "entities.md#conversation" >}})の配列を返します。
 
 ### 基本情報
 
@@ -42,47 +42,48 @@ Returns array of [Conversation]({{< relref "entities.md#conversation" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `max_id` | Return results older than ID | Optional ||
-| `since_id` | Return results newer than ID | Optional ||
-| `min_id` | Return results immediately newer than ID | Optional ||
-| `limit` | Maximum number of results | Optional | 20 |
+| `max_id` | これより前のトゥート | Optional | | |
+| `since_id` | これより後のトゥート(最新から) | Optional | | |
+| `min_id` | これより後のトゥート(最古から) | Optional | | |
+| `limit` | 結果の表示個数 | Optional | 20 | | |
 
-### Pagination
+### ページネーション
 
 {{< api_dynamic_pagination >}}
 
 ## GET /api/v1/timelines/public
 
-Public statuses known to the server.
+連合全体のタイムラインです。
 
-Returns array of [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})の配列を返します。
 
 ### 基本情報
 
 {{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-(3.0.0 and above) If timeline preview is turned off by Admin, it requires authentication.
+3.0.0以降では、タイムラインプレビューをオンにしていないと認証なしでは見ることができません。  
+ローカルタイムラインを表示するには`local`を`true`にしてください。
 
 ### パラメーター
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `local` | Only local statuses | Optional |false|
-| `only_media` | Only statuses with media attachments | Optional |false|
-| `max_id` | Return results older than ID | Optional ||
-| `since_id` | Return results newer than ID | Optional ||
-| `min_id` | Return results immediately newer than ID | Optional ||
-| `limit` | Maximum number of results | Optional | 20 |
+| `local` | ローカルのみ | Optional |false|
+| `only_media` | メディア付きトゥートのみ | Optional |false|
+| `max_id` | これより前のトゥート | Optional | | |
+| `since_id` | これより後のトゥート(最新から) | Optional | | |
+| `min_id` | これより後のトゥート(最古から) | Optional | | |
+| `limit` | 結果の表示個数 | Optional | 20 | | |
 
-### Pagination
+### ページネーション
 
 {{< api_dynamic_pagination >}}
 
 ## GET /api/v1/timelines/tag/:hashtag
 
-Public statuses known to the server marked with a given hashtag.
+ハッシュタグのタイムライン
 
-Returns array of [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})の配列を返します。
 
 ### 基本情報
 
@@ -92,12 +93,12 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `local` | Only local statuses | Optional |false|
-| `only_media` | Only statuses with media attachments | Optional |false|
-| `max_id` | Return results older than ID | Optional ||
-| `since_id` | Return results newer than ID | Optional ||
-| `min_id` | Return results immediately newer than ID | Optional ||
-| `limit` | Maximum number of results | Optional | 20 |
+| `local` | ローカルのみ | Optional |false|
+| `only_media` | メディア付きトゥートのみ | Optional |false|
+| `max_id` | これより前のトゥート | Optional | | |
+| `since_id` | これより後のトゥート(最新から) | Optional | | |
+| `min_id` | これより後のトゥート(最古から) | Optional | | |
+| `limit` | 結果の表示個数 | Optional | 20 | | |
 
 ### Pagination
 
@@ -105,9 +106,9 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 ## GET /api/v1/timelines/list/:list_id
 
-Statuses from accounts on a given list.
+リストのタイムライン
 
-Returns array of [Status]({{< relref "entities.md#status" >}})
+ [Status]({{< relref "entities.md#status" >}})の配列を返します。
 
 ### 基本情報
 
@@ -117,11 +118,11 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `max_id` | Return results older than ID | Optional ||
-| `since_id` | Return results newer than ID | Optional ||
-| `min_id` | Return results immediately newer than ID | Optional ||
-| `limit` | Maximum number of results | Optional | 20 |
+| `max_id` | これより前のトゥート | Optional | | |
+| `since_id` | これより後のトゥート(最新から) | Optional | | |
+| `min_id` | これより後のトゥート(最古から) | Optional | | |
+| `limit` | 結果の表示個数 | Optional | 20 | | |
 
-### Pagination
+### ページネーション
 
 {{< api_dynamic_pagination >}}

@@ -8,7 +8,7 @@ menu:
 
 ## GET /api/v1/polls/:id
 
-Returns [Poll]({{< relref "entities.md#poll" >}})
+[Poll]({{< relref "entities.md#poll" >}})を返します。
 
 ### 基本情報
 
@@ -16,7 +16,7 @@ Returns [Poll]({{< relref "entities.md#poll" >}})
 
 ## POST /api/v1/polls/:id/votes
 
-Vote on a poll.
+投票する
 
 Returns [Poll]({{< relref "entities.md#poll" >}})
 
@@ -24,7 +24,7 @@ Returns [Poll]({{< relref "entities.md#poll" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `choices` | Array of choice indices | Required |
+| `choices` | 選択肢の番号(0-3)の配列 | Required |
 
 ### 基本情報
 

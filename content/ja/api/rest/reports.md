@@ -8,7 +8,7 @@ menu:
 
 ## POST /api/v1/reports
 
-Report an account.
+報告する
 
 ### 基本情報
 
@@ -18,7 +18,7 @@ Report an account.
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `account_id` | The ID of the account to report | Required |
-| `status_ids` | The IDs of statuses to report as array | Optional |
-| `comment` | Reason for the report (up to 1,000 characters) | Optional |
-| `forward` | Whether to forward to the remote admin (in case of a remote account) | Optional |
+| `account_id` | アカウントを報告するときID指定 | Required |
+| `status_ids` | トゥートを報告するときID配列指定 | Optional |
+| `comment` | 1000文字以内で説明 | Optional |
+| `forward` | リモートアカウントの時、相手のAdminにも報告を送信するか | Optional |

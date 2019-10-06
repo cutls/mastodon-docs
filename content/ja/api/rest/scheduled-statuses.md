@@ -8,9 +8,9 @@ menu:
 
 ## GET /api/v1/scheduled_statuses
 
-Get scheduled statuses.
+時間が指定された投稿を取得
 
-Returns array of [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
+[ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})の配列を返します。
 
 ### 基本情報
 
@@ -18,9 +18,9 @@ Returns array of [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
 ## GET /api/v1/scheduled_statuses/:id
 
-Get scheduled status.
+個々の時間が指定された投稿を取得
 
-Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
+[ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})を返します。
 
 ### 基本情報
 
@@ -28,9 +28,9 @@ Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
 ## PUT /api/v1/scheduled_statuses/:id
 
-Update Scheduled status. Only `scheduled_at` can be changed. To change the content, delete it and post a new status.
+`scheduled_at`を変更できます。他の値を変更することはできません。
 
-Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
+[ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})を返します。
 
 ### 基本情報
 
@@ -40,11 +40,11 @@ Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `scheduled_at` | Timestamp string to schedule posting of status (ISO 8601) | Optional |
+| `scheduled_at` | ISO 8601での日付指定 | Optional |
 
 ## DELETE /api/v1/scheduled_statuses/:id
 
-Remove Scheduled status.
+時間が指定された投稿を削除
 
 ### 基本情報
 

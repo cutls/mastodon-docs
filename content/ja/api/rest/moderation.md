@@ -8,7 +8,7 @@ menu:
 
 ## GET /api/v1/admin/accounts
 
-[Local users]({{< relref "entities.md#local-users" >}})を返します。
+[Local users]({{< relref "entities.md#local-users" >}})の配列を返します。
 
 ### 基本情報
 
@@ -34,7 +34,7 @@ menu:
 
 ## GET /api/v1/admin/accounts/:id
 
-Returns [Local users]({{< relref "entities.md#local-users" >}})
+[Local users]({{< relref "entities.md#local-users" >}})を返します。
 
 ### 基本情報
 
@@ -42,7 +42,7 @@ Returns [Local users]({{< relref "entities.md#local-users" >}})
 
 ## POST /api/v1/admin/accounts/:id/enable
 
-Re-enable
+再有効化
 
 ### 基本情報
 
@@ -50,7 +50,7 @@ Re-enable
 
 ## POST /api/v1/admin/accounts/:id/approve
 
-Approve pending account
+保留中のアカウントを承認
 
 ### 基本情報
 
@@ -58,7 +58,7 @@ Approve pending account
 
 ## POST /api/v1/admin/accounts/:id/reject
 
-Reject pending account
+保留中のアカウントを却下
 
 ### 基本情報
 
@@ -66,7 +66,7 @@ Reject pending account
 
 ## POST /api/v1/admin/accounts/:id/unsilence
 
-Unsilence account
+サイレンスを解除(設定は[adimn/:id/action]({{< relref "#post-api-v1-admin-accounts-id-action" >}}))
 
 ### 基本情報
 
@@ -74,7 +74,7 @@ Unsilence account
 
 ## POST /api/v1/admin/accounts/:id/unsuspend
 
-Unsuspend account
+サスペンドを解除(設定は[adimn/:id/action]({{< relref "#post-api-v1-admin-accounts-id-action" >}}))
 
 ### 基本情報
 
@@ -93,16 +93,16 @@ Unsuspend account
 |Name|Description|Required|
 |----|-----------|:------:|
 | `resolved` | Boolean | Optional |
-| `account_id` | String (created by) | Optional |
-| `target_account_id` | String (complained about) | Optional |
+| `account_id` | String (報告者) | Optional |
+| `target_account_id` | String (被報告者) | Optional |
 
-## GET /api/v1/admin/accounts/:id
+## GET /api/v1/admin/reports/:id
 
-Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
+[Local Reports]({{< relref "entities.md#local-reports" >}})の配列を返します。
 
 ## POST /api/v1/admin/reports/:id/assign_to_self
 
-Assign report to self
+報告を受諾
 
 ### 基本情報
 
@@ -110,7 +110,7 @@ Assign report to self
 
 ## POST /api/v1/admin/reports/:id/unassign
 
-Unassign report from self
+受諾解除
 
 ### 基本情報
 
@@ -118,7 +118,7 @@ Unassign report from self
 
 ## POST /api/v1/admin/reports/:id/reopen
 
-Re-open report
+報告をもう一度開く
 
 ### 基本情報
 
@@ -126,7 +126,7 @@ Re-open report
 
 ## POST /api/v1/admin/reports/:id/resolve
 
-Close report
+報告を閉じる
 
 ### 基本情報
 
@@ -134,7 +134,7 @@ Close report
 
 ## POST /api/v1/admin/accounts/:id/action
 
-Perform a moderation action on an account
+アカウントに具体的なモデレーション操作をする
 
 ### 基本情報
 
@@ -144,7 +144,7 @@ Perform a moderation action on an account
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `type` | `silence` or `suspend` | Optional |
+| `type` | `silence` か `suspend` | Optional |
 | `report_id` | String | Optional |
 | `warning_preset_id` | String | Optional |
 | `text` | String | Optional |

@@ -8,7 +8,7 @@ menu:
 
 ## GET /api/v1/statuses/:id
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 
@@ -16,9 +16,9 @@ Returns [Status]({{< relref "entities.md#status" >}})
 
 ## GET /api/v1/statuses/:id/context
 
-What the status replies to, and replies to it.
+指定したトゥートへの返信や、そのトゥートの返信元をたどって取得します。
 
-Returns [Context]({{< relref "entities.md#context" >}})
+[Context]({{< relref "entities.md#context" >}})を返します。
 
 ### 基本情報
 
@@ -30,9 +30,9 @@ Returns [Context]({{< relref "entities.md#context" >}})
 
 ## GET /api/v1/statuses/:id/reblogged_by
 
-Accounts that reblogged the status.
+このトゥートをブーストしたユーザー
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -50,9 +50,9 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 ## GET /api/v1/statuses/:id/favourited_by
 
-Accounts that favourited the status.
+このトゥートをお気に入り登録したユーザー
 
-Returns array of [Account]({{< relref "entities.md#account" >}})
+[Account]({{< relref "entities.md#account" >}})の配列を返します。
 
 ### 基本情報
 
@@ -70,12 +70,12 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 
 ## POST /api/v1/statuses
 
-Publish a new status.
+投稿する
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
-When `scheduled_at` option is present,
-Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}}) 
+`scheduled_at` が設定されているとき
+[ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})を返します。
 
 ### 基本情報
 
@@ -85,46 +85,47 @@ Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})
 
 |Name|Description|Required|Added in|
 |----|-----------|:------:|:------:|
-| `status` | The text of the status | Optional\* |
-| `in_reply_to_id` | ID of the status you want to reply to | Optional |
-| `media_ids` | Array of media IDs to attach to the status | Optional\* |
-| `poll` | Nested parameters to attach a poll to the status | Optional\* |2.8.0|
-| `sensitive` | Mark the media in the status as sensitive | Optional |
-| `spoiler_text` | Text to be shown as a warning before the actual content | Optional |
-| `visibility` | One of `direct`, `private`, `unlisted` `public` | Optional |
-| `scheduled_at` | Timestamp string to schedule posting of status (ISO 8601) | Optional |2.7.0|
-| `language` | Override language code of the toot (ISO 639-2) | Optional |
+| `status` | 投稿内容(500文字以内) | Optional\* |
+| `in_reply_to_id` | このトゥートに返信(ID) | Optional |
+| `media_ids` | 添付するメディアのidを指定 | Optional\* |
+| `poll` | アンケートを添付(以下を参照) | Optional\* |2.8.0|
+| `sensitive` | 添付画像を閲覧注意として設定 | Optional |
+| `spoiler_text` | コンテントワーニング文字列を設定(statusと合わせて500以内) | Optional |
+| `visibility` | 公開範囲: `direct`, `private`, `unlisted` `public` | Optional |
+| `scheduled_at` | ISO 8601で指定した時間に投稿 | Optional |2.7.0|
+| `language` | ISO 639-2で指定した言語として投稿 | Optional |
 
-> You must provide either `status` or `media_ids`, completely empty statuses are not allowed. Polls require a `status` and cannot be combined with `media_ids`.
+> `status` か `media_ids`のどちらかは必ず指定してください。ただし、アンケートは`media_ids`と組み合わせられないため`status`が必須です。
 
-Poll parameters:
+アンケートのパラメーター
 
 |Name|Description|Required|
 |----|-----------|:------:|
-| `poll[options]` | Array of poll answer strings | Required |
-| `poll[expires_in]` | Duration the poll should be open for in seconds | Required |
-| `poll[multiple]` | Whether multiple choices should be allowed | Optional |
-| `poll[hide_totals]` | Whether to hide totals until the poll ends | Optional |
+| `poll[options]` | 選択肢(文字列)の配列 | Required |
+| `poll[expires_in]` | 有効期限(300秒以上の秒) | Required |
+| `poll[multiple]` | 複数選択を許可するか | Optional |
+| `poll[hide_totals]` | 投票が終わるまで票数を隠すかどうか | Optional |
 
-### Idempotency
+### 冪等性
 
-In order to prevent duplicate statuses, this endpoint accepts an `Idempotency-Key` header, which should be set to a unique string for each new status. In the event of a network error, a request can be retried with the same `Idempotency-Key`. Only one status will be created regardless of how many requests with the same `Idempotency-Key` did go through.
+重複投稿を防ぐため `Idempotency-Key` をヘッダーに指定できます。 各投稿に一意な文字列を指定します。ネットワークにエラーが発生した場合、リクエストは同じ`Idempotency-Key`を指定して再試行できます。何度同じ`Idempotency-Key`が付与されたリクエストを行ってもひとつだけ投稿されます。
 
-See <https://stripe.com/blog/idempotency> for more on idempotency and idempotency keys.
+冪等性については <https://stripe.com/blog/idempotency>を参照
 
-### Scheduled status
+### 時間が指定された投稿
 
-Allows users to schedule a toot (with media attachments) to be published at a certain future date.
+2.7.0以降で有効
 
-The scheduled date must be at least 5 minutes into the future. At most, 300 toots can be scheduled at the same time. Only 50 toots can be scheduled for any given day.
+未来の時間に投稿することができます。メディアも添付可能です。
 
-When `scheduled_at` option is present, instead of creating a status, we only run status validation, and if it passes, we create an entry in scheduled_statuses which encodes the status attributes.  Every 5 minutes, a scheduler iterates over the scheduled_statuses table to fetch the ones due in the next 5 minutes, and push them into a more precise Sidekiq queue. In Sidekiq, the individual statuses are created, with media attachments being unassigned from the scheduled status and assigned to the real one.
+300秒(5分)まで指定でき、また同時に300トゥートまで予約できます。1日に捌けるのは50トゥートのみです。
 
-This option was added since v2.7.0.
+`scheduled_at`が指定されていると、投稿せずに投稿のチェック(バリデーション)だけ行います。通過した場合、投稿をエンコードしたscheduled_statusesエントリーを作成します。5分毎にスケジューラーがそのテーブルから5分以内に投稿すべきものを取得し、そしてSidekiqキューに入れます。Sidekiqでは各投稿は作成され時間が指定された仮の投稿ではなく本物の投稿としてみなされます。
+
 
 ## DELETE /api/v1/statuses/:id
 
-Remove a status. The status may still be available a short while after the call.
+投稿を削除します。これを呼び出した後もしばらく投稿が残る場合があります。
 
 ### 基本情報
 
@@ -132,9 +133,9 @@ Remove a status. The status may still be available a short while after the call.
 
 ## POST /api/v1/statuses/:id/reblog
 
-Reblog a status.
+投稿をブースト
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 
@@ -142,15 +143,17 @@ Returns [Status]({{< relref "entities.md#status" >}})
 
 ### パラメーター
 
+ブーストに公開範囲を指定できます。
+
 |Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
 | `visibility` | `public`, `unlisted` or `private` | Optional ||
 
 ## POST /api/v1/statuses/:id/unreblog
 
-Undo the reblog of a status.
+ブーストを削除
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 
@@ -158,9 +161,9 @@ Returns [Status]({{< relref "entities.md#status" >}})
 
 ## POST /api/v1/statuses/:id/pin
 
-Pin user's own status to user's profile.
+投稿のピン留め(ひとり5件まで)
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 
@@ -168,9 +171,9 @@ Returns [Status]({{< relref "entities.md#status" >}})
 
 ## POST /api/v1/statuses/:id/unpin
 
-Remove pinned status from user's profile.
+ピン留めの解除
 
-Returns [Status]({{< relref "entities.md#status" >}})
+[Status]({{< relref "entities.md#status" >}})を返します。
 
 ### 基本情報
 

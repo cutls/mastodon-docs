@@ -8,7 +8,7 @@ menu:
 
 ## GET /api/v1/admin/accounts
 
-Returns [Local users]({{< relref "entities.md#local-users" >}})
+Returns array of [Local users]({{< relref "entities.md#local-users" >}})
 
 ### Resource information
 
@@ -82,7 +82,7 @@ Unsuspend account
 
 ## GET /api/v1/admin/reports
 
-Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
+Returns array of [Local Reports]({{< relref "entities.md#local-reports" >}})
 
 ### Resource information
 
@@ -96,7 +96,7 @@ Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
 | `account_id` | String (created by) | Optional |
 | `target_account_id` | String (complained about) | Optional |
 
-## GET /api/v1/admin/accounts/:id
+## GET /api/v1/admin/reports/:id
 
 Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
 
