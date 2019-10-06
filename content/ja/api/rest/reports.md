@@ -16,7 +16,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `account_id` | アカウントを報告するときID指定 | Required |
 | `status_ids` | トゥートを報告するときID配列指定 | Optional |

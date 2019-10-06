@@ -18,7 +18,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `timeline` | `home` か `notifications` | Required ||
 
@@ -34,7 +34,7 @@ menu:
 
 最低でも2つのいずれかが必要です。
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `notification` | `last_read_id`に最後に読んだトゥートのID | Required) ||
 | `home` | `last_read_id`に最後に読んだ通知のID | Required ||

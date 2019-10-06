@@ -41,7 +41,7 @@ Mastodonは標準化されたオープンな規格であるActivityPubを用い�
 - Prismo
 - PixelFed
 - writefreely
-- and many more
+- 他にもたくさんあります
 
 Fediverseはそれぞれブランドというものを持っていません。「Fediverseでフォローしてください」「分散SNSでフォローしてください」よりも「Mastodonでフォローしてください」という言葉をよく耳にしますが、技術的には後者の方が正確です。
 

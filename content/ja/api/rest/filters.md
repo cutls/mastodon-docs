@@ -28,7 +28,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `phrase` | フィルター語句 | Required |
 | `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | Required |
@@ -58,7 +58,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `phrase` | フィルター語句 | Optional |
 | `context` |  対象とするタイムライン。`home`, `notifications`, `public`, `thread`から1つ以上指定 | Optional |

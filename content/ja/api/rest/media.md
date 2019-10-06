@@ -18,7 +18,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `file` | `multipart/form-data`でエンコードされたファイル | Required |
 | `description` | 1500字までの説明文字列 | Optional |
@@ -36,7 +36,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `description` | 1500字までの説明文字列 | Optional |
 | `focus` | 画像の焦点。参照[focal points](#focal-points) | Optional |

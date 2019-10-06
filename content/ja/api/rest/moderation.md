@@ -16,7 +16,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `local` | ローカルのユーザー | Optional |
 | `remote` | リモートのユーザー | Optional |
@@ -90,7 +90,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `resolved` | Boolean | Optional |
 | `account_id` | String (報告者) | Optional |
@@ -142,7 +142,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `type` | `silence` か `suspend` | Optional |
 | `report_id` | String | Optional |

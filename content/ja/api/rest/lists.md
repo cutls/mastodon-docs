@@ -38,7 +38,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `limit` | 結果の表示個数 | Optional | 40 |
 
@@ -68,7 +68,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `title` | リストのタイトル | Required |
 
@@ -84,7 +84,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `title` | The title of the list | Required |
 
@@ -108,7 +108,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `account_ids` | アカウントのIDの配列 | Required |
 
@@ -122,6 +122,6 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `account_ids` | アカウントのIDの配列 | Required |

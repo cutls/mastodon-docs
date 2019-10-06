@@ -40,7 +40,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `limit` | Maximum number of results | Optional | 40 |
 
@@ -60,7 +60,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `limit` | Maximum number of results | Optional | 40 |
 
@@ -83,7 +83,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Added in|
+|名称|説明|必須|実装バージョン|
 |----|-----------|:------:|:------:|
 | `status` | 投稿内容(500文字以内) | Optional\* |
 | `in_reply_to_id` | このトゥートに返信(ID) | Optional |
@@ -99,7 +99,7 @@ menu:
 
 アンケートのパラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `poll[options]` | 選択肢(文字列)の配列 | Required |
 | `poll[expires_in]` | 有効期限(300秒以上の秒) | Required |
@@ -145,7 +145,7 @@ menu:
 
 ブーストに公開範囲を指定できます。
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `visibility` | `public`, `unlisted` or `private` | Optional ||
 

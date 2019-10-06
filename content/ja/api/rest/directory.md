@@ -18,7 +18,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `order` | `active`(活動順) か `new`(新規登録順) | Optional | `active` |
 | `local` | 表示アカウントをローカルに限定する | Optional | `false` |

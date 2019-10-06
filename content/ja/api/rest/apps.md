@@ -18,7 +18,7 @@ OAuth 2のためにアプリを作成
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `client_name` | アプリ名 | Required |
 | `redirect_uris` | リダイレクトするURL | Required |

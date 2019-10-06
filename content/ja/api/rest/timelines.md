@@ -18,7 +18,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `max_id` | これより前のトゥート | Optional | | |
 | `since_id` | これより後のトゥート(最新から) | Optional | | |
@@ -40,7 +40,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `max_id` | これより前のトゥート | Optional | | |
 | `since_id` | これより後のトゥート(最新から) | Optional | | |
@@ -66,7 +66,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `local` | ローカルのみ | Optional |false|
 | `only_media` | メディア付きトゥートのみ | Optional |false|
@@ -91,7 +91,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `local` | ローカルのみ | Optional |false|
 | `only_media` | メディア付きトゥートのみ | Optional |false|
@@ -116,7 +116,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `max_id` | これより前のトゥート | Optional | | |
 | `since_id` | これより後のトゥート(最新から) | Optional | | |

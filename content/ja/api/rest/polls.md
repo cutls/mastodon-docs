@@ -22,7 +22,7 @@ Returns [Poll]({{< relref "entities.md#poll" >}})
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `choices` | 選択肢の番号(0-3)の配列 | Required |
 

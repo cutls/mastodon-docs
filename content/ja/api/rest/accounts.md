@@ -30,7 +30,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `username` | ユーザー名 | Required |
 | `email` | メールアドレス | Required |
@@ -62,7 +62,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `display_name` | 名前 | Optional |
 | `note` | 自己紹介 | Optional |
@@ -88,7 +88,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `limit` | 結果の表示個数 | Optional | 40 |
 
@@ -108,7 +108,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `limit` | 結果の表示個数 | Optional | 40 |
 
@@ -128,7 +128,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### パラメーター
 
-|Name|Description|Required|Default|Added in|
+|名称|説明|必須|デフォルト値|実装バージョン|
 |----|-----------|:------:|:-----:|:------:|
 | `only_media` | メディアのあるトゥートのみ | Optional | false | |
 | `pinned` | ピン留めされた投稿のみ | Optional | false | |
@@ -156,7 +156,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `reblogs` | ホームタイムラインにこのユーザーのブーストを表示する | Optional | true |
 
@@ -182,7 +182,7 @@ Unfollow an account.
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `id` | アカウントのIDの配列 | Required |
 
@@ -198,7 +198,7 @@ Unfollow an account.
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `q` | 検索語句| Required ||
 | `limit` | 結果の表示個数 | Optional | 40 |

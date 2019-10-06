@@ -26,6 +26,6 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|Default|
+|名称|説明|必須|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `name` | タグ名(`#`なし) | Required ||

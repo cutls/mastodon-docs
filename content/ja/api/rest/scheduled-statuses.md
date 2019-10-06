@@ -38,7 +38,7 @@ menu:
 
 ### パラメーター
 
-|Name|Description|Required|
+|名称|説明|必須|
 |----|-----------|:------:|
 | `scheduled_at` | ISO 8601での日付指定 | Optional |
 
