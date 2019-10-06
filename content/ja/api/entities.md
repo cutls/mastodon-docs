@@ -1,17 +1,17 @@
 ---
-title: Entities
-description: Overview of entities returned from Mastodon's REST API
+title: APIのエンティティ
+description: MastodonのREST APIのエンティティ
 menu:
   docs:
     parent: api
     weight: 3
 ---
 
-- All IDs are encoded as string representations of integers.
-    - IDs can be sorted first by size, and then lexically, to produce a chronological ordering of resources.
-- All datetimes are in ISO 8601 format
-- All HTML strings are sanitized by the server
-- All language codes are in ISO 6391 format
+- すべてのIDは整数ですが、文字列表現としてエンコードされています。
+    - リソースの時系列の順序については、IDは最初にサイズでソートされ、次に字句順にソートされます。
+- 日付はすべてISO 8601形式です。
+- HTML文字列は全てサーバー内でサニタライズされています。
+- 言語コードはISO 6391です。
 
 ## Account
 
@@ -95,13 +95,13 @@ menu:
 
 ### Meta
 
-Images may contain `width`, `height`, `size`, `aspect` at subtrees `small` and `original`.
+画像には `width`, `height`, `size`, `aspect`が`small`と`original`のサブツリーに入っています。
 
-Videos (including GIFV) may contain `aspect`, `audio_bitrate`, `audio_channels`, `audio_encode`, `duration`(Number: sec) and `length`(String), `fps`(Number), `width`, `height`, `size`, `duration`. At `original`, it may contain `duration`, `frame_rate`, `width`, `height` and `bitrate`. At `small`, it may contain `width` , `height`, `aspect`, `size`
+GIFVアニメーションを含む動画には`aspect`, `audio_bitrate`, `audio_channels`, `audio_encode`, `duration`(数字秒数) , `length`(長さ文字列), `fps`, `width`, `height`, `size`, `duration`. また、 `original`サブツリーには `duration`, `frame_rate`, `width`, `height` , `bitrate`が、`small`サブツリーには`width` , `height`, `aspect`, `size`が入っています。
 
-And audio may contain `audio_bitrate`, `audio_channels`, `audio_encode`, `duration`(Number: sec) and `length`(String). 
+音声には、`audio_bitrate`, `audio_channels`, `audio_encode`, `duration`(数字秒数) , `length`(長さ文字列)が入っています。
 
-There may be another top-level object, `focus` with the coordinates `x` and `y`. These coordinates can be used for smart thumbnail cropping, [see this for reference](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point).
+クロッピング用に`focus`が含まれている場合があり、それには `x` と `y`が含まれています。[参照](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point)
 
 ## Card
 
@@ -147,7 +147,7 @@ There may be another top-level object, `focus` with the coordinates `x` and `y`.
 
 ## Error
 
-The most important part of an error response is the HTTP status code. Standard semantics are followed. The body of an error is a JSON object with this structure:
+エラー時に最も重要なのはHTTPのステータスコードです。標準のセマンティクスに従っています。エラーの本文は、次の構造を持つJSONオブジェクトです。
 
 |Attribute|Type|Nullable|Added in|
 |---------|-----------|:------:|:------:|
@@ -180,15 +180,18 @@ The most important part of an error response is the HTTP status code. Standard s
 - `public`
 - `thread`
 
-### Implementation notes
+### 実装について
 
-If `whole_word` is true , client app should do:
+もし `whole_word`(単語マッチ)が指定されている場合クライアントは以下のように処理するべきです。
 
-- Define 'word constituent character' for your app. In the official implementation, it's `[A-Za-z0-9_]` in JavaScript, and `[[:word:]]` in Ruby. In Ruby case it's the POSIX character class (Letter | Mark | Decimal_Number | Connector_Punctuation).
-- If the phrase starts with a word character, and if the previous character before matched range is a word character, its matched range should be treated to not match.
-- If the phrase ends with a word character, and if the next character after matched range is a word character, its matched range should be treated to not match.
+ルール
 
-Please check `app/javascript/mastodon/selectors/index.js` and `app/lib/feed_manager.rb` in the Mastodon source code for more details.
+1. JavaScriptでは`[A-Za-z0-9_]`で、Rubyでは`[[:word:]]`と公式には実装されている、「単語構成文字」を定義します。Rubyの場合、これはPOSIX文字クラスです。(Letter | Mark | Decimal_Number | Connector_Punctuation)
+2. (フレーズが単語構成文字で始まる時)一致する範囲の前の文字が単語構成文字である場合、無効として扱われる必要があります。つまり、ある単語の前に単語構成文字があれば除外しないということです。
+3. (フレーズが単語構成文字で終わる時)一致する範囲の後の文字が単語構成文字である場合、無効として扱われる必要があります。つまり、ある単語の後に単語構成文字があれば除外しないということです。
+
+
+`app/javascript/mastodon/selectors/index.js`[GitHub](https://github.com/tootsuite/mastodon/blob/master/app/javascript/mastodon/selectors/index.js)と`app/lib/feed_manager.rb`[GitHub](https://github.com/tootsuite/mastodon/blob/master/app/lib/feed_manager.rb)の実装が参考になります。
 
 ## Identity Proofs
 
@@ -262,11 +265,11 @@ For Moderation API
 | `created_by_application_id`*1 | Boolean |{{< yes >}}|2.9.1|
 | `invited_by_account_id`*1 | Boolean |{{< yes >}}|2.9.1|
 
-**\*1** only on account data included by moderation reports.
+**\*1** モデレーションのレポート内に含まれるアカウント情報にのみ含まれています。
 
 ## Local reports
 
-For Moderation API
+Moderation API用
 
 |Attribute|Type|Nullable|Added in|
 |---------|-----------|:------:|:------:|
@@ -284,7 +287,7 @@ For Moderation API
 
 ## Markers
 
-In either `home` or `notifications`, return like this:  
+`home` か `notifications`の内部に以下が含まれています。
 
 |Attribute|Type|Nullable|Added in|
 |---------|-----------|:------:|:------:|
@@ -419,7 +422,7 @@ In either `home` or `notifications`, return like this:
 | `pinned` | Boolean |{{< yes >}}|1.6.0|
 | `text` | String |{{< no >}}|2.9.0|
 
-**`text` is only returned at DELETE /api/v1/statuses/:id**
+**`text` はDELETE /api/v1/statuses/:id実行時のみ返されます**
 
 ### Visibility
 

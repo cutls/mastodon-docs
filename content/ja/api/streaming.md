@@ -7,49 +7,47 @@ menu:
     weight: 4
 ---
 
-> 翻訳をお願いします。
+[サーバー送信イベント](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)エンドポイントをリアルタイムアップデートを受信するために使用可能です。サーバー送信イベントは、チャンクエンコード転送に完全に依存する非常に単純な転送方法です。つまり、HTTP接続を開いたまま定期的に新しいデータを受信します。
 
-Your application can use a [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) endpoint to receive updates in real-time. Server-sent events is an incredibly simple transport method that relies entirely on chunked-encoding transfer, i.e. the HTTP connection is kept open and receives new data periodically.
+または、WebSocket接続も確立できます。
 
-Alternatively, a WebSocket connection can also be established.
-
-## Server-sent events (HTTP)
-### Endpoints
+## サーバー送信イベント (HTTP)
+### エンドポイント
 #### GET /api/v1/streaming/health
 
-Returns `OK` when streaming service is fine
+ストリーミングサービスが利用できるとき、`OK`を返します。
 
 #### GET /api/v1/streaming/user
 
-Returns events that are relevant to the authorized user, i.e. home timeline and notifications
+認証ユーザーに関連する情報を返します。ホームタイムラインや通知が一例です。
 
 #### GET /api/v1/streaming/public
 
-Returns all public statuses
+連合タイムラインを返します。
 
 #### GET /api/v1/streaming/public/local
 
-Returns all local statuses
+ローカルタイムラインを返します。
 
 #### GET /api/v1/streaming/hashtag?tag=:hashtag
 
-Returns all public statuses for a particular hashtag
+特定ハッシュタグの連合タイムラインを返します。
 
 #### GET /api/v1/streaming/hashtag/local?tag=:hashtag
 
-Returns all local statuses for a particular hashtag
+特定ハッシュタグのローカルタイムラインを返します。
 
 #### GET /api/v1/streaming/list?list=:list_id
 
-Returns statuses for a list
+特定リストのタイムラインを返します。
 
 #### GET /api/v1/streaming/direct
 
-Returns all direct messages
+ダイレクトメッセージを返します。
 
-### Stream contents
+### ストリーミングのコンテンツ
 
-The stream will contain events as well as heartbeat comments. Lines that begin with a colon (`:`) can be ignored by parsers, they are simply there to keep the connection open. Events have this structure:
+ストリームには、イベントとハートビート用のコメントが含まれます。コロン(:)で始まる行は無視して構いません。ハートビートは接続を開いたままにするためだけにあります。イベントの構造は次のとおりです。
 
 ```
 event: name
@@ -58,9 +56,9 @@ data: payload
 
 ## WebSocket
 
-For WebSockets, there is only one URL path (`/api/v1/streaming`). The access token as well as the endpoint you are interested in must be provided with query params, respectively `access_token` and `stream`. Query params `list` and `tag` are likewise supported for relevant endpoints.
+WebSocketの場合、URLは`/api/v1/streaming`のみです。アクセストークンは`access_token`に、とエンドポイントは`stream`に入力してください。`list`や`tag`もそれぞれ対応したエンドポイントで利用できます。
 
-Possible `stream` values:
+`stream`に指定する値:
 
 - `user`
 - `public`
@@ -70,15 +68,14 @@ Possible `stream` values:
 - `list`
 - `direct`
 
-## Event types
-
-|Event|Description|What's in the payload|
+## イベントの種類
+|イベント|説明|payloadの中身|
 |-----|-----------|---------------------|
-|`update`|A new status has appeared|[Status]({{< relref "entities.md#status" >}})|
-|`notification`|A new notification has appeared|[Notification]({{< relref "entities.md#notification" >}})|
-|`delete`|A status has been deleted|ID of the deleted status|
-|`filters_changed`|Keyword filters have been changed||
+|`update`|新しいトゥート|[Status]({{< relref "entities.md#status" >}})|
+|`notification`|新しい通知|[Notification]({{< relref "entities.md#notification" >}})|
+|`delete`|削除されたトゥート|削除されたトゥートのID|
+|`filters_changed`|フィルターの値が変更された|何も返しません|
 
-The payload is JSON-encoded.
+payloadはJSON形式です。
 
-> **Note:** In case of `filters_changed` event, `payload` is not defined.
+> **注意:** `filters_changed`イベントには`paylaod`は含まれません。

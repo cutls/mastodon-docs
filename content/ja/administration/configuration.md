@@ -9,9 +9,9 @@ menu:
 
 > 翻訳をお願いします。
 
-Mastodon uses environment variables as its configuration.
+Mastodonは、設定として環境変数を使用します。
 
-For convenience, it can read them from a flat file called `.env.production` in the Mastodon directory, but they can always be overridden by a specific process. For example, systemd service files can read environment variables from an `EnvironmentFile` or from inline definitions with `Environment`, so you can have different configuration parameters for specific services. They can also be specified when calling Mastodon from the command line.
+便宜上、Mastodonディレクトリの`.env.production`で呼び出される単一のファイルから設定を読み取ることができますが、プロセスごとに常に上書きできます。たとえば、systemdサービスファイルは`EnvironmentFile`を使用して`Environment`インライン定義から環境変数を読み取ることができるため、特定のサービスに対して異なる設定パラメーターを使用できます。これは、コマンドラインからMastodonを使うときにも指定できます。
 
 ## 基本
 ### 連合
