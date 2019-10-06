@@ -1,15 +1,19 @@
 ---
-title: Mastodon documentation
+title: Mastodon ドキュメント
 ---
 
-Welcome to the Mastodon documentation!
+Mastodonのドキュメントにようこそ。
 
 <div style="margin-bottom: 26px">
   {{< youtube "IPSbNdBmWKE" >}}
 </div>
+<div style="margin-bottom: 26px">
+  <script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm32474021/script?w=640&h=360"></script><noscript><a href="https://www.nicovideo.jp/watch/sm32474021">【Twitterはもう古い！？】マストドンのあるきかた【friends.nico】</a></noscript>
+</div>
 
-**Choose your path:**
 
-- [Learn how to use Mastodon]({{< relref "usage/basics.md" >}})
-- [Learn how to install Mastodon]({{< relref "administration/installation.md" >}})
-- [Learn how to write an app for Mastodon]({{< relref "api/guidelines.md" >}})
+**ガイド:**
+
+- [Mastodonの使い方]({{< relref "usage/basics.md" >}})
+- [Mastodonをインストール]({{< relref "administration/installation.md" >}})
+- [Mastodonアプリを書く]({{< relref "api/guidelines.md" >}})
