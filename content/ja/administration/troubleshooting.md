@@ -9,22 +9,22 @@ menu:
 
 > 翻訳をお願いします。
 
-**I see an error page that says something went wrong. How do I find out what's wrong?**
+**象さんがバンバンしていて、「何かが間違っています(something went wrong)」と言われました。**
 
-All error messages with stack traces are written to the system log. When using systemd, the logs of each systemd service can be browsed with `journalctl -u mastodon-web` (substitute with the correct service name). When using Docker, it's similar: `docker logs mastodon_web_1` (substitute with the correct container name).
+全てのエラーメッセージはスタックトレース付きでシステムログに記録されています。systemdを使っているなら、各systemdサービスのログは`journalctl -u mastodon-web`など(`web`ではない場合もあります)を使って確認できます。Dockerを使っている場合は`docker logs mastodon_web_1` (mastodon_web_1はコンテナ名)で確認してください。
 
-Specific details of server-side errors are *never* displayed to the public, as they can reveal what your setup looks like internally and give attackers clues how to get in, or how to abuse the system more efficiently.
+サーバーサイドのエラーは*一切*表(WebUI, API等)にでてきません。これは、エラーが内部設定を表示してしまう場合があり、攻撃者に効率的な侵入、攻撃方法を教えていることになりかねないからです。
 
-Each response from Mastodon's web server carries a header with a unique request ID, which is also reflected in the logs. By inspecting the headers of the error page, you can easily find the corresponding stack trace in the log.
+全てのMastodonのWebサーバーは一意のリクエストID付きのヘッダーを返します。ログにも同じIDが表示され、一対一に対応しています。エラーページのヘッダーを確認することで対応するスタックトレースをログから簡単に見つけることができます。
 
-**After an upgrade to a newer version, some pages look weird, like they have unstyled elements. Why?**
+**新しいバージョンにアップデートした後、一部のページの表示がおかしいです。スタイルが適用されていないからでしょう。なぜですか？**
 
-Check that you have run `RAILS_ENV=production bin/rails assets:precompile` after the upgrade, and restarted Mastodon's web process, because it looks like it's serving outdated stylesheets and scripts. It's also possible that the precompilation fails due to a lack of RAM, as webpack is unfortunately extremely memory-hungry. If that is the case, make sure you have some swap space assigned. Alternatively, it's possible to precompile the assets on a different machine, then copy over the `public/packs` directory.
+ `RAILS_ENV=production bin/rails assets:precompile`をアップデート後に実行したかを確認してください。そしてMastodonのWebプロセスを再起動してください。古いスタイルシートやスクリプトをそれらが保持しているかもしれないからです。他に考えられるのは、プリコンパイルがRAMの不足で失敗しているということです。webpackがメモリ不足を起こしています。この場合はスワップ領域を確保してください。それか、プリコンパイルを別のマシンで実行して`public/packs`にそれを上書きしてください。
 
-**After an upgrade to a newer version, some requests fail and the logs show error messages about missing columns or tables. Why?**
+**新しいバージョンにアップデートした後、いくつかのリクエストがエラーになり、ログにはcolumnsやtablesが無いと書いてあります。なぜですか？**
 
-Check that you have run `RAILS_ENV=production bin/rails db:migrate` after the upgrade, because it looks like Mastodon's code is accessing a newer or older database schema. If you are using PgBouncer, make sure this one command connects directly to PostgreSQL, as PgBouncer does not support the kind of table locks that are used within migrations.
+`RAILS_ENV=production bin/rails db:migrate`を実行したかを確認してください。Mastodonのコードがより新しいまたはより古いデータベースのスキーマにアクセスしているかもしれないからです。もしPgBouncerを使っているなら、この一つのコマンドを直接PostgreSQLに接続するようにしてください。PgBouncerはこのようなマイグレーション時のテーブルロックをサポートしていないからです。
 
-**I am trying to run a `tootctl` or `rake`/`rails` command, but all I get is an error about uninitialized constants. What's wrong?**
+**私は`tootctl`や`rake`、`rails`コマンドを実行しようとしていますが、初期化されていない定数などというエラーが出るだけです。何がいけませんか？**
 
-Check that you are specifying the correct environment with `RAILS_ENV=production` before the command. By default, the environment is assumed to be development, so the code tries to load development-related gems. However, in production environments, we avoid installing those gems, and that's where the error comes from.
+`RAILS_ENV=production`を指定していることを確かめてください。デフォルトではenvironmentはdevelopmentになっています。そのため、コードはdevelopmentで依存指定したgemを読み込もうとします。しかし、production環境ではそのgemはインストールされないため、エラーが発生するのです。
