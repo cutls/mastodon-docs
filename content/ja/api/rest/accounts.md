@@ -204,3 +204,13 @@ Unfollow an account.
 | `limit` | 結果の表示個数 | Optional | 40 |
 | `resolve` | WebFinger解決をする | Optional | false |
 | `following` | フォローしているユーザーだけから検索 | Optional | false |
+
+## GET /api/v1/accounts/:id/identity_proofs
+
+本人認証の情報(Keybaseなど)
+
+[Identity Proofs]({{< relref "entities.md#identity-proofs" >}})配列を返します。
+
+### 基本情報
+
+{{< api_method_info auth="No" user="Yes" scope="read read:statuses" version="2.8.0" >}}

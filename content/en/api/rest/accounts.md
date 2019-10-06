@@ -204,3 +204,13 @@ Returns array of [Account]({{< relref "entities.md#account" >}})
 | `limit` | Maximum number of results | Optional | 40 |
 | `resolve` | Attempt WebFinger look-up | Optional | false |
 | `following` | Only who the user is following | Optional | false |
+
+## GET /api/v1/accounts/:id/identity_proofs
+
+Identity Proofs like Keybase
+
+Retuens array of [Identity Proofs]({{< relref "entities.md#identity-proofs" >}})
+
+### Resource information
+
+{{< api_method_info auth="No" user="Yes" scope="read read:statuses" version="2.8.0" >}}

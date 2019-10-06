@@ -190,6 +190,16 @@ If `whole_word` is true , client app should do:
 
 Please check `app/javascript/mastodon/selectors/index.js` and `app/lib/feed_manager.rb` in the Mastodon source code for more details.
 
+## Identity Proofs
+
+|Attribute|Type|Nullable|Added in|
+|---------|-----------|:------:|:------:|
+| `profile_url` | String (URL) |{{< no >}}|2.8.0|
+| `proof_url` | String (URL) |{{< no >}}|2.8.0|
+| `provider` | `keybase`, ... |{{< no >}}|2.8.0|
+| `provider_username` | String |{{< no >}}|2.8.0|
+| `updated_at` | DString (Datetime) |{{< no >}}|2.8.0|
+
 ## Instance
 
 |Attribute|Type|Nullable|Added in|
