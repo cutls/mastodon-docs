@@ -7,7 +7,7 @@ menu:
     weight: 1
 ---
 
-Mastodonはフェデレーションされているため、ユーザーがログインする可能性のあるすべてのサーバーにアプリケーションを手動で登録することは現実的ではありません。このため、アプリ登録APIが公開されており、OAuth 2認証用のOAuth 2資格情報の取得を自動化できます。
+Mastodonは連合しているため、ユーザーがログインする可能性のあるすべてのサーバーにアプリケーションを手動で登録することは現実的ではありません。このため、アプリ登録APIが公開されており、OAuth 2認証用のOAuth 2資格情報の取得を自動化できます。
 
 ユーザーがログインする前にログインしたいドメインを指定できるようにしてください。そのドメインを使用してOAuth 2のクライアントIDとシークレットを取得し、そのドメインを使用してURLを生成し、通常のOAuth 2に進みます。
 
@@ -19,7 +19,7 @@ Mastodonは、次のOAuth 2フローをサポートしています。
 
 ## OAuth 2 エンドポイント
 
-以下の説明は[Doorkeeper documentation](https://github.com/doorkeeper-gem/doorkeeper/wiki/API-endpoint-descriptions-and-examples)から引用したものです。MastodonではDoorkeeperを使用しています。
+以下の説明は[Doorkeeper documentation](https://github.com/doorkeeper-gem/doorkeeper/wiki/API-endpoint-descriptions-and-examples)から引用したものです。MastodonではOAuth認証にDoorkeeperを使用しています。
 
 ### GET /oauth/authorize
 

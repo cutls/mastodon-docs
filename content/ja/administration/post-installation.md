@@ -7,35 +7,34 @@ menu:
     weight: 3
 ---
 
-> 翻訳をお願いします。
 
-## Using the command-line interface
+## コマンドラインインターフェースを使う
 
-The command-line interface of Mastodon is an executable file called `tootctl` residing in the `bin` directory within the Mastodon root directory. You must specify which environment you intend to use whenever you execute it by specifying the `RAILS_ENV` environment variable. Unless you are a developer working on a local machine, you need to use `RAILS_ENV=production`. If you are sure that you will never need another environment (for development, testing, or staging), you can add it to your `.bashrc` file for convenience, e.g.:
+MastodonのコマンドラインインターフェースはMastodonのルートディレクトリにある`bin`ディレクトリの`tootctl`という実行ファイルです。`RAILS_ENV`環境変数を使って、実行するたびに使用する環境を指定する必要があります。ローカルマシンで作業する開発者でない限り、`RAILS_ENV=production`を使用する必要があります。別の環境（開発、テスト、またはステージング用）が必要ないことが確実な場合は、簡便のため`.bashrc`にファイルに以下のように追加できます。
 
 ```bash
 echo "export RAILS_ENV=production" >> ~/.bashrc
 ```
 
-If so, you won't need to specify it each time inline. Otherwise, calls to `tootctl` will usually go like this, assuming that the Mastodon code is checked out in `/home/mastodon/live`:
+これで、毎回環境を指定する必要はなくなります。それ以外の場合、`/home/mastodon/live`にMastodonコードがあるとすると、`tootctl`への呼び出しは通常次のようになります。
 
 ```bash
 cd /home/mastodon/live
 RAILS_ENV=production bin/tootctl help
 ```
 
-## Creating an admin account
-### In the browser
+## 管理者アカウントの作成
+### ブラウザを使用
 
-After signing up in the browser, you will need to use the command line to give your newly created account admin privileges. Assuming your username is `alice`:
+ブラウザでサインアップした後、コマンドラインを使用して、新しく作成したアカウントに管理者権限を付与する必要があります。`alice`というユーザーに付与するなら、
 
 ```bash
 RAILS_ENV=production bin/tootctl accounts modify alice --role admin
 ```
 
-### From the command line
+### コマンドラインを使用
 
-You can create a new account using the command-line interface.
+コマンドラインでアカウントを作ることもできます。
 
 ```bash
 RAILS_ENV=production bin/tootctl accounts create \
@@ -45,64 +44,68 @@ RAILS_ENV=production bin/tootctl accounts create \
   --role admin
 ```
 
-A randomly generated password will be shown in the terminal.
+ランダムに生成されたパスワードがターミナルに表示されます。
 
-## Filling in server information
+## サーバー情報を書き加える
 
-After logging in, navigate to the **Site settings** page. While there are no technical requirements for filling in this information, it is considered crucial for operating a server for humans.
+ログイン後、**サイト設定**ページに移動します。この情報を入力するための技術的な要件はありませんが、コンピュータというより人間向けの設定と言えます。
 
-|Setting|Meaning|
+|設定|意味|
 |-------|-------|
-|Contact username|Your username so people know who owns the server|
-|Business e-mail|An e-mail address so people locked out of their accounts, or people without accounts, can contact you|
-|Instance description|Why did you start this server? Who is it for? What makes it different?|
-|Custom extended information|You can put all sorts of information in here but a **code of conduct** is recommended|
+|連絡先ユーザー名 |他の人が管理者だとわかるようにするために必要 |
+|ビジネスメールアドレス| アカウントがロックされたり、サーバー外部の人から連絡を受けるために必要 |
+|サーバーの説明| サーバーの個性を説明|
+|短いサーバーの説明| もっと短い説明 |
 
-After you fill these in, simply hit "Save changes".
+「変更の保存」を押して保存します。
 
-## Setting up regular backups (optional, but not really)
+## 定期的なバックアップ(強く推奨)
 
-For any real-world use, you should make sure to regularly backup your Mastodon server.
+サーバーを表に出すのであれば、Mastodonサーバーのバックアップは必須です。
 
-### Overview
+### 概要
 
-Things that need to be backed up in order of importance:
+バックアップすべきものを重要度順に並べています。
 
-1. PostgreSQL database
-2. Application secrets from the `.env.production` file or equivalent
-3. User-uploaded files
-4. Redis database
+1. PostgreSQLデータベース
+2. `.env.production`等の機密ファイル
+3. ユーザーがアップロードしたファイル
+4. Redisデータベース
 
-### Failure modes
+### 「失敗」と「その後」
 
-There are two failure types that people in general may guard for: The failure of the hardware, such as data corruption on the disk; and human and software error, such as wrongful deletion of particular piece of data. In this documentation, only the former type is considered.
+一般に人間が回避することができる障害のタイプは2つあります。
 
-A lost PostgreSQL database is complete game over. Mastodon stores all the most important data in the PostgreSQL database. If the database disappears, all the accounts, posts and followers on your server will disappear with it.
+1. ディスク上のデータ破損などのハードウェアの障害特定のデータの不正な削除など
+1. 人的およびソフトウェアのエラー
 
-If you lose application secrets, some functions of Mastodon will stop working for your users, they will be logged out, two-factor authentication will become unavailable, Web Push API subscriptions will stop working.
+このドキュメントでは、1.のみを扱います。
 
-If you lose user-uploaded files, you will lose avatars, headers, and media attachments, but Mastodon *will* work moving forward.
+PostgreSQLのデータベースを失ってしまった場合、もうお手上げ状態です。Mastodonは重要なデータのほぼ全てをPostgreSQLデータベースに保存しています。この場合、全てのアカウントや投稿、フォロワー情報なども失われます。
 
-Losing the Redis database is almost harmless: The only irrecoverable data will be the contents of the Sidekiq queues and scheduled retries of previously failed jobs. The home and list feeds are stored in Redis, but can be regenerated with tootctl.
+機密ファイルを失ってしまった場合、一部のMastodonの機能が利用不可になります。ユーザーはログアウトされ、2要素認証は利用できなくなり、Web Push APIは機能しなくなります。
 
-The best backups are so-called off-site backups, i.e. ones that are not stored on the same machine as Mastodon itself. If the server you are hosted on goes on fire and the hard disk drive explodes, backups stored on that same hard drive won't be of much use.
+ユーザーがアップロードしたファイルを失うということは、アバター、ヘッダー、メディアの添付ファイルが失われるということですが、Mastodon自体は停止しません。
 
-### Backing up application secrets
+Redisデータベースを失ってもほとんど無害です。回復不能なデータは、Sidekiqキューの内容と、以前に失敗したジョブのスケジュールされた再試行だけです。ホームフィードとリストフィードはRedisに保存されますが、tootctlを使用して再生成できます。
 
-Application secrets are the easiest to backup, since they never change. You only need to store `.env.production` somewhere safe.
+最適なバックアップは、いわゆるオフサイトバックアップ、つまりMastodon自体と同じマシンに保存されていないバックアップです。ホストされているサーバーのハードディスクドライブが爆発した場合、同じハードドライブに保存されているバックアップはあまり役に立ちません。
 
-### Backing up PostgreSQL
+### 機密ファイルのバックアップ
 
-PostgreSQL is at risk of data corruption from power cuts, hard disk drive failure, and botched schema migrations. For that reason, occassionally making a backup with `pg_dump` or `pg_dumpall` is recommended.
+アプリケーションの機密ファイルは変更されないため、バックアップが最も簡単です。`.env.production`をどこか安全なところに保存してください。
 
-For high-availability setups, it is possible to use hot streaming replication to have a second PostgreSQL server with always up-to-date data, ready to be switched over to if the other server goes down.
+### PostgreSQLのバックアップ
 
-### Backing up user-uploaded files
+PostgreSQLは、停電、ハードディスクドライブの障害、スキーマの移行の失敗によるデータ破損の危険にさらされています。そのため、ときどき`pg_dump`または`pg_dumpall`でバックアップを作成することをおすすめします。
 
-If you are using an external object storage provider such as Amazon S3, Google Cloud or Wasabi, then you don't need to worry about backing those up. The respective companies are responsible for handling hardware failures.
+高可用性が求められる場合、ホットストリーミングレプリケーションを使用して、常に最新のデータを持つ2番目のPostgreSQLサーバーを用意し、他のサーバーがダウンした場合に切り替えることができます。
 
-If you are using local file storage, then it's up to you to make copies of the sizeable `public/system` directory, where uploaded files are stored by default.
+### ユーザーがアップロードしたファイルのバックアップ
 
-### Backing up Redis
+Amazon S3、Google Cloud、Wasabiなどの外部オブジェクトストレージを使用している場合、これらのバックアップについて心配する必要はありません。各企業は、ハードウェア障害の処理に責任を負っています。
+ローカルファイルストレージを使用している場合、アップロードされたファイルはデフォルトで`public/system`に保存されます。この可変ディレクトリのコピーを作成するのはあなた次第です。
 
-Backing up Redis is easy. Redis regularly writes to `/var/lib/redis/dump.rdb` which is the only file you need to make a copy of.
+### Redisのバックアップ
+
+Redisのバックアップは簡単です。Redisは、`/var/lib/redis/dump.rdb`にバックアップが必要な内容の全てを含んでいます。

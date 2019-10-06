@@ -26,7 +26,7 @@ menu:
 
 ## GET /api/v1/statuses/:id/card
 
-**This API has been already removed.**
+**このAPIは削除されました。**
 
 ## GET /api/v1/statuses/:id/reblogged_by
 

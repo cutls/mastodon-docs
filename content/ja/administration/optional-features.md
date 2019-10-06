@@ -6,39 +6,37 @@ menu:
     parent: administration
     weight: 5
 ---
-> 翻訳をお願いします。
 
 
-## Full-text search
+## 全文検索
 
-Mastodon supports full-text search when it ElasticSearch is available. Mastodon's full-text search allows logged in users to find results from their own toots, their favourites, and their mentions. It deliberately does not allow searching for arbitrary strings in the entire database.
+ElasticSearchが利用可能な場合、Mastodonは全文検索をサポートします。Mastodonの全文検索では、ログインしているユーザーが自分の投稿、お気に入り、メンションから検索することができます。データベース全体で任意の文字列を検索することはできません。
 
-### Install ElasticSearch
+### ElasticSearchのインストール
 
-ElasticSearch requires a Java runtime. If you don't have Java already installed, do it now. Assuming you are logged in as `root`:
+ElasticSearchにはJavaランタイムが必要です。Javaがまだインストールされていない場合は以下のように行ってください。`root`でログインされているとします。
 
     apt install openjdk-8-jre-headless
 
-Add the official ElasticSearch repository to apt:
+公式のElasticSearchリポジトリをaptに登録します。
 
     wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
     echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-6.x.list
     apt update
 
-Now you can install ElasticSearch:
+ElasticSearchをインストールします。
 
     apt install elasticsearch
 
-> **Security warning:** By default, ElasticSearch is supposed to bind to localhost only, i.e. be inaccessible from the outside network. You can check which address ElasticSearch binds to by looking at `network.host` within `/etc/elasticsearch/elasticsearch.yml`. Consider that anyone who can access ElasticSearch can access and modify any data within it, as there is no authentication layer. So it's really important that the access is secured. Having a firewall that only exposes the 22, 80 and 443 ports is advisable, as outlined in the [main installation instructions]({{< relref "installation.md" >}}). If you have a multi-host setup, you must know how to secure internal traffic.
-
-To start ElasticSearch:
+> **セキュリティ警告** 標準では、ElasticSearchはlocalhostのみにバインドされます。よって、外部から参照することはできません。ElasticSearchのバインドされているアドレスを`/etc/elasticsearch/elasticsearch.yml`内の`network.host`で確認してください。ElasticSearchには認証レイヤーがないため、ElasticSearchにアクセスできる人は誰でも、その中のデータにアクセスして変更できます。そのため、アクセスを保護することが非常に重要です。[インストール]({{< relref "installation.md" >}})で説明した通り、22, 80, 443以外のポートは開放しないようにしてください。複数サーバーで設定した場合、内部のトラフィックを保護する方法を知っておく必要があります。
+ElasticSearchを開始する
 
     systemctl enable elasticsearch
     systemctl start elasticsearch
 
-### Setup Mastodon
+### Mastodonに適用
 
-Edit `.env.production` to add the following variables:
+`.env.production`を編集します。
 
 ```bash
 ES_ENABLED=true
@@ -46,22 +44,23 @@ ES_HOST=localhost
 ES_PORT=9200
 ```
 
-If you have multiple Mastodon servers on the same machine, and you are planning to use the same ElasticSearch installation for all of them, make sure that all of them have unique `REDIS_NAMESPACE` in their configurations, to differentiate the indices. If you need to override the prefix of the ElasticSearch index, you can set `ES_PREFIX` directly.
+同じマシンで複数のMastodonを動かしていて、それらすべてに対して同じElasticSearchを使用しようとする場合、インデックスを区別するために、個々の`REDIS_NAMESPACE`設定が一意であることを確認してください。もしElasticSearchインデックスのプレフィックスを上書きする必要がある場合、`ES_PREFIX`を直接指定できます。
 
-After saving the new configuration, create the index in ElasticSearch with:
+
+設定を保存した後、次の通りElasticSearchでインデックスを作成します。
 
     RAILS_ENV=production bundle exec rake chewy:upgrade
 
-Then restart Mastodon processes for the new configuration to take effect:
+次に、新しい設定を有効にするためにMastodonプロセスを再起動します。
 
     systemctl restart mastodon-sidekiq
     systemctl reload mastodon-web
 
-Now new statuses will be written to the ElasticSearch index. The last step is importing all of the old data as well. This might take a long while:
+これで、新しいステータスがElasticSearchインデックスに書き込まれます。初回起動時は、古いデータもすべてインデックスするので、時間がかかる場合があります。
 
     RAILS_ENV=production bundle exec rake chewy:sync
 
-> **Compatibility note:** There is a known bug in Ruby 2.6.0 that prevents the above task from working. Other versions of Ruby, such as 2.6.1, are fine.
+> **互換性に関する注意:** Ruby 2.6.0では上手く行かないという報告があります。2.6.1以上では問題ありません。
 
 ## Hidden services
 

@@ -7,53 +7,51 @@ menu:
     weight: 5
 ---
 
-> 翻訳をお願いします。
+新しいバージョンのMastodonが利用可能になった時、[GitHub releases page](https://github.com/tootsuite/mastodon/releases)に掲載されます。`master`ブランチからリリース前のコードを取得して動かすことも可能ですが、おすすめしません。
 
-When a new version of Mastodon comes out, it appears on the [GitHub releases page](https://github.com/tootsuite/mastodon/releases). Please mind that running unreleased code from the `master` branch, while possible, is not recommended.
-
-Mastodon releases correspond to git tags. First, switch to the `mastodon` user:
+Mastodonのリリースはgitのタグ(tag)と呼応しているため、`mastodon`ユーザーに切り替えて、
 
 ```sh
 su - mastodon
 ```
 
-And navigate to the Mastodon root directory:
+Mastodon本体のディレクトリに移動します。
 
 ```sh
 cd /home/mastodon/live
 ```
 
-Download the releases's code, assuming that the version is called `v2.5.0`:
+リリースのコードをダウンロードします。`v3.0.0`の場合は
 
 ```sh
 git fetch --tags
-git checkout v2.5.0
+git checkout v3.0.0
 ```
 
-The release page contains a changelog, and below it, upgrade instructions. This is where you would execute them, for example, if the release mentions that you need to re-compile assets, you would execute:
+リリースノートにはチェンジログが含まれています。そのあとにアップデートガイドが載っています。そのガイドに記載のコードはこの状態で実行します。もしリリースノートにアセットのリコンパイルが必要と書かれているならば、以下のように実行します。
 
 ```sh
 RAILS_ENV=production bundle exec rails assets:precompile
 ```
 
-After you have executed all special release-specific instructions, the last thing remaining is restarting Mastodon. *Usually* the streaming API is not updated, and therefore does not require a restart. Restarting the streaming API can lead to an unusually high load on the server, so it is advised to avoid it if possible.
+記載されているリリース特有のコマンドを実行したなら、後はMastodonを再起動するだけです。*一般に、*ストリーミングAPIはアップデートされませんので、再起動する必要はありません。ストリーミングAPIの再起動は、その後に多数の一般APIへのリクエストが予想されるため、できる限りしないのをおすすめします。
 
-Switch back to root:
+rootに戻ります。
 
 ```sh
 exit
 ```
 
-You would restart Sidekiq:
+Sidekiqを再起動
 
 ```sh
 systemctl restart mastodon-sidekiq
 ```
 
-And you would reload the web process to avoid downtime:
+ダウンタイムを避けるためWebプロセスを再読み込みします。
 
 ```sh
 systemctl reload mastodon-web
 ```
 
-**That's all!** You're running the new version of Mastodon now.
+**完成です！** これより最新のMastodonをお楽しみいただけます。
