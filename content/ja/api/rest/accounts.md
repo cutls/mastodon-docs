@@ -44,7 +44,7 @@ IPアドレスによって30分毎5回に制限されています。
 
 ユーザー自身のアカウントの認証情報を返します。
 
-[Account]({{< relref "entities.md#account" >}}に[`source` attribute]({{< relref "entities.md#source" >}})が付いたものを返します。
+[Account]({{< relref "entities.md#account" >}})に[`source` attribute]({{< relref "entities.md#source" >}})が付いたものを返します。
 
 ### 基本情報
 

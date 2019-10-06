@@ -1,6 +1,6 @@
 baseURL = "https://docs.toot.app"
 languageCode = "en-us"
-defaultContentLanguage = "en"
+defaultContentLanguage = "ja"
 title = "Mastodon documentation"
 pygmentsCodeFences = true
 pygmentsStyle = "dracula"
