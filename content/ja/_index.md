@@ -2,7 +2,7 @@
 title: Mastodon ドキュメント
 ---
 
-Mastodonのドキュメントにようこそ。
+Mastodonのドキュメントへようこそ。
 
 <div style="margin-bottom: 26px">
   {{< youtube "IPSbNdBmWKE" >}}
