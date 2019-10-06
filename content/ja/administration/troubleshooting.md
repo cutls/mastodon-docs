@@ -7,8 +7,6 @@ menu:
     weight: 99
 ---
 
-> 翻訳をお願いします。
-
 **象さんがバンバンしていて、「何かが間違っています(something went wrong)」と言われました。**
 
 全てのエラーメッセージはスタックトレース付きでシステムログに記録されています。systemdを使っているなら、各systemdサービスのログは`journalctl -u mastodon-web`など(`web`ではない場合もあります)を使って確認できます。Dockerを使っている場合は`docker logs mastodon_web_1` (mastodon_web_1はコンテナ名)で確認してください。
