@@ -69,7 +69,7 @@ Mastodonはonion等のTorを経由して提供できます。これにより、T
 
 ### Torのインストール
 
-最初のTorのDebianアーカイブをaptに追加する必要があります。
+最初にTorのDebianアーカイブをaptに追加する必要があります。
 
 ```
 deb https://deb.torproject.org/torproject.org stretch main
@@ -127,9 +127,9 @@ access_log /var/log/nginx/mastodon_access.log;
 error_log /var/log/nginx/mastodon_error.log warn;
 ```
 
-In place of your old Mastodon configuration add an include directive to this new configuration file.
+古いMastodon設定の代わりに、この新しい設定ファイルにincludeディレクティブを追加します。
 
-Your Nginx configuration file will be left looking something like this.
+あなたのNginx設定はこのようになるはずです。
 
 ```
 server {
