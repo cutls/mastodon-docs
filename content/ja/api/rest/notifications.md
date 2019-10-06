@@ -18,7 +18,7 @@ menu:
 
 ### パラメーター
 
-|名称|説明|必須|デフォルト値|
+|名称|説明|必要性|デフォルト値|
 |----|-----------|:------:|:-----:|
 | `max_id` | これより前のトゥート | 任意 ||
 | `since_id` | これより後のトゥート(最新から) | 任意 ||
@@ -65,7 +65,7 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 ### パラメーター
 
-|名称|説明|必須|
+|名称|説明|必要性|
 |----|-----------|:------:|
 | `subscription[endpoint]` | hookされるURL | 必須 |
 | `subscription[keys][p256dh]` | User agent public key. 'prime256v1'曲線をBase 64エンコードしたもの | 必須 |
@@ -96,7 +96,7 @@ Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}}
 
 ### パラメーター
 
-|名称|説明|必須|
+|名称|説明|必要性|
 |----|-----------|:------:|
 | `data[alerts][follow]` | フォロー時にhookするか | 任意 |
 | `data[alerts][favourite]` | お気に入り登録時にhookするか | 任意 |
