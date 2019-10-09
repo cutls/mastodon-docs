@@ -7,99 +7,87 @@ menu:
     weight: 6
 ---
 
-> 翻訳をお願いします。
+いろいろ事情があってMastodonインスタンスを他のサーバーへ移行したいこともあるでしょう。人は時たま移行せざるを得ない状況に出会うものです。しかし、今夜は徹夜か…と諦めるにはまだ早いです。Mastodonの移行は、ダウンタイムは発生するもののそこまで難しいものではありません。
 
-Sometimes, for various reasons, you may want to migrate your Mastodon instance from one server to another. Fortunately this is not too difficult of a process, although it may result in some downtime.
+**注意:**このガイドはUbuntu環境を前提にしています。他のディストリビューションでは異なる場合があります。
 
-**Note:** this guide was written with Ubuntu Server in mind; your mileage may vary for other setups.
-
-Basic steps
+まずはじめに
 ----
 
-1. Set up a new Mastodon server using the [Production Guide](/administration/installation/) (however, don't run `mastodon:setup`).
-2. Stop Mastodon on the old server (e.g. `systemctl stop 'mastodon-*.service'`).
-3. Dump and load the Postgres database using the instructions below.
-4. Copy the `system/` files using the instructions below. (Note: if you're using S3, you can skip this step.)
-5. Copy the `.env.production` file.
-6. Run `RAILS_ENV=production bundle exec rails assets:precompile` to compile Mastodon
-7. Run `RAILS_ENV=production ./bin/tootctl feeds build` to rebuild the home timelines for each user.
-8. Start Mastodon on the new server.
-9. Update your DNS settings to point to the new server.
-10. Update or copy your Nginx configuration, re-run LetsEncrypt as necessary.
-11. Enjoy your new server!
+1. 新しい環境で新しいMastodonを立ち上げます。[インストールガイド](/administration/installation/)も見てください。`mastodon:setup`はまだしないでください。
+2. 旧環境でMastodonのサービスを停止させてください。`systemctl stop mastodon-*.service`)
+3. 後述の手順に従ってPostgresデータベースをダンプしロードしてください。
+4. `system/`以下のファイルを旧環境から新環境へコピーしてください。(S3やその他オブジェクトストレージを使用していない場合のみ)
+6. `.env.production`を旧環境から新環境へコピーしてください。
+7. `RAILS_ENV=production bundle exec rails assets:precompile`を実行してください。
+8. `RAILS_ENV=production ./bin/tootctl feeds build`を実行してください。ホームタイムラインを再構築します。
+9. 新環境のMastodonのサービスを起動します。
+10. DNS設定を編集し新環境へアクセスできるようにします。
+11. 必要に応じてNginxのconfやLet's Encryptの再取得をしてください。
+12. 新環境で快適なMastodonライフを！
 
-Detailed steps
+詳細な手順
 ----
 
-### What data needs to be migrated
+### 移行すべきデータ
 
-At a high level, you'll need to copy over the following:
+以下はとにかく移行してください。
 
-- The `~/live/public/system` directory, which contains user-uploaded images and videos (if using S3, you don't need this)
-- The Postgres database (using [pg\_dump](https://www.postgresql.org/docs/9.1/static/backup-dump.html))
-- The `~/live/.env.production` file, which contains server config and secrets
+- `~/live/public/system`以下のファイル。ユーザーがアップロードしたメディアが全て含まれています。(S3やその他オブジェクトストレージを使用している場合は除く)
+- Postgresデータベース([pg\_dump](https://www.postgresql.org/docs/9.1/static/backup-dump.html)を使用)
+- `~/live/.env.production`(サーバーの設定やシークレットファイル)
 
-Less crucially, you'll probably also want to copy the following for convenience:
+必須というわけではないが、移行した方が楽になる場合があります。
 
-- The nginx config (under `/etc/nginx/sites-available/default`)
-- The systemd config files (`/etc/systemd/system/mastodon-*.service`), which may contain your server tweaks and customizations
-- The pgbouncer configuration under `/etc/pgbouncer` (if you're using it)
+- `/etc/nginx/sites-available/default`にあるNginxのconf
+- サービス設定ファイル: `/etc/systemd/system/mastodon-*.service`(サーバーの調整やカスタマイズが含まれている場合があります。)
+- 使用している場合、pgBouncerの設定ファイル:`/etc/pgbouncer`
 
-### Dump and load Postgres
+### Postgresのダンプとロード
 
-Instead of running `mastodon:setup`, we're going to create an empty Postgres database 
-using the `template0` database (which is useful when restoring a Postgres dump, 
-[as described in the pg\_dump documentation](https://www.postgresql.org/docs/9.1/static/backup-dump.html#BACKUP-DUMP-RESTORE)).
+`mastodon:setup`を実行するかわりに、`template_0`という空のデータベースを作ります。こうすることで、Postgresのダンプが楽になります。[as described in the pg\_dump documentation](https://www.postgresql.org/docs/9.1/static/backup-dump.html#BACKUP-DUMP-RESTORE)も参照。
 
-Run this as the `mastodon` user on your old system:
+`mastodon`ユーザーで以下の通りに実行してください。
 
 ```bash
 pg_dump -Fc mastodon_production -f backup.dump
 ```
 
-Copy the `backup.dump` file over, using `rsync` or `scp`. Then on the new system, 
-create an empty database as the `mastodon` user:
+`backup.dump`を`rsync`や`scp`を使って新しい環境にコピーし、その新環境の`mastodon`ユーザーで空のデータベースを作ります。
 
 ```bash
 createdb -T template0 mastodon_production
 ```
 
-Then import it:
+そしてインポートします。
 
 ```bash
 pg_restore -U mastodon -n public --no-owner --role=mastodon \
   -d mastodon_production backup.dump
 ```
 
-(Note that if the username is not `mastodon` on the new server, you should change the 
-`-U` AND `--role` values above. It's okay if the username is different between the two servers.)
+(もしユーザー名が`mastodon`でないなら、`-U`と`--role`を変えてください。2つの環境間でユーザー名が異なっていても構いません。)
 
-### Copy files
+### ファイルのコピー
 
-This will probably take some time, and you'll want to avoid re-copying unnecessarily, so using `rsync` is recommended.
-On your old machine, as the `mastodon` user, run:
+おそらくかなりの時間がかかります。不要な再コピーを防ぐためにも、`rsync`を使うのがおすすめです。旧環境の`mastodon`ユーザーで、
 
 ```bash
 rsync -avz ~/live/public/system/ mastodon@example.com:~/live/public/system/
 ```
 
-You'll want to re-run this if any of the files on the old server change.
+と実行します。移行中に外部から何らかのファイル変更があった場合、再実行の必要があります。
 
-You should also copy over the `.env.production` file, which contains secrets.
+`.env.production`も秘匿すべき内容が含まれているためコピーしてください。
 
-Optionally, you may copy over the 
-nginx, systemd, and pgbouncer config files, or rewrite them from scratch.
+任意でNginxやsystemd、pgBouncerの設定ファイルもコピーするか、0から書き直しても構いません。
 
-### During migration
+### 移行中は
 
-You can edit the `~/live/public/500.html` page on the old machine if you want to show a nice error message to
-let existing users know that a migration is in progress.
+旧環境の`~/live/public/500.html`を編集して、移行実行中ということをユーザーに知らせるエラーメッセージを表示させておくと良いでしょう。
 
-You'll probably also want to set the DNS TTL to something small (30-60 minutes) about a day in advance, so
-that DNS can propagate quickly once you point it to the new IP address.
+移行の前日までにDNSのTTLを短く(30〜60分)に設定して、すぐに新しい環境にアクセスできるようにしてください。
 
-### After migrating
+### 移行の後
 
-You can check [whatsmydns.net](http://whatsmydns.net/) to see the progress of DNS propagation.
-To jumpstart the process, you can always edit your own `/etc/hosts` file to point to your new server so
-you can start playing around with it early.
+[whatsmydns.net](http://whatsmydns.net/)などでDNSの適用状況をチェックできます。開発環境等の`/etc/hosts`を編集して、新しい環境にすぐにアクセスできるようにするのも良いでしょう。
