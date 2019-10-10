@@ -13,26 +13,26 @@ Mastodonは**連合**ソーシャルネットワークです。
 
 **連合**とは脱中央集権化のひとつの形です。あるひとつの中央集権的なノードのかわりに、複数のノードを用意し、任意の数の人が使用できるようになります。
 
-|中央集権度|例|
+|分類|サービス例|
 |:---------------------:|--------|
 |中央集権的|Twitter, Facebook, Instagram|
 |連合的|E-mail, XMPP|
 |分散的|BitTorrent, IPFS, Scuttlebutt|
 
-Mastodonサーバーは単一で動作します。いままでのWebサイトと同様にサインアップして、投稿して、画像を上げて、おしゃべりして…。しかし、今までのWebサイトと違って、複数のMastodonサーバーは各々相互に動作し、別々のサーバーに登録した人同士で会話できます。つまり、Outlookのメールアドレス(==someone==@outlook.com)からGmailのメールアドレス(==someone==@gmail.com)にメールを送信するようなものです。
+Mastodonサーバーは単一でも動作します。いままでのWebサイトと同様にサインアップして、投稿して、画像を上げて、おしゃべりして…。しかし、今までのWebサイトと違って、複数のMastodonサーバーは各々相互にデータを送受信し、別々のサーバーに登録した人同士で会話できます。概念的には、Outlookのメールアドレス(==someone==@outlook.com)からGmailのメールアドレス(==someone==@gmail.com)にメールを送信することと同じです。
 
 <figure>
   <img src="/decentralization.png" alt="" style="margin: 0; box-shadow: none">
   <figcaption><p>左から中央集権、連合、分散</p></figcaption>
 </figure>
 
-もし、TwitterアカウントからInstagramアカウントをフォローできたら、コメントを送れたら…。もしTwitterやInstagramが連合サービスなら。可能です。しかし、現実はそうではありません。
+もし、TwitterアカウントからInstagramアカウントをフォローできたら、コメントを送れたら…。もしTwitterやInstagramが連合サービスなら、可能です。しかし、現実はそうではありません。
 
 ## Fediverse - 連合の宇宙
 
 Mastodonは標準化されたオープンな規格であるActivityPubを用います。他のActivityPubをサポートするソフトウェアは他のMastodonサーバーと通信できるように、シームレスに通信できます。
 
-これこそが**Fedeverse**(連合する*federated*宇宙*universe*)です。Fediverse内では相互に通信することができ、Fediverseはそのようなすべてのサーバーの総称です。これには、すべてのMastodonサーバーと、他の実装も含まれます。Fediverseは、日本語では分散SNSとも呼ばれます。
+これこそが**Fedeverse**(連合する *federated* 宇宙*universe*)です。Fediverse内では相互に通信することができ、Fediverseはそのようなすべてのサーバーの総称です。これには、すべてのMastodonサーバーと、他の実装も含まれます。Fediverseは、日本語では分散SNSとも呼ばれます。
 
 - Misskey
 - Pleroma
@@ -41,6 +41,9 @@ Mastodonは標準化されたオープンな規格であるActivityPubを用い�
 - Prismo
 - PixelFed
 - writefreely
+- Hubzilla
+- μblog.pub
+- GNU social
 - 他にもたくさんあります
 
 Fediverseはそれぞれブランドというものを持っていません。「Fediverseでフォローしてください」「分散SNSでフォローしてください」よりも「Mastodonでフォローしてください」という言葉をよく耳にしますが、技術的には前者の方が正確です。
@@ -87,8 +90,8 @@ Mastodonの開発はPatreonを用いたクラウドファンディングで資�
 
 ### なりすましと同一性の検証
 
-同じユーザー名のアカウントは他のサーバーに行けば作ることができます。しかし、なりすましを防ぎたいからと言ってすべてを事前に作成しておくことはできません。電子メールと同様に、`==someone==@hotmail.vom`と`==someone==@gmail.com`は同じ人とは限りません。
+同じユーザー名のアカウントは他のサーバーに行けば作ることができます。しかし、なりすましを防ぎたいからと言ってすべてを事前に作成しておくことはできません。電子メールと同様に、`==someone==@hotmail.com`と`==someone==@gmail.com`は同じ人とは限りません。
 
-Mastodonは自分でホストできるため、他人から既に信用されているドメインを用いてMastodonをホストするより良い方法はありません。
+Mastodonは誰でもホストできます。最適なのは、他人から既に信用されているドメインを用いてMastodonをホストすることでしょう。
 
 文書ベースの検証やTwitterで見られるチェックマークは、中央集権モデルでなければ不可能です。ただし、マストドンはあなたがあなたのプロフィールに置いたリンクを相互参照して、あなたがそれらのリンクの本当の所有者であることを証明することができます。これらのリンクの1つが既知で信頼できる個人のホームページである場合、本人確認の次善の手段として機能します。また、Keybase等と連携するシステムを備えているため、それらを用いて証明することもできます。
