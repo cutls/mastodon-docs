@@ -1,27 +1,27 @@
 ---
-title: ActivityPub compliance
-description: What objects and properties of the ActivityPub spec Mastodon supports
+title: ActivityPub準拠について
+description: MastodonがサポートするActivityPubオブジェクトやプロパティに関する情報
 menu:
   docs:
     parent: development
     weight: 5
 ---
 
-## APIs
+## API
 
-- Mastodon supports the server-to-server part of the [ActivityPub spec](https://www.w3.org/TR/activitypub/).
-- It implements the [HTTP signatures spec](https://tools.ietf.org/html/draft-cavage-http-signatures-10) for authentication of inbox deliveries.
-- Mastodon also supports [Linked Data Signatures](https://w3c-dvcg.github.io/ld-signatures/) for forwarded payloads.
+- Mastodonは[ActivityPub](https://www.w3.org/TR/activitypub/)のS2S(server-to-server)部をサポートしています。
+- Inboxの認証に[HTTP signatures spec](https://tools.ietf.org/html/draft-cavage-http-signatures-10)を使用しています。
+- Mastodonは情報の転送に[Linked Data Signatures](https://w3c-dvcg.github.io/ld-signatures/)を使用しています。
 
-## Restrictions
+## 制限
 
-- All object IDs must use the `https://` schema.
-- Servers must offer a [WebFinger](https://tools.ietf.org/html/rfc7033) endpoint for turning usernames into actors.
-- Activities attributed to an actor must have an ID on the same host as the actor.
+- 全てのオブジェクトに `https://` スキーマを使用してください。
+- 各サーバーは[WebFinger](https://tools.ietf.org/html/rfc7033)エンドポイントを提供してください。ユーザー名をアクターに変換する際に必要です。
+- アクターに属するアクティビティはアクターと同じホスト上に一意のIDを持っている必要があります。
 
-## Activities
+## サポートするアクティビティ
 
-|Supported activity|Supported objects|
+|アクティビティ|オブジェクト|
 |------------------|-----------------|
 |`Accept`|`Follow`|
 |`Add`|`Note`|
@@ -38,14 +38,15 @@ menu:
 |`Undo`|`Accept`, `Announce`, `Block`, `Follow`, `Like`|
 |`Update`|`Object`|
 
-As far as the `Create` activity is concerned, only `Note` is a first-class citizen in Mastodon, because Mastodon is a microblogging engine. For other types of supported objects, Mastodon internally creates a toot representation, for example, an `Article` or `Page` becomes a toot with the `name` and `url` of the original object, as users are expected to navigate to the original URL to read the article with rich text formatting. For `Image` and `Video` objects, the `name` is likewise used to fill the content of the toot, with the original file attached to the toot.
+Mastodonはマイクロブログアプリケーションのため、`Create`アクティビティに関しては`Note`のために設計されています。他のサポートされるオブジェクトに関しても、Mastodon内部ではトゥートの一つとして解釈できるよう変換されます。例えば、`Article`や`Page`はオリジナルの記事名とURLが入ったトゥートとして解釈します。これによって記事本来のリッチテキストにユーザーがアクセスできます。`Image`や`Video`オブジェクトは、コンテンツを埋めるため`name`と`url`を用いて、添付メディアとして画像や動画を表示します。
 
-The `Flag` activity allows reporting content on another server, and its `object` can be either one or more actors, or one or more objects attributed to various actors. The `Add` and `Remove` activities only work with [featured collections](#featured-collection). The `Delete` activity can be used to delete all local data of the sender when the `object` of it is the sender. The `Update` activity can only be used to update the profile of the sender. Likewise, the `Move` activity allows re-assigning followers from the sender (`object`) to another actor (`target`), but only if the other actor references the sender in the `alsoKnownAs` property.
+`Flag`アクティビティは他のサーバー上のコンテンツを通報し、それを元のサーバーに届けるために必要です。そしてその`object`は1つ以上のアクター、または各アクターに属する1つ以上のオブジェクトです。Mastodonにおいて`Add`や`Remove`アクティビティは[ピン留めされたコンテンツ](#ピン留めされたコンテンツ)のために使用します。`Delete`アクティビティは`object`のコンテンツが送信者のものと一致した場合、それに関する全てのデータをローカルから削除します。`Update`アクティビティは送信者のプロフィールが更新された際にのみ使用されます。`Move`アクティビティは他のユーザーが`alsoKnownAs`プロパティで送信者を参照する場合にのみ、フォロワーを送信者(`object`)から別のアクター(`target`)に再割り当てできます。
 
-## Extensions
-### Featured collection
+## 拡張
+### ピン留めされたコンテンツ
 
-What is known in Mastodon as "pinned toots", or statuses that are always featured at the top of people's profiles, is implemented using an extra property `featured` on the actor object that points to a `Collection` of objects. Example:
+Mastodonでは"ピン留めされたトゥート"として知られています。ユーザーのプロフィールの最初に常に表示されるトゥートのことです。これはオブジェクトの`Collection`に指定されたアクターに`featured`プロパティを追加して実装されます。  
+例:
 
 ```json
 {
@@ -67,9 +68,10 @@ What is known in Mastodon as "pinned toots", or statuses that are always feature
 }
 ```
 
-### Custom emojis
+### カスタム絵文字
 
-Mastodon supports arbitrary emojis, that is, small images uploaded by admins and invokable via shortcodes. For this, an `Emoji` type is used. These emojis are listed in the `tag` property just like `Mention` and `Hashtag` objects, since they are entities that affect how the text is rendered. Example:
+Mastodonは管理者がアップロードし、ショートコードを定義した任意の絵文字をサポートします。このために`Emoji`という`type`が使用されます。 これらの絵文字は、テキストのレンダリング方法に影響するエンティティであるため、 `Mention`や`Hashtag`オブジェクトと同じように、`tag`を用いてリストされます。  
+例:
 
 ```json
 {
@@ -100,9 +102,10 @@ Mastodon supports arbitrary emojis, that is, small images uploaded by admins and
 }
 ```
 
-### Focal points
+### 焦点
 
-Mastodon supports setting a focal point on uploaded images, so that wherever that image is displayed, the focal point stays in view. This is implemented using an extra property `focalPoint` on the `Image` objects. The property is simply an array of two floating points between 0 and 1. Example:
+Mastodonはアップロードされた画像に焦点を設定できます。このため、焦点を設定された画像はいかなるときも常に焦点を含むように表示されます。これは`Image`オブジェクトの`focalPoint`プロパティを用いて実装されます。このプロパティは0以上1以下の浮動小数点数の配列で指定されます。  
+例:
 
 ```json
 {
