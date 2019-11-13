@@ -7,6 +7,8 @@ menu:
     weight: 1
 ---
 
+> 翻訳中
+
 Mastodon is a **Ruby on Rails** application with a **React.js** front-end. It follows standard practices of those frameworks, so if you are already familiar with Rails or React.js, you will not find any surprises here.
 
 The best way of working with Mastodon in a development environment is installing all the dependencies on your system, rather than using Docker or Vagrant. You need Ruby, Node.js, PostgreSQL and Redis, which is a pretty standard set of dependencies for Rails applications.

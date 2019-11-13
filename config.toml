@@ -29,7 +29,7 @@ enableGitInfo = true
 	   identifier = "administration"
 	   url = "/administration/"
 	[[languages.ja.menu.docs]]
-	   name = "Development guide"
+	   name = "開発者ガイド"
 	   weight = 3
 	   identifier = "development"
 	   url = "/development/"
