@@ -14,7 +14,7 @@ Returns array of [Status]({{< relref "entities.md#status" >}})
 
 ### Resource information
 
-{{< api_method_info auth="Yes" user="Yes" scope="read read:bookmarks" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:bookmarks" version="3.0.2?" >}}
 
 ### Parameters
 
@@ -34,7 +34,7 @@ Returns [Status]({{< relref "entities.md#status" >}})
 
 ### Resource information
 
-{{< api_method_info auth="Yes" user="Yes" scope="write write:bookmarks" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:bookmarks" version="3.0.2?" >}}
 
 ## POST /api/v1/statuses/:id/unbookmark
 

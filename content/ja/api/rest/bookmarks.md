@@ -14,7 +14,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:bookmarks" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:bookmarks" version="3.0.2?" >}}
 
 ### パラメーター
 
@@ -34,7 +34,7 @@ menu:
 
 ### 基本情報
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:bookmarks" version="0.0.0" >}}
+{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:bookmarks" version="3.0.2?" >}}
 
 ## POST /api/v1/statuses/:id/unbookmark
 
