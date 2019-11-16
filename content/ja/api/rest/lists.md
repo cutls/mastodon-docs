@@ -86,7 +86,7 @@ menu:
 
 |名称|説明|必要性|
 |----|-----------|:------:|
-| `title` | The title of the list | 必須 |
+| `title` | リストのタイトル | 必須 |
 
 ## DELETE /api/v1/lists/:id
 
