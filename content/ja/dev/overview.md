@@ -26,8 +26,7 @@ MastodonはRuby on Railsアプリケーションです。フロントエンド�
 * Webpack runs continuously and re-compiles JS and CSS assets when you change any of the front-end files, and the pages automatically reload
 * Webpackが継続的に動作します。JSとCSSアセットを変更時にリコンパイルし、ページを自動で再読込します。
 * キャッシュがデフォルトで無効になります。
-* Adminのアカウントが`admin@localhost:3000`、パスワードが`mastodonadmin`
-* An admin account with the e-mail `admin@localhost:3000` and password `mastodonadmin` is created automatically during `db:seed`
+* メールアドレスが`admin@localhost:3000`、パスワードが`mastodonadmin`のアカウントが`db:seed`中に自動で作成されます。
 
-It should be noted that the Docker configuration distributed with Mastodon is optimized for the production environment, and so is an extremely bad fit for development. The Vagrant configuration, on the other hand, is meant specifically for development and not production use.
+Dockerの構成設定はproduction環境用に設定されていることに注意してください。つまり、Dockerは開発環境として非常に向いていないということです。逆にVagrantはdevelopmentを目的にしており、productionには不向きです。
 
