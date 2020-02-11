@@ -1,97 +1,91 @@
 ---
-title: 脱中央集権
-description: Mastodonの脱中央集権への道のりとその実践的手法
+title: Decentralization
+description: How Mastodon is decentralized and what it means in practical terms
 menu:
   docs:
     parent: usage
     weight: 2
 ---
 
-Mastodonは**連合**ソーシャルネットワークです。
+Mastodon is a **federated** social network.
 
-## 連合とは
+## What is federation?
 
-**連合**とは脱中央集権化のひとつの形です。あるひとつの中央集権的なノードのかわりに、複数のノードを用意し、任意の数の人が使用できるようになります。
+**Federation** is a form of decentralization. Instead of a single central node that all people use, there are multiple nodes, that any number of people can use.
 
-|分類|サービス例|
+|Grade of centralization|Examples|
 |:---------------------:|--------|
-|中央集権的|Twitter, Facebook, Instagram|
-|連合的|E-mail, XMPP|
-|分散的|BitTorrent, IPFS, Scuttlebutt|
+|Centralized|Twitter, Facebook, Instagram|
+|Federated|E-mail, XMPP|
+|Distributed|BitTorrent, IPFS, Scuttlebutt|
 
-Mastodonサーバーは単一でも動作します。いままでのWebサイトと同様にサインアップして、投稿して、画像を上げて、おしゃべりして…。しかし、今までのWebサイトと違って、複数のMastodonサーバーは各々相互にデータを送受信し、別々のサーバーに登録した人同士で会話できます。概念的には、Outlookのメールアドレス(==someone==@outlook.com)からGmailのメールアドレス(==someone==@gmail.com)にメールを送信することと同じです。
+A Mastodon server can operate alone. Just like a traditional website, people sign up on it, post messages, upload pictures and talk to each other. *Unlike* a traditional website, Mastodon servers can interoperate, letting their users communicate with each other, just like you can send an e-mail from your GMail address to someone from Outlook.
 
 <figure>
   <img src="/decentralization.png" alt="" style="margin: 0; box-shadow: none">
-  <figcaption><p>左から中央集権、連合、分散</p></figcaption>
+  <figcaption><p>Left to right: Centralized, Federated, Distributed</p></figcaption>
 </figure>
 
-もし、TwitterアカウントからInstagramアカウントをフォローできたら、コメントを送れたら…。もしTwitterやInstagramが連合サービスなら、可能です。しかし、現実はそうではありません。
+In practical terms: Imagine if you could follow an Instagram user from your Twitter account and comment on their photos without leaving your account. If Twitter and Instagram were federated services, that would be possible.
 
-## Fediverse - 連合の宇宙
+## The fediverse
 
-Mastodonは標準化されたオープンな規格であるActivityPubを用います。他のActivityPubをサポートするソフトウェアは他のMastodonサーバーと通信できるように、シームレスに通信できます。
+Mastodon uses a standardized, open protocol to implement federation. It is called ActivityPub. Any software that likewise implements federation via ActivityPub can seamlessly communicate with Mastodon, just like Mastodon servers communicate with one another.
 
-これこそが**Fedeverse**(連合する *federated* 宇宙*universe*)です。Fediverse内では相互に通信することができ、Fediverseはそのようなすべてのサーバーの総称です。これには、すべてのMastodonサーバーと、他の実装も含まれます。Fediverseは、日本語では分散SNSとも呼ばれます。
+The **fediverse** ("federated universe") is the name for all servers that can communicate with each other. That includes all Mastodon servers, but also other implementations:
 
 - Misskey
 - Pleroma
 - PeerTube
 - Plume
-- Prismo
-- PixelFed
-- writefreely
-- Hubzilla
-- μblog.pub
-- GNU social
-- 他にもたくさんあります
+- and many more
 
-Fediverseはそれぞれブランドというものを持っていません。「Fediverseでフォローしてください」「分散SNSでフォローしてください」よりも「Mastodonでフォローしてください」という言葉をよく耳にしますが、技術的には前者の方が正確です。
+The fediverse does not have its own brand, so you will more often hear "follow me on Mastodon" than "follow me on the fediverse", but technically the latter is more correct.
 
-## 実践的な実装
-### アカウントにアクセス
+## Practical implications
+### Addressing people
 
-Mastodonのユーザー名は、実際には2つの部分で構成されています。
+Mastodon usernames actually consist of two parts:
 
-- ローカルなユーザーネーム, e.g. `alice`
-- サーバー名, e.g. `example.com`
+- The local username, e.g. `alice`
+- And the domain of the server, e.g. `example.com`
 
-メールアドレスのようなものです。便宜上、Mastodonは同一サーバー内では後者(サーバー名)を省略しても構いませんが、他の人にアカウント名を伝える際にはサーバー名も伝えなければなりません。
+Just like an e-mail address. For convenience sake, Mastodon allows you to skip the second part when addressing people on the same server as you, but you have to keep in mind when sharing your username with other people, you need to include the domain or they won't be able to find you as easily.
 
 |{{< no >}}|{{< yes >}}|
 |:--------:|:---------:|
 |I'm @alice on Mastodon!|I'm @alice@example.com on Mastodon!|
 
-Mastodonの検索フォームや検索APIでは上記の「完全な」ユーザー名でユーザーを検索できたり、その人のプロフィールへのリンクを持つ人を検索でき、必要に応じて共有できます。
+The search form in Mastodon will find people either with the above address form, or the link to the person's profile, so you can share that instead if you prefer.
 
-### アカウントをフォロー
+### Following people
 
-他のユーザーに出会ったとき、それがモバイルアプリ上でもブラウザ上でも、"フォロー"をクリックするだけで、そのサーバーのユーザーかに関わらずフォローできます。
+As long as you encounter a person within your app's user interface, e.g. the web interface on your home server, or your mobile app, you can just click "follow" and you won't notice a difference if that person is on your server or not.
 
-しかし、自分のサーバー上ではなく他のサーバーの公開ページでフォローしようとしても、理論上上手くいきません。それは相手のサーバーに自分がどのサーバーの誰であるかを教えていないからです。
+However if you come across someone's public profile hosted on a different server, there's an obstacle: That server sees you as just another anonymous visitor.
 
-よって、公開ページでフォローを押すと、ポップアップが表示され、自分の完全なユーザー名(@alice@exapmle.com)を入力するよう求められます。この方法なら、ダイアログが自分のいるサーバーにリクエストを投げてちゃんとフォローすることができます。
+So when you click "follow", a dialog will pop up asking you to enter your own full username (with the domain part, most importantly). This way, the dialog actually sends you back to your home server, where you are logged in and can really do stuff.
 
-公開ページでのリプライ(返信)やブースト、お気に入り登録も同じように可能です。
+You will also notice that dialog when clicking on "reply", "boost" or "favourite" on public pages of other servers.
 
-### コンテンツの閲覧
+### Browsing content
 
-自分が潜在的に興味のあるコンテンツを発見するために、Mastodonでは全ての公開投稿を表示できる方法を提供しています。もちろん、全世界で共有され、全投稿を所持しているサーバーは存在しないので本当の意味での「全ての」公開投稿を取得することはできません。**連合タイムライン**は、見ているサーバー自身とそのサーバーが「知っている」他のサーバーの公開投稿全てを表示します。サーバーが他のサーバーの公開投稿を「知る」方法はいろいろありますが、ほとんどはそのサーバー上の誰かがフォローしている人によるものです。
+To allow you to discover potentially interesting content, Mastodon provides a way to browse all public posts. Well, there is no global shared state between all servers, so there is no way to browse *all* public posts. When you browse the **federated timeline**, you see all public posts that the server you are on knows about. There are various ways your server may discover posts, but the bulk of them will be from people that other users on your server follow.
 
-見ているサーバーに限ったの公開投稿を取得するためには、**ローカルタイムライン**を使います。これは連合タイムラインのフィルターにすぎません。ここでいう「ローカル」とは、地理的な場所ではなくそのサーバーのことです。
+There is a way to filter the federated timeline to view only public posts created on your server: The **local timeline**. Mind that "local" here refers to the server, not to a geographical location.
 
-### 資金調達と収益化
+### Funding and monetization
 
-すべてのMastodonサーバーは完全に独立した個々の人間や組織が運営しています。Mastodonはいかなる収益モデルをソフトウェアとして実装していません。
+All Mastodon servers are operated by different people or organizations completely independently. Mastodon does not implement any monetization strategies in the software.
 
-一部のサーバーは有料アカウントを提供しています。一部の大企業がホストするサーバーは既存のインフラストラクチャーの上に成立させ収益モデルの一環として無償提供しています。しかし、ほとんどのサーバー管理者はPatreonおよび同様のサービスを介してユーザーからのクラウドファンディングに依存しています。もし自分のいるサーバーを金銭的に支援したい場合、寄付や支援の方法をチェックしてみましょう。
+Some server operators choose to offer paid accounts, some server operators are companies who can utilize their existing infrastructure, and most server operators rely on crowdfunding from their users via Patreon and similar services. So if you want to support the server hosting your account, check if it offers a way to donate.
 
-Mastodonの開発はPatreonを用いたクラウドファンディングで資金を調達しています。一切のベンチャーキャピタルは関与していません。
+Mastodon development is likewise crowdfunded via Patreon. No venture capital is involved.
 
-### なりすましと同一性の検証
+### Impersonation and verification
 
-同じユーザー名のアカウントは他のサーバーに行けば作ることができます。しかし、なりすましを防ぎたいからと言ってすべてを事前に作成しておくことはできません。電子メールと同様に、`==someone==@hotmail.com`と`==someone==@gmail.com`は同じ人とは限りません。
+The same username *can* be registered on different servers, there is no way to claim all of them ahead of time. Just like with e-mail, you should not expect `alice@hotmail.com` to be the same person as `alice@gmail.com`.
 
-Mastodonは誰でもホストできます。最適なのは、他人から既に信用されているドメインを用いてMastodonをホストすることでしょう。
+Because Mastodon can be self-hosted, there is no better way to verify your identity than to host Mastodon on your own domain, which people already trust.
 
-文書ベースの検証やTwitterで見られるチェックマークは、中央集権モデルでなければ不可能です。ただし、マストドンはあなたがあなたのプロフィールに置いたリンクを相互参照して、あなたがそれらのリンクの本当の所有者であることを証明することができます。これらのリンクの1つが既知で信頼できる個人のホームページである場合、本人確認の次善の手段として機能します。また、Keybase等と連携するシステムを備えているため、それらを用いて証明することもできます。
+Document-based verification and blue ticks are not possible without a central authority. However, Mastodon can cross-reference the links you put on your profile to prove that you are the real owner of those links. In case one of those links is your personal homepage that is known and trusted, it can serve as the next-best-thing to identity verification.

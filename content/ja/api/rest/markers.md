@@ -6,35 +6,35 @@ menu:
     weight: 10
 ---
 
-未読管理マーカー
+Track unread notification count across sessions
 
 ## GET /api/v1/markers
 
-[Markers]({{< relref "entities.md#markers" >}})を返します。
+Returns [Markers]({{< relref "entities.md#markers" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="3.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `timeline` | `home` か `notifications` | 必須 ||
+| `timeline` | `home` or `notifications` | Required ||
 
 ## POST /api/v1/markers
 
-[Markers]({{< relref "entities.md#markers" >}})を返します。
+Returns [Markers]({{< relref "entities.md#markers" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="3.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
-最低でも2つのいずれかが必要です。
+Either `notification` or `home` is required, POSTing both of them is also OK. 
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `notification` | `last_read_id`に最後に読んだトゥートのID | Required) ||
-| `home` | `last_read_id`に最後に読んだ通知のID | 必須 ||
+| `notification` | Set id(String) of last read toot on `last_read_id` | Required ||
+| `home` | Set id(String) of last read toot on `last_read_id` | Required ||

@@ -8,15 +8,57 @@ metaDataFormat = "yaml"
 paginate = 100
 enableGitInfo = true
 
+[menu]
+  [[menu.docs]]
+    name = "Using Mastodon"
+    weight = 10
+    identifier = "user"
+    url = "/user/"
+  [[menu.docs]]
+    name = "Running Mastodon"
+    weight = 20
+    identifier = "admin"
+    url = "/admin/"
+  [[menu.docs]]
+    name = "Developing Mastodon apps"
+    weight = 30
+    identifier = "client"
+    url = "/client/"
+  [[menu.docs]]
+    name = "Contributing to Mastodon"
+    weight = 40
+    identifier = "dev"
+    url = "/dev/"
+  [[menu.docs]]
+    name = "Spec compliance"
+    weight = 50
+    identifier = "spec"
+    url = "/spec/"
+  [[menu.docs]]
+    name = "REST API"
+    weight = 60
+    identifier = "api"
+    url = "/api/"
+  [[menu.docs]]
+    name = "API Methods"
+    weight = 70
+    identifier = "methods"
+    url = "/methods/"
+  [[menu.docs]]
+    name = "API Entities"
+    weight = 80
+    identifier = "entities"
+    url = "/entities/"
+
 [languages]
   [languages.en]
     contentDir = "content/en"
     languageName = "English"
-    weight = 1
+    weight = -99
   [languages.ja]
     contentDir = "content/ja"
     languageName = "日本語"
-    weight = 1
+    weight = -99
     [languages.ja.menu]
 	[[languages.ja.menu.docs]]
 	   name = "ユーザーガイド"
@@ -43,30 +85,3 @@ enableGitInfo = true
 	   weight = 5
 	   identifier = "rest-api"
 	   url = "/api/rest/"
-
-[menu]
-  [[menu.docs]]
-    name = "User guide"
-    weight = 1
-    identifier = "usage"
-    url = "/usage/"
-  [[menu.docs]]
-    name = "Administrator guide"
-    weight = 2
-    identifier = "administration"
-    url = "/administration/"
-  [[menu.docs]]
-    name = "API Overview"
-    weight = 4
-    identifier = "api"
-    url = "/api/"
-  [[menu.docs]]
-    name = "REST API"
-    weight = 5
-    identifier = "rest-api"
-    url = "/api/rest/"
-  [[menu.docs]]
-    name = "Development guide"
-    weight = 3
-    identifier = "development"
-    url = "/development/"

@@ -8,144 +8,144 @@ menu:
 
 ## GET /api/v1/admin/accounts
 
-[Local users]({{< relref "entities.md#local-users" >}})の配列を返します。
+Returns array of [Local users]({{< relref "entities.md#local-users" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `local` | ローカルのユーザー | 任意 |
-| `remote` | リモートのユーザー | 任意 |
-| `by_domain` | ドメインで絞り込む | 任意 |
-| `active` | このアカウントはBANしていないか | 任意 |
-| `pending` | 処理中 | 任意 |
-| `disabled` | 活動停止中 | 任意 |
-| `silenced` | サイレンス中 | 任意 |
-| `suspended` | 追い出されたか | 任意 |
-| `username` | ユーザー名 | 任意 |
-| `display_name` | SNS上の名前 | 任意 |
-| `email` | メールアドレス | 任意 |
-| `ip` | IP アドレス | 任意 |
-| `staff` | スタッフかどうか | 任意 |
+| `local` | Locals or not(including remotes) | Optional |
+| `remote` | Remotes or not(including locals)| Optional |
+| `by_domain` | Domain | Optional |
+| `active` | Boolean | Optional |
+| `pending` | Boolean | Optional |
+| `disabled` | Boolean | Optional |
+| `silenced` | Boolean | Optional |
+| `suspended` | Boolean | Optional |
+| `username` | Username(without @) | Optional |
+| `display_name` | Display name | Optional |
+| `email` | Email address | Optional |
+| `ip` | IP address | Optional |
+| `staff` | Boolean | Optional |
 
 ## GET /api/v1/admin/accounts/:id
 
-[Local users]({{< relref "entities.md#local-users" >}})を返します。
+Returns [Local users]({{< relref "entities.md#local-users" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/enable
 
-再有効化
+Re-enable
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/approve
 
-保留中のアカウントを承認
+Approve pending account
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/reject
 
-保留中のアカウントを却下
+Reject pending account
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/unsilence
 
-サイレンスを解除(設定は[adimn/:id/action]({{< relref "#post-api-v1-admin-accounts-id-action" >}}))
+Unsilence account
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/unsuspend
 
-サスペンドを解除(設定は[adimn/:id/action]({{< relref "#post-api-v1-admin-accounts-id-action" >}}))
+Unsuspend account
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:accounts" version="2.9.1" >}}
 
 ## GET /api/v1/admin/reports
 
-[Local Reports]({{< relref "entities.md#local-reports" >}})を返します。
+Returns array of [Local Reports]({{< relref "entities.md#local-reports" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:read admin:read:reports" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:read admin:read:reports" version="2.9.1" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `resolved` | Boolean | 任意 |
-| `account_id` | String (報告者) | 任意 |
-| `target_account_id` | String (被報告者) | 任意 |
+| `resolved` | Boolean | Optional |
+| `account_id` | String (created by) | Optional |
+| `target_account_id` | String (complained about) | Optional |
 
 ## GET /api/v1/admin/reports/:id
 
-[Local Reports]({{< relref "entities.md#local-reports" >}})の配列を返します。
+Returns [Local Reports]({{< relref "entities.md#local-reports" >}})
 
 ## POST /api/v1/admin/reports/:id/assign_to_self
 
-報告を受諾
+Assign report to self
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/reports/:id/unassign
 
-受諾解除
+Unassign report from self
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/reports/:id/reopen
 
-報告をもう一度開く
+Re-open report
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/reports/:id/resolve
 
-報告を閉じる
+Close report
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
 ## POST /api/v1/admin/accounts/:id/action
 
-アカウントに具体的なモデレーション操作をする
+Perform a moderation action on an account
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="admin:write admin:write:reports" version="2.9.1" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `type` | `silence` か `suspend` | 任意 |
-| `report_id` | String | 任意 |
-| `warning_preset_id` | String | 任意 |
-| `text` | String | 任意 |
-| `send_email_notification` | Boolean | 任意 |
+| `type` | `silence` or `suspend` | Optional |
+| `report_id` | String | Optional |
+| `warning_preset_id` | String | Optional |
+| `text` | String | Optional |
+| `send_email_notification` | Boolean | Optional |

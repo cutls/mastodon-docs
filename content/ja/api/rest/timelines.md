@@ -8,121 +8,120 @@ menu:
 
 ## GET /api/v1/timelines/home
 
-フォローしているユーザーのトゥートを時系列に返します。
+Statuses from accounts the user follows.
 
-[Status]({{< relref "entities.md#status" >}})の配列を返します。
+Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `max_id` | これより前のトゥート | 任意 | | |
-| `since_id` | これより後のトゥート(最新から) | 任意 | | |
-| `min_id` | これより後のトゥート(最古から) | 任意 | | |
-| `limit` | 結果の表示個数 | 任意 | 20 | | |
+| `max_id` | Return results older than ID | Optional ||
+| `since_id` | Return results newer than ID | Optional ||
+| `min_id` | Return results immediately newer than ID | Optional ||
+| `limit` | Maximum number of results | Optional | 20 |
 
 
 ## GET /api/v1/conversations
 
-**v1/timelines/direct は削除されました**
+**v1/timelines/direct has been already removed.**
 
-会話を表示
+Conversations for an account
 
-[Conversation]({{< relref "entities.md#conversation" >}})の配列を返します。
+Returns array of [Conversation]({{< relref "entities.md#conversation" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="2.6.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.6.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `max_id` | これより前のトゥート | 任意 | | |
-| `since_id` | これより後のトゥート(最新から) | 任意 | | |
-| `min_id` | これより後のトゥート(最古から) | 任意 | | |
-| `limit` | 結果の表示個数 | 任意 | 20 | | |
-
-### ページネーション
-
-{{< api_dynamic_pagination_ja >}}
-
-## GET /api/v1/timelines/public
-
-連合全体のタイムラインです。
-
-[Status]({{< relref "entities.md#status" >}})の配列を返します。
-
-### 基本情報
-
-{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
-
-3.0.0以降では、タイムラインプレビューをオンにしていないと認証なしでは見ることができません。  
-ローカルタイムラインを表示するには`local`を`true`にしてください。
-
-### パラメーター
-
-|名称|説明|必要性|デフォルト値|
-|----|-----------|:------:|:-----:|
-| `local` | ローカルのみ | 任意 |false|
-| `only_media` | メディア付きトゥートのみ | 任意 |false|
-| `max_id` | これより前のトゥート | 任意 | | |
-| `since_id` | これより後のトゥート(最新から) | 任意 | | |
-| `min_id` | これより後のトゥート(最古から) | 任意 | | |
-| `limit` | 結果の表示個数 | 任意 | 20 | | |
-
-### ページネーション
-
-{{< api_dynamic_pagination_ja >}}
-
-## GET /api/v1/timelines/tag/:hashtag
-
-ハッシュタグのタイムライン
-
-[Status]({{< relref "entities.md#status" >}})の配列を返します。
-
-### 基本情報
-
-{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
-
-### パラメーター
-
-|名称|説明|必要性|デフォルト値|
-|----|-----------|:------:|:-----:|
-| `local` | ローカルのみ | 任意 |false|
-| `only_media` | メディア付きトゥートのみ | 任意 |false|
-| `max_id` | これより前のトゥート | 任意 | | |
-| `since_id` | これより後のトゥート(最新から) | 任意 | | |
-| `min_id` | これより後のトゥート(最古から) | 任意 | | |
-| `limit` | 結果の表示個数 | 任意 | 20 | | |
+| `max_id` | Return results older than ID | Optional ||
+| `since_id` | Return results newer than ID | Optional ||
+| `min_id` | Return results immediately newer than ID | Optional ||
+| `limit` | Maximum number of results | Optional | 20 |
 
 ### Pagination
 
-{{< api_dynamic_pagination_ja >}}
+{{< api_dynamic_pagination >}}
+
+## GET /api/v1/timelines/public
+
+Public statuses known to the server.
+
+Returns array of [Status]({{< relref "entities.md#status" >}})
+
+### Resource information
+
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+
+(3.0.0 and above) If timeline preview is turned off by Admin, it requires authentication.
+
+### Parameters
+
+|Name|Description|Required|Default|
+|----|-----------|:------:|:-----:|
+| `local` | Only local statuses | Optional |false|
+| `only_media` | Only statuses with media attachments | Optional |false|
+| `max_id` | Return results older than ID | Optional ||
+| `since_id` | Return results newer than ID | Optional ||
+| `min_id` | Return results immediately newer than ID | Optional ||
+| `limit` | Maximum number of results | Optional | 20 |
+
+### Pagination
+
+{{< api_dynamic_pagination >}}
+
+## GET /api/v1/timelines/tag/:hashtag
+
+Public statuses known to the server marked with a given hashtag.
+
+Returns array of [Status]({{< relref "entities.md#status" >}})
+
+### Resource information
+
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+
+### Parameters
+
+|Name|Description|Required|Default|
+|----|-----------|:------:|:-----:|
+| `local` | Only local statuses | Optional |false|
+| `only_media` | Only statuses with media attachments | Optional |false|
+| `max_id` | Return results older than ID | Optional ||
+| `since_id` | Return results newer than ID | Optional ||
+| `min_id` | Return results immediately newer than ID | Optional ||
+| `limit` | Maximum number of results | Optional | 20 |
+
+### Pagination
+
+{{< api_dynamic_pagination >}}
 
 ## GET /api/v1/timelines/list/:list_id
 
-リストのタイムライン
+Statuses from accounts on a given list.
 
- [Status]({{< relref "entities.md#status" >}})の配列を返します。
+Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:statuses" version="2.1.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:statuses" version="2.1.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `max_id` | これより前のトゥート | 任意 | | |
-| `since_id` | これより後のトゥート(最新から) | 任意 | | |
-| `min_id` | これより後のトゥート(最古から) | 任意 | | |
-| `limit` | 結果の表示個数 | 任意 | 20 | | |
+| `max_id` | Return results older than ID | Optional ||
+| `since_id` | Return results newer than ID | Optional ||
+| `min_id` | Return results immediately newer than ID | Optional ||
+| `limit` | Maximum number of results | Optional | 20 |
 
-### ページネーション
+### Pagination
 
-{{< api_dynamic_pagination_ja >}}
+{{< api_dynamic_pagination >}}

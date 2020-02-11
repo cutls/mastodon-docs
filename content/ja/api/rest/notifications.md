@@ -8,106 +8,106 @@ menu:
 
 ## GET /api/v1/notifications
 
-自分の通知を表示
+Notifications concerning the user.
 
-[Notification]({{< relref "entities.md#notification" >}})の配列を返します。
+Returns array of [Notification]({{< relref "entities.md#notification" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `max_id` | これより前のトゥート | 任意 ||
-| `since_id` | これより後のトゥート(最新から) | 任意 ||
-| `min_id` | これより後のトゥート(最古から) | 任意 ||
-| `limit` | 結果の表示個数 | 任意 | 20 |
-| `exclude_types` | 表示しないタイプの配列(e.g. `follow`, `favourite`, `reblog`, `mention`) | 任意 ||
-| `account_id` | そのアカウントからの通知に限定 | 任意 ||
+| `max_id` | Return results older than ID | Optional ||
+| `since_id` | Return results newer than ID | Optional ||
+| `min_id` | Return results immediately newer than ID | Optional ||
+| `limit` | Maximum number of results | Optional | 20 |
+| `exclude_types` | Array of types to exclude (e.g. `follow`, `favourite`, `reblog`, `mention`) | Optional ||
+| `account_id` | Return only notifications sent from given account | Optional ||
 
 ### Pagination
 
-{{< api_dynamic_pagination_ja >}}
+{{< api_dynamic_pagination >}}
 
 ## GET /api/v1/notifications/:id
 
-[Notification]({{< relref "entities.md#notification" >}})を返します。
+Returns [Notification]({{< relref "entities.md#notification" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:notifications" version="0.0.0" >}}
 
 ## POST /api/v1/notifications/:id/dismiss
 
-**v3.0.0で廃止**
+**This API removed at v3.0.0**
 
 ## POST /api/v1/notifications/clear
 
-通知を全てクリアする
+Delete all notifications from the server.
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:notifications" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:notifications" version="0.0.0" >}}
 
 ## POST /api/v1/push/subscription
 
-Web Pushに登録を購読する: 参照 [Web Push API]({{< relref "push.md" >}})
+Add a Web Push API subscription to receive notifications. See also: [Web Push API]({{< relref "push.md" >}})
 
-> ひとつのアクセストークンに対し購読はひとつまでです。2回目以降は、古いものが自動で削除されます。
+> Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.
 
-[Push Subscription]({{< relref "entities.md#push-subscription" >}})を返します。
+Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `subscription[endpoint]` | hookされるURL | 必須 |
-| `subscription[keys][p256dh]` | User agent public key. 'prime256v1'曲線をBase 64エンコードしたもの | 必須 |
-| `subscription[keys][auth]` | Auth secret. 16バイトのランダム文字列をBase 64エンコードしたもの | 必須 |
-| `data[alerts][follow]` | フォロー時にhookするか | 任意 |
-| `data[alerts][favourite]` | お気に入り登録時にhookするか | 任意 |
-| `data[alerts][reblog]` | ブースト時にhookするか  | 任意 |
-| `data[alerts][mention]` | メンション時にhookするか  | 任意 |
-| `data[alerts][poll]` | 通知完了時にhookするか  | 任意 |
+| `subscription[endpoint]` | Endpoint URL that called when notification is happen. | Required |
+| `subscription[keys][p256dh]` | User agent public key. Base64 encoded string of public key of ECDH key using 'prime256v1' curve. | Required |
+| `subscription[keys][auth]` | Auth secret. Base64 encoded string of 16 bytes of random data. | Required |
+| `data[alerts][follow]` | Boolean of whether you want to receive follow notification event. | Optional |
+| `data[alerts][favourite]` | Boolean of whether you want to receive favourite notification event. | Optional |
+| `data[alerts][reblog]` | Boolean of whether you want to receive reblog notification event. | Optional |
+| `data[alerts][mention]` | Boolean of whether you want to receive mention notification event. | Optional |
+| `data[alerts][poll]` | Boolean of whether you want to receive poll result notification event. | Optional |
 
 ## GET /api/v1/push/subscription
 
-[Push Subscription]({{< relref "entities.md#push-subscription" >}})を返します。
+Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
 ## PUT /api/v1/push/subscription
 
-購読通知の`data`内を更新します。`data`以外を変えるためにはもう一度購読しなおしてください。
+Update current Web Push API subscription. Only the `data` part can be updated, e.g. which types of notifications are desired. To change fundamentals, a new subscription must be created instead.
 
-[Push Subscription]({{< relref "entities.md#push-subscription" >}})を返します。
+Returns [Push Subscription]({{< relref "entities.md#push-subscription" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `data[alerts][follow]` | フォロー時にhookするか | 任意 |
-| `data[alerts][favourite]` | お気に入り登録時にhookするか | 任意 |
-| `data[alerts][reblog]` | ブースト時にhookするか  | 任意 |
-| `data[alerts][mention]` | メンション時にhookするか  | 任意 |
-| `data[alerts][poll]` | 通知完了時にhookするか  | 任意 |
+| `data[alerts][follow]` | Boolean of whether you want to receive follow notification event. | Optional |
+| `data[alerts][favourite]` | Boolean of whether you want to receive favourite notification event. | Optional |
+| `data[alerts][reblog]` | Boolean of whether you want to receive reblog notification event. | Optional |
+| `data[alerts][mention]` | Boolean of whether you want to receive mention notification event. | Optional |
+| `data[alerts][poll]` | Boolean of whether you want to receive poll result notification event. | Optional |
 
 ## DELETE /api/v1/push/subscription
 
-現在の通知購読を解除する
+Remove the current Web Push API subscription.
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="push" version="2.4.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="push" version="2.4.0" >}}

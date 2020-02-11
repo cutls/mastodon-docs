@@ -8,173 +8,170 @@ menu:
 
 ## GET /api/v1/statuses/:id
 
-[Status]({{< relref "entities.md#status" >}})を返します。
+Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ## GET /api/v1/statuses/:id/context
 
-指定したトゥートへの返信や、そのトゥートの返信元をたどって取得します。
+What the status replies to, and replies to it.
 
-[Context]({{< relref "entities.md#context" >}})を返します。
+Returns [Context]({{< relref "entities.md#context" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
 ## GET /api/v1/statuses/:id/card
 
-**このAPIは削除されました。**
+**This API has been already removed.**
 
 ## GET /api/v1/statuses/:id/reblogged_by
 
-このトゥートをブーストしたユーザー
+Accounts that reblogged the status.
 
-[Account]({{< relref "entities.md#account" >}})の配列を返します。
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | 任意 | 40 |
+| `limit` | Maximum number of results | Optional | 40 |
 
 ### Pagination
 
-{{< api_pagination_ja >}}
+{{< api_pagination >}}
 
 ## GET /api/v1/statuses/:id/favourited_by
 
-このトゥートをお気に入り登録したユーザー
+Accounts that favourited the status.
 
-[Account]({{< relref "entities.md#account" >}})の配列を返します。
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | Maximum number of results | 任意 | 40 |
+| `limit` | Maximum number of results | Optional | 40 |
 
 ### Pagination
 
-{{< api_pagination_ja >}}
+{{< api_pagination >}}
 
 ## POST /api/v1/statuses
 
-投稿する
+Publish a new status.
 
-[Status]({{< relref "entities.md#status" >}})を返します。
+Returns [Status]({{< relref "entities.md#status" >}})
 
-`scheduled_at` が設定されているとき
-[ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}})を返します。
+When `scheduled_at` option is present,
+Returns [ScheduledStatus]({{< relref "entities.md#scheduledstatus" >}}) 
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|実装バージョン|
+|Name|Description|Required|Added in|
 |----|-----------|:------:|:------:|
-| `status` | 投稿内容(500文字以内) | Optional\* |
-| `in_reply_to_id` | このトゥートに返信(ID) | 任意 |
-| `media_ids` | 添付するメディアのidを指定 | Optional\* |
-| `poll` | アンケートを添付(以下を参照) | Optional\* |2.8.0|
-| `sensitive` | 添付画像を閲覧注意として設定 | 任意 |
-| `spoiler_text` | コンテントワーニング文字列を設定(statusと合わせて500以内) | 任意 |
-| `visibility` | 公開範囲: `direct`, `private`, `unlisted` `public` | 任意 |
-| `scheduled_at` | ISO 8601で指定した時間に投稿 | 任意 |2.7.0|
-| `language` | ISO 639-2で指定した言語として投稿 | 任意 |
+| `status` | The text of the status | Optional\* |
+| `in_reply_to_id` | ID of the status you want to reply to | Optional |
+| `media_ids` | Array of media IDs to attach to the status | Optional\* |
+| `poll` | Nested parameters to attach a poll to the status | Optional\* |2.8.0|
+| `sensitive` | Mark the media in the status as sensitive | Optional |
+| `spoiler_text` | Text to be shown as a warning before the actual content | Optional |
+| `visibility` | One of `direct`, `private`, `unlisted` `public` | Optional |
+| `scheduled_at` | Timestamp string to schedule posting of status (ISO 8601) | Optional |2.7.0|
+| `language` | Override language code of the toot (ISO 639-2) | Optional |
 
-> `status` か `media_ids`のどちらかは必ず指定してください。ただし、アンケートは`media_ids`と組み合わせられないため`status`が必須です。
+> You must provide either `status` or `media_ids`, completely empty statuses are not allowed. Polls require a `status` and cannot be combined with `media_ids`.
 
-アンケートのパラメーター
+Poll parameters:
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `poll[options]` | 選択肢(文字列)の配列 | 必須 |
-| `poll[expires_in]` | 有効期限(300秒以上の秒) | 必須 |
-| `poll[multiple]` | 複数選択を許可するか | 任意 |
-| `poll[hide_totals]` | 投票が終わるまで票数を隠すかどうか | 任意 |
+| `poll[options]` | Array of poll answer strings | Required |
+| `poll[expires_in]` | Duration the poll should be open for in seconds | Required |
+| `poll[multiple]` | Whether multiple choices should be allowed | Optional |
+| `poll[hide_totals]` | Whether to hide totals until the poll ends | Optional |
 
-### 冪等性
+### Idempotency
 
-重複投稿を防ぐため `Idempotency-Key` をヘッダーに指定できます。 各投稿に一意な文字列を指定します。ネットワークにエラーが発生した場合、リクエストは同じ`Idempotency-Key`を指定して再試行できます。何度同じ`Idempotency-Key`が付与されたリクエストを行ってもひとつだけ投稿されます。
+In order to prevent duplicate statuses, this endpoint accepts an `Idempotency-Key` header, which should be set to a unique string for each new status. In the event of a network error, a request can be retried with the same `Idempotency-Key`. Only one status will be created regardless of how many requests with the same `Idempotency-Key` did go through.
 
-冪等性については <https://stripe.com/blog/idempotency>を参照
+See <https://stripe.com/blog/idempotency> for more on idempotency and idempotency keys.
 
-### 時間が指定された投稿
+### Scheduled status
 
-2.7.0以降で有効
+Allows users to schedule a toot (with media attachments) to be published at a certain future date.
 
-未来の時間に投稿することができます。メディアも添付可能です。
+The scheduled date must be at least 5 minutes into the future. At most, 300 toots can be scheduled at the same time. Only 50 toots can be scheduled for any given day.
 
-300秒(5分)まで指定でき、また同時に300トゥートまで予約できます。1日に捌けるのは50トゥートのみです。
+When `scheduled_at` option is present, instead of creating a status, we only run status validation, and if it passes, we create an entry in scheduled_statuses which encodes the status attributes.  Every 5 minutes, a scheduler iterates over the scheduled_statuses table to fetch the ones due in the next 5 minutes, and push them into a more precise Sidekiq queue. In Sidekiq, the individual statuses are created, with media attachments being unassigned from the scheduled status and assigned to the real one.
 
-`scheduled_at`が指定されていると、投稿せずに投稿のチェック(バリデーション)だけ行います。通過した場合、投稿をエンコードしたscheduled_statusesエントリーを作成します。5分毎にスケジューラーがそのテーブルから5分以内に投稿すべきものを取得し、そしてSidekiqキューに入れます。Sidekiqでは各投稿は作成され時間が指定された仮の投稿ではなく本物の投稿としてみなされます。
-
+This option was added since v2.7.0.
 
 ## DELETE /api/v1/statuses/:id
 
-投稿を削除します。これを呼び出した後もしばらく投稿が残る場合があります。
+Remove a status. The status may still be available a short while after the call.
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
 ## POST /api/v1/statuses/:id/reblog
 
-投稿をブースト
+Reblog a status.
 
-[Status]({{< relref "entities.md#status" >}})を返します。
+Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-ブーストに公開範囲を指定できます。
-
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `visibility` | `public`, `unlisted` or `private` | 任意 ||
+| `visibility` | `public`, `unlisted` or `private` | Optional ||
 
 ## POST /api/v1/statuses/:id/unreblog
 
-ブーストを削除
+Undo the reblog of a status.
 
-[Status]({{< relref "entities.md#status" >}})を返します。
+Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:statuses" version="0.0.0" >}}
 
 ## POST /api/v1/statuses/:id/pin
 
-投稿のピン留め(ひとり5件まで)
+Pin user's own status to user's profile.
 
-[Status]({{< relref "entities.md#status" >}})を返します。
+Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}
 
 ## POST /api/v1/statuses/:id/unpin
 
-ピン留めの解除
+Remove pinned status from user's profile.
 
-[Status]({{< relref "entities.md#status" >}})を返します。
+Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="1.6.0" >}}

@@ -1,53 +1,53 @@
 ---
 title: Streaming API
-description: リアルタイムアップデートを提供するStreaming APIへの接続方法
+description: How to use Mastodon's streaming API for live, real-time updates
 menu:
   docs:
     parent: api
     weight: 4
 ---
 
-[サーバー送信イベント](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)エンドポイントをリアルタイムアップデートを受信するために使用可能です。サーバー送信イベントは、チャンクエンコード転送に完全に依存する非常に単純な転送方法です。つまり、HTTP接続を開いたまま定期的に新しいデータを受信します。
+Your application can use a [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) endpoint to receive updates in real-time. Server-sent events is an incredibly simple transport method that relies entirely on chunked-encoding transfer, i.e. the HTTP connection is kept open and receives new data periodically.
 
-または、WebSocket接続も確立できます。
+Alternatively, a WebSocket connection can also be established.
 
-## サーバー送信イベント (HTTP)
-### エンドポイント
+## Server-sent events (HTTP)
+### Endpoints
 #### GET /api/v1/streaming/health
 
-ストリーミングサービスが利用できるとき、`OK`を返します。
+Returns `OK` when streaming service is fine
 
 #### GET /api/v1/streaming/user
 
-認証ユーザーに関連する情報を返します。ホームタイムラインや通知が一例です。
+Returns events that are relevant to the authorized user, i.e. home timeline and notifications
 
 #### GET /api/v1/streaming/public
 
-連合タイムラインを返します。
+Returns all public statuses
 
 #### GET /api/v1/streaming/public/local
 
-ローカルタイムラインを返します。
+Returns all local statuses
 
 #### GET /api/v1/streaming/hashtag?tag=:hashtag
 
-特定ハッシュタグの連合タイムラインを返します。
+Returns all public statuses for a particular hashtag
 
 #### GET /api/v1/streaming/hashtag/local?tag=:hashtag
 
-特定ハッシュタグのローカルタイムラインを返します。
+Returns all local statuses for a particular hashtag
 
 #### GET /api/v1/streaming/list?list=:list_id
 
-特定リストのタイムラインを返します。
+Returns statuses for a list
 
 #### GET /api/v1/streaming/direct
 
-ダイレクトメッセージを返します。
+Returns all direct messages
 
-### ストリーミングのコンテンツ
+### Stream contents
 
-ストリームには、イベントとハートビート用のコメントが含まれます。コロン(:)で始まる行は無視して構いません。ハートビートは接続を開いたままにするためだけにあります。イベントの構造は次のとおりです。
+The stream will contain events as well as heartbeat comments. Lines that begin with a colon (`:`) can be ignored by parsers, they are simply there to keep the connection open. Events have this structure:
 
 ```
 event: name
@@ -56,9 +56,9 @@ data: payload
 
 ## WebSocket
 
-WebSocketの場合、URLは`/api/v1/streaming`のみです。アクセストークンは`access_token`に、とエンドポイントは`stream`に入力してください。`list`や`tag`もそれぞれ対応したエンドポイントで利用できます。
+For WebSockets, there is only one URL path (`/api/v1/streaming`). The access token as well as the endpoint you are interested in must be provided with query params, respectively `access_token` and `stream`. Query params `list` and `tag` are likewise supported for relevant endpoints.
 
-`stream`に指定する値:
+Possible `stream` values:
 
 - `user`
 - `public`
@@ -68,14 +68,15 @@ WebSocketの場合、URLは`/api/v1/streaming`のみです。アクセストー�
 - `list`
 - `direct`
 
-## イベントの種類
-|イベント|説明|payloadの中身|
+## Event types
+
+|Event|Description|What's in the payload|
 |-----|-----------|---------------------|
-|`update`|新しいトゥート|[Status]({{< relref "entities.md#status" >}})|
-|`notification`|新しい通知|[Notification]({{< relref "entities.md#notification" >}})|
-|`delete`|削除されたトゥート|削除されたトゥートのID|
-|`filters_changed`|フィルターの値が変更された|何も返しません|
+|`update`|A new status has appeared|[Status]({{< relref "entities.md#status" >}})|
+|`notification`|A new notification has appeared|[Notification]({{< relref "entities.md#notification" >}})|
+|`delete`|A status has been deleted|ID of the deleted status|
+|`filters_changed`|Keyword filters have been changed||
 
-payloadはJSON形式です。
+The payload is JSON-encoded.
 
-> **注意:** `filters_changed`イベントには`paylaod`は含まれません。
+> **Note:** In case of `filters_changed` event, `payload` is not defined.

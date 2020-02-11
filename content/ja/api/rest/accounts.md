@@ -8,209 +8,209 @@ menu:
 
 ## GET /api/v1/accounts/:id
 
-[Account]({{< relref "entities.md#account" >}})を返します。
+Returns [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="No" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:accounts" version="0.0.0" >}}
 
 ## POST /api/v1/accounts
 
-[Token]({{< relref "entities.md#token" >}})を返します。
+Returns [Token]({{< relref "entities.md#token" >}})
 
-クライアント資格情報の付与によって取得されたトークンを使用してアプリで使用できます。ユーザーは未確認で、通常どおり電子メールが送信されます。
+The method is available to apps with a token obtained via the client credentials grant. It creates a user and account records, as well as an access token for the app that initiated the request. The user is unconfirmed, and an e-mail is sent as usual.
 
-アクセストークンを返します。アクセストークンはアプリが保存する必要がありますが、未確認となっているため、REST APIは使用できません。アプリは、ユーザーが電子メールのリンクをクリックするのを待つ必要があります。
+The method returns the access token, which the app should save for later. The REST API is not available to users with unconfirmed accounts, so the app must be smart to wait for the user to click a link in their e-mail inbox.
 
-IPアドレスによって30分毎5回に制限されています。
+The method is rate-limited by IP to 5 requests per 30 minutes.
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="No" scope="write write:accounts" version="2.7.0" >}}
+{{< api_method_info auth="Yes" user="No" scope="write write:accounts" version="2.7.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `username` | ユーザー名 | 必須 |
-| `email` | メールアドレス | 必須 |
-| `password` | パスワード | 必須 |
-| `agreement` | 規約に同意したか(Boolean) | 必須 |
-| `locale` | メールの送信言語 | 必須 |
+| `username` | User name | Required |
+| `email` | E-mail address | Required |
+| `password` | Password text | Required |
+| `agreement` | Agreement to local rules, terms of use, privacy policy (Bool) | Required |
+| `locale` | The language of the e-mail to be sent first | Required |
 
-`agreement`は当然規約(ローカルルール, 利用規約, プライバシーポリシー)を表示してからtrueに設定すべきです。
+The `agreement` parameter must be set to true after presenting the local rules, terms of use, privacy policy for the user and obtaining consent.
 
 ## GET /api/v1/accounts/verify_credentials
 
-ユーザー自身のアカウントの認証情報を返します。
+User's own account.
 
-[Account]({{< relref "entities.md#account" >}})に[`source` attribute]({{< relref "entities.md#source" >}})が付いたものを返します。
+Returns [Account]({{< relref "entities.md#account" >}}) with an extra [`source` attribute]({{< relref "entities.md#source" >}}).
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
 
 ## PATCH /api/v1/accounts/update_credentials
 
-ユーザー自身のアカウントの認証情報を更新します。
+Update user's own account.
 
-[Account]({{< relref "entities.md#account" >}})を返します。
+Returns [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `display_name` | 名前 | 任意 |
-| `note` | 自己紹介 | 任意 |
-| `avatar` | アバター(プロフィール画像) `multipart/form-data`で送信 | 任意 |
-| `header` | ヘッダー画像 `multipart/form-data`で送信 | 任意 |
-| `locked` | 鍵をかけるか | 任意 |
-| `source[privacy]` | 規定の公開範囲 | 任意 |
-| `source[sensitive]`| 常に画像を閲覧注意として投稿するか | 任意 |
-| `source[language]` | ISO6391で表したデフォルトの投稿言語(APIで上書き可) | 任意 |
-| `fields_attributes` | フィールド(4つまで) | 任意 |
-| `discoverable` | Boolean: プロフィールディレクトリに表示するか | 任意 |
-| `bot ` | Boolean: botかどうか | 任意 |
+| `display_name` | Display name | Optional |
+| `note` | Biography | Optional |
+| `avatar` | Avatar encoded using `multipart/form-data` | Optional |
+| `header` | Header image encoded using `multipart/form-data` | Optional |
+| `locked` | Enable follow requests | Optional |
+| `source[privacy]` | Default post privacy preference | Optional |
+| `source[sensitive]`| Whether to mark statuses as sensitive by default | Optional |
+| `source[language]` | Override language on statuses by default (ISO6391) | Optional |
+| `fields_attributes` | Profile metadata (max. 4) | Optional |
+| `discoverable` | Boolean: whether you are shown on profile directory | Optional |
+| `bot ` | Boolean: whether you are bot | Optional |
 
 ## GET /api/v1/accounts/:id/followers
 
-フォロワー一覧
+Accounts which follow the given account.
 
-[Account]({{< relref "entities.md#account" >}})を返します。
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | 結果の表示個数 | 任意 | 40 |
+| `limit` | Maximum number of results | Optional | 40 |
 
 ### Pagination
 
-{{< api_pagination_ja >}}
+{{< api_pagination >}}
 
 ## GET /api/v1/accounts/:id/following
 
-フォロー(フォロイー)一覧
+Accounts which the given account is following.
 
-[Account]({{< relref "entities.md#account" >}})配列を返します。
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="No" scope="read read:accounts" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | 結果の表示個数 | 任意 | 40 |
+| `limit` | Maximum number of results | Optional | 40 |
 
 ### Pagination
 
-{{< api_pagination_ja >}}
+{{< api_pagination >}}
 
 ## GET /api/v1/accounts/:id/statuses
 
-投稿一覧
+An account's statuses.
 
-[Status]({{< relref "entities.md#status" >}})配列を返します。
+Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:statuses" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|実装バージョン|
+|Name|Description|Required|Default|Added in|
 |----|-----------|:------:|:-----:|:------:|
-| `only_media` | メディアのあるトゥートのみ | 任意 | false | |
-| `pinned` | ピン留めされた投稿のみ | 任意 | false | |
-| `exclude_replies` | リプライのある投稿は表示しない | 任意 | false | |
-| `max_id` | これより前のトゥート | 任意 | | |
-| `since_id` | これより後のトゥート(最新から) | 任意 | | |
-| `min_id` | これより後のトゥート(最古から) | 任意 | | |
-| `limit` | 結果の表示個数 | 任意 | 20 | | |
-| `exclude_reblogs` | ブースト除外 | 任意 | false | 2.7.0 |
-| `tagged` | このタグの付いた投稿のみ表示(`#`なし) | 任意 || 2.8.0 |
+| `only_media` | Only return statuses that have media attachments | Optional | false | |
+| `pinned` | Only return statuses that have been pinned | Optional | false | |
+| `exclude_replies` | Skip statuses that reply to other statuses | Optional | false | |
+| `max_id` | Return results older than ID | Optional | | |
+| `since_id` | Return results newer than ID | Optional | | |
+| `min_id` | Return results immediately newer than ID | Optional | | |
+| `limit` | Maximum number of results | Optional | 20 | | |
+| `exclude_reblogs` | Skip statuses that are reblogs of other statuses | Optional | false | 2.7.0 |
+| `tagged` | Filtering by hashtag without `#` | Optional || 2.8.0 |
 
-### ページネーション
+### Pagination
 
-{{< api_dynamic_pagination_ja >}}
+{{< api_dynamic_pagination >}}
 
 ## POST /api/v1/accounts/:id/follow
 
-アカウントのフォロー
+Follow an account.
 
-[Relationship]({{< relref "entities.md#relationship" >}})を返します。
+Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `reblogs` | ホームタイムラインにこのユーザーのブーストを表示する | 任意 | true |
+| `reblogs` | Whether the followed account's reblogs will show up in the home timeline | Optional | true |
 
 ## POST /api/v1/accounts/:id/unfollow
 
 Unfollow an account.
 
-[Relationship]({{< relref "entities.md#relationship" >}})を返します。
+Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
 ## GET /api/v1/accounts/relationships
 
-そのユーザーと自分とのフォローなどの関係(複数指定可能)
+Relationship of the user to the given accounts in regards to following, blocking, muting, etc.
 
-[Relationship]({{< relref "entities.md#relationship" >}})の配列を返します。
+Returns array of [Relationship]({{< relref "entities.md#relationship" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:follows" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:follows" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `id` | アカウントのIDの配列 | 必須 |
+| `id` | Array of account IDs | Required |
 
 ## GET /api/v1/accounts/search
 
-指定した条件に一致するアカウントを表示
+Search for matching accounts by username, domain and display name.
 
-[Account]({{< relref "entities.md#account" >}})の配列を返します。
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `q` | 検索語句| 必須 ||
-| `limit` | 結果の表示個数 | 任意 | 40 |
-| `resolve` | WebFinger解決をする | 任意 | false |
-| `following` | フォローしているユーザーだけから検索 | 任意 | false |
+| `q` | What to search for | Required ||
+| `limit` | Maximum number of results | Optional | 40 |
+| `resolve` | Attempt WebFinger look-up | Optional | false |
+| `following` | Only who the user is following | Optional | false |
 
 ## GET /api/v1/accounts/:id/identity_proofs
 
-本人認証の情報(Keybaseなど)
+Identity Proofs like Keybase
 
-[Identity Proofs]({{< relref "entities.md#identity-proofs" >}})配列を返します。
+Retuens array of [Identity Proofs]({{< relref "entities.md#identity-proofs" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="Yes" scope="read read:statuses" version="2.8.0" >}}
+{{< api_method_info auth="No" user="Yes" scope="read read:statuses" version="2.8.0" >}}

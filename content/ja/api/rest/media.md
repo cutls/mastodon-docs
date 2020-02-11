@@ -8,40 +8,39 @@ menu:
 
 ## POST /api/v1/media
 
-メディアをアップロード
+Upload a media attachment that can be used with a new status.
 
-[Attachment]({{< relref "entities.md#attachment" >}})を返します。
+Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `file` | `multipart/form-data`でエンコードされたファイル | 必須 |
-| `description` | 1500字までの説明文字列 | 任意 |
-| `focus` | 画像の焦点。参照[focal points](#focal-points) | 任意 |
+| `file` | Media file encoded using `multipart/form-data` | Required |
+| `description` | A plain-text description of the media for accessibility (max 1500 chars) | Optional |
+| `focus` | Two floating points, comma-delimited. See [focal points](#focal-points) | Optional |
 
 ## PUT /api/v1/media/:id
 
-メディアをの情報を更新
+Update a media attachment. Can only be done before the media is attached to a status.
 
-[Attachment]({{< relref "entities.md#attachment" >}})を返します。
+Returns [Attachment]({{< relref "entities.md#attachment" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:media" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|
+|Name|Description|Required|
 |----|-----------|:------:|
-| `description` | 1500字までの説明文字列 | 任意 |
-| `focus` | 画像の焦点。参照[focal points](#focal-points) | 任意 |
+| `description` | A plain-text description of the media for accessibility (max 1500 chars) | Optional |
+| `focus` | Two floating points, comma-delimited. See [focal points](#focal-points) | Optional |
 
-## 焦点
+## Focal points
 
-サーバーでは一さの画像のクロップは行いません。アプリやユーザーの自由度を高めるためです。そのため、クリッピングはクライアントが行ってください。焦点を使用して、画像の特定の場所が常にトリミングされた範囲内にあるようにします。
-確認: [See this for how to let users select focal point coordinates](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point).
+Server-side preview images are never cropped, to support a variety of apps and user interfaces. Therefore, the cropping must be done by those apps. To crop intelligently, focal points can be used to ensure a certain section of the image is always within the cropped viewport. [See this for how to let users select focal point coordinates](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point).

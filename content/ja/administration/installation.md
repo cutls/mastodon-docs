@@ -3,8 +3,8 @@ title: インストール
 description: Ubuntu 18.04 serverへのインストール方法
 menu:
   docs:
-    parent: administration
-    weight: 1
+    weight: 90
+    parent: admin
 ---
 
 <img src="/setup.png" alt="" style="margin: 0; box-shadow: none">

@@ -8,18 +8,18 @@ menu:
 
 ## GET /api/v1/directory
 
-プロフィールディレクトリを返します。
+Accounts listed on Profile Directory
 
-[Account]({{< relref "entities.md#account" >}})の配列を返します。
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="No" user="No" scope="read read:accounts" version="3.0.0" >}}
+{{< api_method_info auth="No" user="No" scope="read read:accounts" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `order` | `active`(活動順) か `new`(新規登録順) | 任意 | `active` |
-| `local` | 表示アカウントをローカルに限定する | 任意 | `false` |
-| `offset` | 結果のオフセット | 任意 ||
+| `order` | `active` or `new` | Optional | `active` |
+| `local` | Show only local users | Optional | `false` |
+| `offset` | Offset in the results | Optional ||

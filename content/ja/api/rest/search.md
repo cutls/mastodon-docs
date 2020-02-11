@@ -8,26 +8,26 @@ menu:
 
 ## GET /api/v2/search
 
-**v1/search は削除されました**
+**v1/search has been already removed**
 
-アカウント, ハッシュタグ, 投稿(全文検索導入時)を検索します。
+Search for content in accounts, statuses and hashtags.
 
-[Results]({{< relref "entities.md#results" >}})を返します。
+Returns [Results]({{< relref "entities.md#results" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:search" version="2.4.1" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:search" version="2.4.1" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `q` | 検索語句 | 必須 ||
-| `limit` | 結果の表示個数 | 任意 | 40 |
-| `resolve` | WebFinger解決をする | 任意 | false |
-| `following` | フォローしているユーザーだけから検索 | 任意 | false |
-| `offset` | 結果のオフセット | 任意 | 0 |
-| `type` | `accounts`, `statuses` or `hashtags`でフィルター | 任意 ||
-| `max_id` | これより前の結果 | 任意 ||
-| `min_id` | これのすぐ後のトゥート(古い方から) | 任意 ||
-| `account_id` | | 任意 |  |
+| `q` | The search query | Required ||
+| `resolve` | Attempt WebFinger look-up | Optional |false|
+| `limit` | Maximum number of results | Optional | 40 |
+| `offset` | Offset in the search results | Optional | 0 |
+| `following` | Only include accounts the user is following | Optional | false |
+| `type` | Filtering by `accounts`, `statuses` or `hashtags` | Optional ||
+| `max_id` | Return results older than ID | Optional ||
+| `min_id` | Return results immediately newer than ID | Optional ||
+| `account_id` | | Optional |  |

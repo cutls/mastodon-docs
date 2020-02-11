@@ -8,10 +8,10 @@ menu:
 
 ## GET /api/v1/preferences
 
-現在のユーザー設定の一部を取得
+Preferences about the logined user.
 
-[Preferences]({{< relref "entities.md#preferences" >}})を返します。
+Returns [Preferences]({{< relref "entities.md#preferences" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" version="2.8.0" >}}
+{{< api_method_info auth="Yes" user="Yes" version="2.8.0" >}}

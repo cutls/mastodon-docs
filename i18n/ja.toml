@@ -1,0 +1,65 @@
+[improvePage]
+other = "このページを改善する"
+
+[lastUpdated]
+other = "最終更新"
+
+[lastUpdatedDateFormat]
+other = "{{ .Format \"January 2, 2006\" }}"
+
+[joinTitle]
+other = "メディア革命をあなたに"
+
+[joinText]
+other = "Mastodonは300万人が利用する無料の分散SNSです"
+
+[joinAction]
+other = "今すぐMastodonに参加しよう"
+
+[merch]
+other = "Merch"
+
+[shirtsAndStickers]
+other = "Tシャツとステッカー(英語)"
+
+[joinMastodon]
+other = "Mastodonに参加しよう"
+
+[blog]
+other = "ブログ"
+
+[viewSource]
+other = "ソースコード"
+
+[imprint]
+other = "インプリント"
+
+[formDataParameters]
+other = "フォームのパラメータ"
+
+[headers]
+other = "ヘッダ"
+
+[required]
+other = "必須"
+
+[optional]
+other = "任意"
+
+[pathParameters]
+other = "パス"
+
+[queryParameters]
+other = "クエリ"
+
+[request]
+other = "リクエスト"
+
+[response]
+other = "レスポンス"
+
+[otherTranslations]
+other = "他の言語:"
+
+[internalNotice]
+other = "**内的なパラメータです** ページングにはHTTPのリンクヘッダを参照してください。"

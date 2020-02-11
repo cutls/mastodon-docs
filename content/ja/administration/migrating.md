@@ -3,8 +3,8 @@ title: サーバーのマイグレーション
 description: Mastodonのサーバーを新しいものへマイグレーションする方法
 menu:
   docs:
-    parent: administration
-    weight: 6
+    weight: 90
+    parent: admin
 ---
 
 いろいろ事情があってMastodonインスタンスを他のサーバーへ移行したいこともあるでしょう。人は時たま移行せざるを得ない状況に出会うものです。しかし、今夜は徹夜か…と諦めるにはまだ早いです。Mastodonの移行は、ダウンタイムは発生するもののそこまで難しいものではありません。

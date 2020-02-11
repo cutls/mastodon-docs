@@ -6,26 +6,25 @@ menu:
     weight: 10
 ---
 
-公開プロフィール等に表示されるピン留めされたタグを管理
 
 ## GET /api/v1/featured_tags
 
-[Featured Tag]({{< relref "entities.md#featured-tag" >}})を返します。
+Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:accounts" version="3.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:accounts" version="3.0.0" >}}
 
 ## POST /api/v1/featured_tags
 
-[Featured Tag]({{< relref "entities.md#featured-tag" >}})を返します。
+Returns [Featured Tag]({{< relref "entities.md#featured-tag" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:accounts" version="3.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:accounts" version="3.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `name` | タグ名(`#`なし) | 必須 ||
+| `name` | Tag(String) without `#` | Required ||

@@ -8,37 +8,36 @@ menu:
 
 ## GET /api/v1/bookmarks
 
-自分のブックマーク一覧
+Statuses the user has bookmarked.
 
-[Status]({{< relref "entities.md#status" >}})の配列を返します。
+Returns array of [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:bookmarks" version="3.0.2?" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:bookmarks" version="3.0.2?" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` | 結果の表示個数 | 任意 | 20 |
+| `limit` | Maximum number of results | Optional | 20 |
 
 ### Pagination
 
-{{< api_pagination_ja >}}
+{{< api_pagination >}}
 
 ## POST /api/v1/statuses/:id/bookmark
 
-トゥートをブックマークに追加
+Bookmark a status.
 
-[Status]({{< relref "entities.md#status" >}})を返します。
+Returns [Status]({{< relref "entities.md#status" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write write:bookmarks" version="3.0.2?" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write write:bookmarks" version="3.0.2?" >}}
 
 ## POST /api/v1/statuses/:id/unbookmark
 
-ブックマークを削除
+Undo the bookmark of a status.
 
-[Status]({{< relref "entities.md#status" >}})を返します。
-
+Returns [Status]({{< relref "entities.md#status" >}})

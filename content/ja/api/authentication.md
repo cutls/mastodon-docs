@@ -1,25 +1,25 @@
 ---
-title: 認証
-description: OAuth 2でMastodon認証する方法
+title: Authentication
+description: How to authenticate with OAuth 2 on Mastodon
 menu:
   docs:
     parent: api
     weight: 1
 ---
 
-Mastodonは連合しているため、ユーザーがログインする可能性のあるすべてのサーバーにアプリケーションを手動で登録することは現実的ではありません。このため、アプリ登録APIが公開されており、OAuth 2認証用のOAuth 2資格情報の取得を自動化できます。
+Mastodon is federated, therefore you can't be expected to manually register your application on all potential servers your users might want to login on. For this reason, there is an open app registration API, so obtaining OAuth 2 credentials for OAuth 2 authorization can be automated.
 
-ユーザーがログインする前にログインしたいドメインを指定できるようにしてください。そのドメインを使用してOAuth 2のクライアントIDとシークレットを取得し、そのドメインを使用してURLを生成し、通常のOAuth 2に進みます。
+Make sure that you allow your users to specify the domain they want to connect to before login. Use that domain to acquire a client id/secret for OAuth 2 and then proceed with normal OAuth 2 also using that domain to build the URLs.
 
-Mastodonは、次のOAuth 2フローをサポートしています。
+Mastodon supports the following OAuth 2 flows:
 
-- **認証コードフロー**: エンドユーザー向け
-- **パスワード認証型フロー**: botおよびその他のシングルユーザーアプリケーション用
-- **クライアント認証情報フロー**: ユーザーの代わりに動作しないアプリケーションの場合
+- **Authorization code flow**: For end-users
+- **Password grant flow**: For bots and other single-user applications
+- **Client credentials flow**: For applications that do not act on behalf of users
 
-## OAuth 2 エンドポイント
+## OAuth 2 endpoints
 
-以下の説明は[Doorkeeper documentation](https://github.com/doorkeeper-gem/doorkeeper/wiki/API-endpoint-descriptions-and-examples)から引用したものです。MastodonではOAuth認証にDoorkeeperを使用しています。
+The following descriptions are taken from the [Doorkeeper documentation](https://github.com/doorkeeper-gem/doorkeeper/wiki/API-endpoint-descriptions-and-examples). Mastodon uses Doorkeeper to implement OAuth 2.
 
 ### GET /oauth/authorize
 
@@ -33,18 +33,16 @@ Post here with `authorization_code` for authorization code grant type or `userna
 
 Post here with client credentials (in basic auth or in params `client_id` and `client_secret`) to revoke an access token. This corresponds to the token endpoint, using the OAuth 2.0 Token Revocation RFC (RFC 7009).
 
-## 認証フローの例
+## Example authorization code flow
 
-1. `client_id` と `client_secret`をアプリ内のキャッシュから取得します。もしない場合は[アプリケーションの登録]({{< relref "api/rest/apps.md#post-api-v1-apps" >}})をします。  
-`client_id` と `client_secret`は次に使うときのためにアプリ内にキャッシュしておきます。この呼び出しには`id`は必要ありません。
-1. `/oauth/authorize`にアクセスできるようユーザーにリンクを提供します。`scope`, `response_type=code`, `redirect_uri`, アプリの `client_id`が必要です。`state`を任意で加えることもできます。  
-もし正しくボタンを押した場合`redirect_uri`に指定したとおりにリダイレクトされます。そのURIには`code`パラメーターが付与されます。`state`はそのまま維持されます。
-1. `/oauth/token`に`client_id`, `client_secret`, `grant_type=authorization_code`, `code`, `redirect_uri`を加えてPOSTリクエストを送信します。`access_token`をアプリに保存します。認証コードは再利用できません。もし使用した場合作り直す必要があります。
+1. Get `client_id` and `client_secret` from your local cache. If you don't have the two, you need to [register the application]({{< relref "api/rest/apps.md#post-api-v1-apps" >}}). Store `client_id` and `client_secret` in your local cache for next time. We actually don't need the `id` returned from this call.
+1. Tell the user to visit `/oauth/authorize` with parameters `scope`, `response_type=code`, `redirect_uri`, your `client_id`, and optionally a randomly-generated `state` parameter. The user clicks on the URL and gets shown a page asking them to authorize your app for the scopes you requested. If the user clicks on the right button, they are redirected back to your `redirect_uri` with a `code` param in the query string. That is the authorization code. If you provided a `state` value in the previous step, that will be passed along as well.
+1. Send a POST request to `/oauth/token` with the parameters `client_id`, `client_secret`, `grant_type=authorization_code`, `code`, `redirect_uri`. Save the `access_token` you get back in your local cache. Note that an authorization code can only be used once. If it has been used already, you need to repeat step two to get a new one.
 
-アクセストークンはAPI呼び出し時に`Authorization: Bearer ...`を加えます。
+Once you have the access token, add the HTTP header `Authorization: Bearer ...` to any API call.
 
-## よくある間違い
+## Common gotchas
 
-- OAuthパラメーター名は`scope`ですが、MastodonのREST APIを使用してアプリケーションを登録する場合、パラメーター名は`scopes`です。OAuthパラメーターは、最初に登録したスコープのサブセットにすることができますが、元のセットになかったものを含めることはできません。
-- OAuthパラメーター名は`redirect_uri`ですが、MastodonのREST APIを使用してアプリケーションを登録する場合、パラメーター名は`redirect_uris`です。後者は、改行で区切られた複数のURIで構成できます。
-- もし`redirect_uris`に複数指定した場合、全てのOAuthリクエストの`redirect_uri`はアプリケーションとともに登録されたもの(ひとつまたは複数)で無くてはいけません。
+- The OAuth param name is `scope`, but when registering the application using Mastodon's REST API, the param name is `scopes`. The OAuth param can be a subset of the scopes you registered initially, but cannot include anything that wasn't in the original set.
+- The OAuth param name is `redirect_uri`, but when registering the application using Mastodon's REST API, the param name is `redirect_uris`. The latter can actually consist of multiple allowed URIs, separated by newlines.
+- The `redirect_uri` in all OAuth requests must either be the same as the one registered with the application, or one of them, if you registered multiple URIs separated by newlines with the application.

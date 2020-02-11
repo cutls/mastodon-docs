@@ -8,38 +8,38 @@ menu:
 
 ## GET /api/v1/follow_requests
 
-自分に来ているフォローリクエスト一覧
+Accounts that have requested to follow the user.
 
-[Account]({{< relref "entities.md#account" >}})の配列を返します。
+Returns array of [Account]({{< relref "entities.md#account" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="read read:follows follow" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="read read:follows follow" version="0.0.0" >}}
 
-### パラメーター
+### Parameters
 
-|名称|説明|必要性|デフォルト値|
+|Name|Description|Required|Default|
 |----|-----------|:------:|:-----:|
-| `limit` |結果の表示個数 | 任意 | 40 |
+| `limit` | Maximum number of results | Optional | 40 |
 
-### ページネーション
+### Pagination
 
-{{< api_pagination_ja >}}
+{{< api_pagination >}}
 
 ## POST /api/v1/follow_requests/:id/authorize
 
-フォローリクエストの受理(フォローされます)
+Allow the account to follow the user.
 
-[Relationship]({{< relref "entities.md#relationship" >}})を返します。
+Returns [Relationship]({{< relref "entities.md#relationship" >}})
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
 
 ## POST /api/v1/follow_requests/:id/reject
 
-フォローリクエストの拒否
+Do not allow the account to follow the user.
 
-### 基本情報
+### Resource information
 
-{{< api_method_info_ja auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
+{{< api_method_info auth="Yes" user="Yes" scope="write:follows follow" version="0.0.0" >}}
