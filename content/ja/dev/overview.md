@@ -1,6 +1,6 @@
 ---
-title: Technical overview
-description: A description of Mastodon's architecture.
+title: 技術的情報
+description: Mastodonのアーキテクチャに対する説明。
 menu:
   docs:
     weight: 10
@@ -8,20 +8,20 @@ menu:
 ---
 
 {{< hint style="warning" >}}
-This page is under construction.
+未完成です
 {{< /hint >}}
 
-Mastodon is a Ruby on Rails application with a React.js front-end.  It follows standard practices of those frameworks, so if you are already familiar with Rails or React.js, you will not find any surprises here.
+MastodonはRuby on Railsアプリケーションです。フロントエンドにReact.jsを採用しています。これらのフレームワークの標準的な利用法に従っているので、RailsやReact.jsに触れたことがあるならば、驚くような物は何も無いでしょう。
 
-The best way of working with Mastodon in a development environment is installing all the dependencies on your system, rather than using Docker or Vagrant. You need Ruby, Node.js, PostgreSQL and Redis, which is a pretty standard set of dependencies for Rails applications.
+開発者環境でMastodonを動かす最良の方法は、システムに依存関係をすべてインストールした方がDockerやVagrantを利用するよりも良いです。RubyやNode.js、Postgre、SQL、RedisはRailsアプリケーションによくある依存関係です。
 
-### Environments {#environments}
+### 環境 {#environments}
 
-An “environment” is a set of configuration values intended for a specific use case. Some environments could be: development, in which you intend to change the code; test, in which you intend to run the automated test suite; staging, which is meant to preview the code to end-users; and production, which is intended to face end-users. Mastodon comes with configurations for development, test and production.
+「環境」は特定のユースケースに対する構成設定値の集合です。環境の例: コードを変更するため、テストを走らせるためのdevelopment。エンドユーザーにコードをプレビューするためのstaging。エンドユーザー向けのproductionです。Mastodonにはdevelopment、staging、productionの3つの構成が付属しています。
 
-The default value of `RAILS_ENV` is `development`, so you don’t need to set anything extra to run Mastodon in development mode. In fact, all of Mastodon’s configuration has correct defaults for the development environment, so you do not need an `.env` file unless you need to customize something. Here are some of the different behaviours between the development environment and the production environment:
+`RAILS_ENV`はデフォルトで`development`に設定されています。なので、Mastodonをdevelopmentで動かすときは何も付与する必要はありません。実際は、すべてのMastodonの構成設定はdevelopment用にデフォルト値が設定されており、`.env`ファイルも何かを変更しない限り不要です。以下はdevelopmentモードとproductionモードの挙動の違いです。
 
-* Ruby code reloads itself when you change it, which means you don’t need to restart the Rails server process to see changes
+* Rubyコードを変更した時に自動で再読込します。変更を確認するためにRailsサーバーのプロセスを再起動する必要はないと言うことです。
 * All errors you encounter show stack traces in the browser, rather than being hidden behind a generic error page
 * Webpack runs continuously and re-compiles JS and CSS assets when you change any of the front-end files, and the pages automatically reload
 * Caching is disabled by default
