@@ -1,11 +1,6 @@
 ---
-<<<<<<< HEAD:content/en/usage/moderation.md
-title: For Moderatiors
-description: Overview of moderation tools on Mastodon
-=======
 title: Moderation actions
 description: Actions that can be taken against unwanted users or domains.
->>>>>>> 9858688afedfe6e485d8980f91b8a598ae5455a1:content/en/admin/moderation.md
 menu:
   docs:
     weight: 110
