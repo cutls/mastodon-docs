@@ -58,13 +58,13 @@ menu:
 
 **Description:** The value of the hashtag after the \# sign.\
 **Type:** String\
-**Version history:** Added in 0.9.0
+**実装履歴:** Added in 0.9.0
 
 ### `url` {#url}
 
 **Description:** A link to the hashtag on the instance.\
 **Type:** String \(URL\)\
-**Version history:** Added in 0.9.0
+**実装履歴:** Added in 0.9.0
 
 ## Optional attributes
 
@@ -72,7 +72,7 @@ menu:
 
 **Description:** Usage statistics for given days.\
 **Type:** Array of [History]({{< relref "history.md" >}})\
-**Version history:** Added in 2.4.1
+**実装履歴:** Added in 2.4.1
 
 ## See also
 

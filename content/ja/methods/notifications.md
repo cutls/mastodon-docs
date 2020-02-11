@@ -13,11 +13,11 @@ menu:
 
 Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.
 
-**Returns:** Array of Notification\
+**返り値:** Array of Notification\
 **OAuth:** User token + `read:notifications`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.6.0 - add min_id
 - 2.9.0 - add account_id
 
@@ -146,11 +146,11 @@ Invalid or missing Authorization header
 
 View information about a notification with a given ID.
 
-**Returns:** Notification\
+**返り値:** Notification\
 **OAuth:** User token + `read:notifications`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -234,11 +234,11 @@ Invalid or missing Authorization header
 
 Clear all notifications from the server.
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:notifications`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -282,11 +282,11 @@ Invalid or missing Authorization header
 
 Clear a single notification from the server.
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:notifications`\
-**Version history:**
+**実装履歴:**
 
-- 1.3.0 - added
+- 1.3.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -335,7 +335,7 @@ Invalid or missing Authorization header
 
 Delete a single notification from the server.
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:notifications`\
 **Version history**:
 - 0.0.0 - available

@@ -21,11 +21,11 @@ Mastodon natively supports the [Web Push API](https://developer.mozilla.org/en-U
 
 Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.
 
-**Returns:** PushSubscription\
+**返り値:** PushSubscription\
 **OAuth:** User token + `push`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.0 - added
+- 2.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -93,11 +93,11 @@ A new PushSubscription has been generated, which will send the requested alerts 
 
 View the PushSubscription currently associated with this access token.
 
-**Returns:** PushSubscription\
+**返り値:** PushSubscription\
 **OAuth:** User token + `push`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.0 - added
+- 2.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -150,11 +150,11 @@ A PushSubscription does not exist for this token.
 
 Updates the current push subscription. Only the data part can be updated. To change fundamentals, a new subscription must be created instead.
 
-**Returns:** PushSubscription\
+**返り値:** PushSubscription\
 **OAuth:** User token + `push`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.0 - added
+- 2.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -226,11 +226,11 @@ No existing PushSubscription for this token
 
 Removes the current Web Push API subscription.
 
-**Returns:** none\
+**返り値:** none\
 **OAuth:** User token + `push`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.0 - added
+- 2.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

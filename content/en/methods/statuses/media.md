@@ -14,11 +14,11 @@ menu:
 
 Creates an attachment to be used with a new status.
 
-**Returns:** Attachment\
+**返り値:** Attachment\
 **OAuth:** User token + `write:media`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.3.0 - add `focus` parameter
 
 {{< endapi-method-description >}}
@@ -139,11 +139,11 @@ File or file type is unsupported or invalid
 
 Update an Attachment, before it is attached to a status and posted.
 
-**Returns:** Attachment\
+**返り値:** Attachment\
 **OAuth:** User token + `write:media`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

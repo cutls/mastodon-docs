@@ -28,19 +28,19 @@ menu:
 `unlisted` = Unlisted post\
 `private` = Followers-only post\
 `direct` = Direct post\
-**Version history:** Added in 2.8.0
+**実装履歴:** Added in 2.8.0
 
 ### `posting:default:sensitive` {#sensitive}
 
 **Description:** Default sensitivity flag for new posts. Equivalent to [Source\#sensitive](source.md#sensitive).\
 **Type:** Boolean\
-**Version history:** Added in 2.8.0
+**実装履歴:** Added in 2.8.0
 
 ### `posting:default:language` {#language}
 
 **Description:** Default language for new posts. Equivalent to [Source\#language](source.md#language)\
 **Type:** String \(ISO 639-1 language two-letter code\), or null\
-**Version history:** Added in 2.8.0
+**実装履歴:** Added in 2.8.0
 
 ### `reading:expand:media` {#media}
 
@@ -49,13 +49,13 @@ menu:
 `default` = Hide media marked as sensitive\
 `show_all` = Always show all media by default, regardless of sensitivity\
 `hide_all` = Always hide all media by default, regardless of sensitivity\
-**Version history:** Added in 2.8.0
+**実装履歴:** Added in 2.8.0
 
 ### `reading:expand:spoilers` {#cw}
 
 **Description:** Whether CWs should be expanded by default.\
 **Type:** Boolean\
-**Version history:** Added in 2.8.0
+**実装履歴:** Added in 2.8.0
 
 ## See also
 

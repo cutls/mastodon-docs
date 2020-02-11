@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="" path="/api/v1/blocks" title="Blocked users" >}}
 {{< api-method-description >}}
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** User token + `read:blocks`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

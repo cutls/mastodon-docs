@@ -74,19 +74,19 @@ menu:
 
 **Description:** Location of linked resource.\
 **Type:** String \(URL\)\
-**Version history:** Added in 1.0.0
+**実装履歴:** Added in 1.0.0
 
 ### `title` {#title}
 
 **Description:** Title of linked resource.\
 **Type:** String\
-**Version history:** Added in 1.0.0
+**実装履歴:** Added in 1.0.0
 
 ### `description` {#description}
 
 **Description:** Description of preview.\
 **Type:** String\
-**Version history:** Added in 1.0.0
+**実装履歴:** Added in 1.0.0
 
 ### `type` {#type}
 
@@ -96,7 +96,7 @@ menu:
 `photo` = Photo OEmbed\
 `video` = Video OEmbed\
 `rich` = iframe OEmbed. Not currently accepted, so won't show up in practice.\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ## Optional attributes
 
@@ -104,55 +104,55 @@ menu:
 
 **Description:** The author of the original resource.\
 **Type:** String\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `author_url` {#author_url}
 
 **Description:** A link to the author of the original resource.\
 **Type:** String \(URL\)\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `provider_name` {#provider_name}
 
 **Description:** The provider of the original resource.\
 **Type:** String\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `provider_url` {#provider_url}
 
 **Description:** A link to the provider of the original resource.\
 **Type:** String \(URL\)\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `html` {#html}
 
 **Description:** HTML to be used for generating the preview card.\
 **Type:** String \(HTML\)\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `width` {#width}
 
 **Description:** Width of preview, in pixels.\
 **Type:** Number\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `height` {#height}
 
 **Description:** Height of preview, in pixels.\
 **Type:** Number\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `image` {#image}
 
 **Description:** Preview thumbnail.\
 **Type:** String \(URL\)\
-**Version history:** Added in 1.0.0
+**実装履歴:** Added in 1.0.0
 
 ### `embed_url` {#embed_url}
 
 **Description:** Used for photo embeds, instead of custom `html`.\
 **Type:** String \(URL\)\
-**Version history:** Added in 2.1.0
+**実装履歴:** Added in 2.1.0
 
 ## See also
 

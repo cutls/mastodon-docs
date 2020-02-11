@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/markers" title="Get saved timeline position" >}}
 {{< api-method-description >}}
 
-**Returns:** Marker\
+**返り値:** Marker\
 **OAuth:** User token + `read:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 3.0.0 - added
+- 3.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -72,11 +72,11 @@ Invalid or missing Authorization header
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/markers" title="Save position in timeline" >}}
 {{< api-method-description >}}
 
-**Returns:** Marker\
+**返り値:** Marker\
 **OAuth:** User token + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 3.0.0 - added
+- 3.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

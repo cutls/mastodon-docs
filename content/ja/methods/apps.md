@@ -13,11 +13,11 @@ menu:
 
 Create a new application to obtain OAuth2 credentials.
 
-**Returns:** Application, with `client_id` and `client_secret`\
+**返り値:** Application, with `client_id` and `client_secret`\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.7.2 - now returns vapid_key
 
 {{< endapi-method-description >}}
@@ -79,11 +79,11 @@ If a required parameter is missing or improperly formatted, the request will fai
 
 Confirm that the app's OAuth2 credentials work.
 
-**Returns:** Application\
+**返り値:** Application\
 **OAuth level:** App token\
-**Version history:**
+**実装履歴:**
 
-- 2.0.0 - added
+- 2.0.0 - 追加されました
 - 2.7.2 - now returns vapid_key
 
 {{< endapi-method-description >}}

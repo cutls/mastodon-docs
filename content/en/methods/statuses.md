@@ -13,11 +13,11 @@ menu:
 
 Post a new status.
 
-**Returns:** Status. When `scheduled_at` is present, ScheduledStatus is returned instead.\
+**返り値:** Status. When `scheduled_at` is present, ScheduledStatus is returned instead.\
 **OAuth:** User + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.7.0 - `scheduled_at` added
 - 2.8.0 - `poll` added
 
@@ -128,11 +128,11 @@ Status will be posted with chosen parameters. If scheduled_at is provided, then 
 
 View information about a status.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** Public for public statuses, user token + `read:statuses` for private statuses\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.7.0 - public statuses no longer require token
 
 {{< endapi-method-description >}}
@@ -252,11 +252,11 @@ Status does not exist, is deleted, or is private.
 
 Delete one of your own statuses.
 
-**Returns:** Status with source `text` and `media_attachments` or `poll`\
+**返り値:** Status with source `text` and `media_attachments` or `poll`\
 **OAuth:** User token + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.9.0 - return source properties, for use with delete and redraft
 
 {{< endapi-method-description >}}
@@ -454,11 +454,11 @@ Status already deleted, does not exist, or is not owned by you
 
 View statuses above and below this status in the thread.
 
-**Returns:** Context\
+**返り値:** Context\
 **OAuth:** Public for public statuses. User token + `read:statuses` for private statuses.\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -538,10 +538,10 @@ Status does not exist, is deleted, or is private
 
 View who boosted a given status.
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** Public
 Version history:
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -591,11 +591,11 @@ Status does not exist, is deleted, or is private.
 
 View who favourited a given status.
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -645,11 +645,11 @@ Status does not exist, is deleted, or is private
 
 Add a status to your favourites list.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:favourites`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -719,11 +719,11 @@ Status does not exist, is deleted, or is private
 
 Remove a status from your favourites list.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:favourites`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -795,11 +795,11 @@ Status does not exist, is deleted, or is private
 
 Reshare a status.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.8.0 - add visibility parameter
 
 {{< endapi-method-description >}}
@@ -888,11 +888,11 @@ Status does not exist, is deleted, or is private
 
 Undo a reshare of a status.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -964,11 +964,11 @@ Status deleted, does not exist, or no reblog exists
 
 Privately bookmark a status.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:bookmarks`\
-**Version history:**
+**実装履歴:**
 
-- 3.1.0 - added
+- 3.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1038,11 +1038,11 @@ Invalid or missing Authorization header
 
 Remove a status from your private bookmarks.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:bookmarks`\
-**Version history:**
+**実装履歴:**
 
-- 3.1.0 - added
+- 3.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1112,11 +1112,11 @@ Status does not exist, is deleted, is private, or was already not bookmarked
 
 Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:mutes`\
-**Version history:**
+**実装履歴:**
 
-- 1.4.2 - added
+- 1.4.2 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1186,11 +1186,11 @@ Invalid or missing Authorization header
 
 Start receiving notifications again for the thread that this status is part of.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:mutes`\
-**Version history:**
+**実装履歴:**
 
-- 1.4.2 - added
+- 1.4.2 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1260,11 +1260,11 @@ Invalid or missing Authorization header
 
 Feature one of your own public statuses at the top of your profile.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 1.6.0 - added
+- 1.6.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1370,11 +1370,11 @@ Status is not owned by you, or is not public. You cannot pin one of your private
 
 Unfeature a status from the top of your profile.
 
-**Returns:** Status\
+**返り値:** Status\
 **OAuth:** User token + `write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 1.6.0 - added
+- 1.6.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1457,11 +1457,11 @@ Status does not exist, is deleted, or is private
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/statuses/:id/card" title="Preview card" >}}
 {{< api-method-description >}}
 
-**Returns:** Card\
+**返り値:** Card\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.6.0 - deprecated in favor of card property inlined on Status entity
 - 3.0.0 - removed
 

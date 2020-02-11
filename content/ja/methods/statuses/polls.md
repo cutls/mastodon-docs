@@ -12,11 +12,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/polls/:id" title="View a poll" >}}
 {{< api-method-description >}}
 
-**Returns:** Poll\
+**返り値:** Poll\
 **OAuth:** Public if parent status is public. User token + `read:statuses` if parent status is private.\
-**Version history:**
+**実装履歴:**
 
-- 2.8.0 - added
+- 2.8.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -78,11 +78,11 @@ Poll does not exist, or poll's parent status is private
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/polls/:id/votes" title="Vote on a poll" >}}
 {{< api-method-description >}}
 
-**Returns:** Poll\
+**返り値:** Poll\
 **OAuth:** User token + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 2.8.0 - added
+- 2.8.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

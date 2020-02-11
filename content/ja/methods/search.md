@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v2/search" title="Search results" >}}
 {{< api-method-description >}}
 
-**Returns:** Results\
+**返り値:** Results\
 **OAuth:** User token + `read:search`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.1 - added, limit hardcoded to 5
+- 2.4.1 - 追加されました, limit hardcoded to 5
 - 2.8.0 - add type, limit, offset, min_id, max_id, account_id
 - 3.0.0 - add `exclude_unreviewed` param
 
@@ -150,12 +150,12 @@ Invalid or missing Authorization header
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/search" title="\(DEPRECATED\) Search results" >}}
 {{< api-method-description >}}
 
-**Returns:** Results, but hashtags is an array of strings instead of an array of Tag.\
+**返り値:** Results, but hashtags is an array of strings instead of an array of Tag.\
 **OAuth:** User token + `read:search`\
-**Version history:**\
-1.1 - added, limit hardcoded to 5
+**実装履歴:**\
+1.1 - 追加されました, limit hardcoded to 5
 - 1.5.0 - now requires authentication
-- 2.8.0 - added limit, pagination, and account options
+- 2.8.0 - 追加されました limit, pagination, and account options
 - 3.0.0 - removed; use v2 instead
 
 {{< endapi-method-description >}}

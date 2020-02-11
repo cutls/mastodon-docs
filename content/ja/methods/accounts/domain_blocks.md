@@ -160,7 +160,7 @@ If `domain` is not provided or contains spaces, the request will fail.
 **OAuth:** User token + ****`write:blocks` or `follow`\
 **実装履歴:**
 
-- 1.4.0 - added
+- 1.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

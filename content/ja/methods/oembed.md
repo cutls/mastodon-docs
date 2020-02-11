@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/oembed" title="OEmbed as JSON" >}}
 {{< api-method-description >}}
 
-**Returns:** OEmbed metadata\
+**返り値:** OEmbed metadata\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 1.0.0 - added
+- 1.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

@@ -12,11 +12,11 @@ menu:
 
 Statuses the user has bookmarked.
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** User token + `read:bookmarks`\
-**Version history:**
+**実装履歴:**
 
-- 3.1.0 - added
+- 3.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

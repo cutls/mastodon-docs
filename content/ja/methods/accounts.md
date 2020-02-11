@@ -15,12 +15,12 @@ menu:
 
 Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.
 
-**Returns:** Token\
+**返り値:** Token\
 **OAuth:** App token + `write:accounts`\
 **Version:**
 
-- 2.7.0 - added
-- 3.0.0 - added `reason` parameter
+- 2.7.0 - 追加されました
+- 3.0.0 - 追加されました `reason` parameter
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -78,11 +78,11 @@ The language of the confirmation email that will be sent
 
 Test to make sure that the user token works.
 
-**Returns:** the user's own Account with Source\
+**返り値:** the user's own Account with Source\
 **OAuth**: User token + `read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -236,14 +236,14 @@ Your user account is currently disabled, missing a confirmed email address, or p
 
 Update the user's display and preferences.
 
-**Returns:** the user's own Account with Source\
+**返り値:** the user's own Account with Source\
 **OAuth:** User token + `write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 1.1.1 - added
-- 2.3.0 - added `locked` parameter
-- 2.4.0 - added `source[privacy,sensitive]` parameters
-- 2.7.0 - added `discoverable` parameter
+- 1.1.1 - 追加されました
+- 2.3.0 - 追加されました `locked` parameter
+- 2.4.0 - 追加されました `source[privacy,sensitive]` parameters
+- 2.7.0 - 追加されました `discoverable` parameter
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -401,11 +401,11 @@ You should use accounts/verify_credentials to first obtain plaintext representat
 
 View information about a profile.
 
-**Returns:** Account\
+**返り値:** Account\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.4.0 - returns 410 if account is suspended
 
 {{< endapi-method-description >}}
@@ -575,11 +575,11 @@ Account is suspended
 
 Statuses posted to the given account.
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** Public \(for public statuses only\), or user token + `read:statuses` \(for private statuses the user is authorized to see\)\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.6.0 - add min_id
 - 2.7.0 - add exclude_reblogs and allow unauthed use
 - 2.8.0 - add tagged parameter
@@ -665,11 +665,11 @@ Account is suspended
 
 Accounts which follow the given account, if network is not hidden by the account owner.
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** App token + `read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -807,11 +807,11 @@ Account is suspended
 
 Accounts which the given account is following, if network is not hidden by the account owner.
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** App token + `read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -961,11 +961,11 @@ Account is suspended
 
 User lists that you have added this account to.
 
-**Returns:** Array of List\
+**返り値:** Array of List\
 **OAuth:** User token + `read:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1051,11 +1051,11 @@ Account with given id is suspended
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/accounts/:id/identity_proofs" title="Identity proofs" >}}
 {{< api-method-description >}}
 
-**Returns:** Array of IdentityProof\
+**返り値:** Array of IdentityProof\
 **OAuth:** User token\
-**Version history:**
+**実装履歴:**
 
-- 2.8.0 - added
+- 2.8.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1131,11 +1131,11 @@ Account with given id is suspended
 
 Follow the given account.
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:follows` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1201,11 +1201,11 @@ Trying to follow someone that you block or that blocks you
 
 Unfollow the given account.
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:follows` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1266,11 +1266,11 @@ Invalid or missing Authorization header
 
 Block the given account. Clients should filter statuses from this account if received \(e.g. due to a boost in the Home timeline\)
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:blocks` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1331,11 +1331,11 @@ Invalid or missing Authorization header
 
 Unblock the given account.
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:blocks` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1396,11 +1396,11 @@ Invalid or missing Authorization header
 
 Mute the given account. Clients should filter statuses and notifications from this account, if received \(e.g. due to a boost in the Home timeline\).
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:mutes` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1466,11 +1466,11 @@ Invalid or missing Authorization header
 
 Unmute the given account.
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:mutes` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1531,11 +1531,11 @@ Invalid or missing Authorization header
 
 Add the given account to the user's featured profiles. \(Featured profiles are currently shown on the user's own public profile.\)
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.5.0 - added
+- 2.5.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1633,11 +1633,11 @@ Account already endorsed
 
 Remove the given account from the user's featured profiles.
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User + `write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.5.0 - added
+- 2.5.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1709,11 +1709,11 @@ Successfully unendorsed, or account was already not endorsed
 
 Find out whether a given account is followed, blocked, muted, etc.
 
-**Returns:** Array of Relationship\
+**返り値:** Array of Relationship\
 **OAuth:** User token + `read:follows`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -1802,11 +1802,11 @@ Token does not have an authorized user
 
 Search for matching accounts by username or display name.
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** User token + `read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

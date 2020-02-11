@@ -13,11 +13,11 @@ menu:
 
 Information about the server.
 
-**Returns:** Instance\
+**返り値:** Instance\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 1.1.0 - added
+- 1.1.0 - 追加されました
 - 3.0.0 - requires user token if instance is in whitelist mode
 
 {{< endapi-method-description >}}
@@ -94,11 +94,11 @@ Information about the server.
 
 Domains that this instance is aware of.
 
-**Returns:** Array of String\
+**返り値:** Array of String\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 2.1.2 - added
+- 2.1.2 - 追加されました
 - 3.0.0 - requires user token if instance is in whitelist mode
 
 {{< endapi-method-description >}}
@@ -122,11 +122,11 @@ Domains that this instance is aware of.
 
 Instance activity over the last 3 months, binned weekly.
 
-**Returns:** Array of Activity\
+**返り値:** Array of Activity\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 2.1.2 - added
+- 2.1.2 - 追加されました
 - 3.0.0 - requires user token if instance is in whitelist mode
 
 {{< endapi-method-description >}}

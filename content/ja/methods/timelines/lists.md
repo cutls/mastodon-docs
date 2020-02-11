@@ -14,11 +14,11 @@ menu:
 
 Fetch all lists that the user owns.
 
-**Returns:** Array of List\
+**返り値:** Array of List\
 **OAuth:** User token + `read:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -67,11 +67,11 @@ Invalid or missing Authorization header
 
 Fetch the list with the given ID. Used for verifying the title of a list.
 
-**Returns:** List\
+**返り値:** List\
 **OAuth:** User token + `read:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -136,11 +136,11 @@ If the ID does not exist or is not owned by you
 
 Create a new list.
 
-**Returns:** List\
+**返り値:** List\
 **OAuth:** User token + `write:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -192,11 +192,11 @@ Invalid or missing Authorization header
 
 Change the title of a list.
 
-**Returns:** List\
+**返り値:** List\
 **OAuth:** User token + `write:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -264,11 +264,11 @@ If the title is blank
 {{< api-method method="delete" host="https://mastodon.example" path="/api/v1/lists/:id" title="Delete a list" >}}
 {{< api-method-description >}}
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -332,11 +332,11 @@ ID does not exist or is not owned by you
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/lists/:id/accounts" title="View accounts in list" >}}
 {{< api-method-description >}}
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** User token + `read:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -428,11 +428,11 @@ The list ID does not exist or is not owned by you
 
 Add accounts to the given list. Note that the user must be following these accounts.
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -508,11 +508,11 @@ Account is already in list
 
 Remove accounts from the given list.
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

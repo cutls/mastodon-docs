@@ -48,13 +48,13 @@ menu:
 
 **Description:** Profile bio.\
 **Type:** String\
-**Version history:** Added in 1.5.0
+**実装履歴:** Added in 1.5.0
 
 ### `fields` {#fields}
 
 **Description:** Metadata about the account.\
 **Type:** Array of [Field]({{< relref "field.md" >}})\
-**Version history:** Added in 2.4.0
+**実装履歴:** Added in 2.4.0
 
 ## Nullable attributes
 
@@ -66,25 +66,25 @@ menu:
 `unlisted` = Unlisted post\
 `private` = Followers-only post\
 `direct` = Direct post\
-**Version history:** Added in 1.5.0
+**実装履歴:** Added in 1.5.0
 
 ### `sensitive` {#sensitive}
 
 **Description:** Whether new statuses should be marked sensitive by default.\
 **Type:** Boolean\
-**Version history:** Added in 1.5.0
+**実装履歴:** Added in 1.5.0
 
 ### `language` {#language}
 
 **Description:** The default posting language for new statuses.\
 **Type:** String \(ISO 639-1 language two-letter code\)\
-**Version history:** Added in 2.4.2
+**実装履歴:** Added in 2.4.2
 
 ### `follow_requests_count` {#follow_requests_count}
 
 **Description:** The number of pending follow requests.\
 **Type:** Number\
-**Version history:** Added in 3.0.0
+**実装履歴:** Added in 3.0.0
 
 ## See also
 

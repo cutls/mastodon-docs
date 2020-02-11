@@ -21,11 +21,11 @@ Responses are not currently documented. Exact nature of parameters has not been 
 
 View accounts matching certain criteria for filtering, up to 100 at a time. Pagination may be done with the HTTP Link header in the response.
 
-**Returns:** Admin::Account\
+**返り値:** Admin::Account\
 **OAuth:** User token + `admin:read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -95,11 +95,11 @@ Filter for staff accounts?
 
 View admin-level information about the given account.
 
-**Returns:** Admin::Account\
+**返り値:** Admin::Account\
 **OAuth:** User token + `admin:read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -133,11 +133,11 @@ Bearer &lt;user token&gt;
 
 Perform an action against an account and log this action in the moderation history.
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `admin:write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -188,11 +188,11 @@ Whether an email should be sent to the user with the above information.
 
 Approve the given local account if it is currently pending approval.
 
-**Returns:** Admin::Account\
+**返り値:** Admin::Account\
 **OAuth:** User token + `admin:write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -226,11 +226,11 @@ Bearer &lt;user token&gt;
 
 Reject the given local account if it is currently pending approval.
 
-**Returns:** Admin::Account\
+**返り値:** Admin::Account\
 **OAuth:** User token + `admin:write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -264,11 +264,11 @@ Bearer &lt;user token&gt;
 
 Re-enable a local account whose login is currently disabled.
 
-**Returns:** Admin::Account\
+**返り値:** Admin::Account\
 **OAuth:** User token + `admin:write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -302,11 +302,11 @@ Bearer &lt;user token&gt;
 
 Unsilence a currently silenced account.
 
-**Returns:** Admin::Account\
+**返り値:** Admin::Account\
 **OAuth:** User token + `admin:write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -340,11 +340,11 @@ Bearer &lt;user token&gt;
 
 Unsuspend a currently suspended account.
 
-**Returns:** Admin::Account\
+**返り値:** Admin::Account\
 **OAuth:** User token + `admin:write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -382,11 +382,11 @@ Bearer &lt;user token&gt;
 
 View all reports. Pagination may be done with HTTP Link header in the response.
 
-**Returns:** Array of Admin::Report\
+**返り値:** Array of Admin::Report\
 **OAuth:** User token + `admin:read:reports`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -423,11 +423,11 @@ Bearer &lt;user token&gt;
 
 View information about the report with the given ID.
 
-**Returns:** Admin::Report\
+**返り値:** Admin::Report\
 **OAuth:** User token + `admin:read:reports`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -461,11 +461,11 @@ Bearer &lt;user token&gt;
 
 Claim the handling of this report to yourself.
 
-**Returns:** Admin::Report\
+**返り値:** Admin::Report\
 **OAuth:** User token + `admin:write:reports`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -499,11 +499,11 @@ Bearer &lt;user token&gt;
 
 Unassign a report so that someone else can claim it.
 
-**Returns:** Admin::Report\
+**返り値:** Admin::Report\
 **OAuth:** User token + `admin:write:reports`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -537,11 +537,11 @@ Bearer &lt;user token&gt;
 
 Mark a report as resolved with no further action taken.
 
-**Returns:** Admin::Report\
+**返り値:** Admin::Report\
 **OAuth:** User token + `admin:write:reports`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -575,11 +575,11 @@ Bearer &lt;user token&gt;
 
 Reopen a currently closed report.
 
-**Returns:** Admin::Report\
+**返り値:** Admin::Report\
 **OAuth:** User token + `admin:write:reports`\
-**Version history:**
+**実装履歴:**
 
-- 2.9.1 - added
+- 2.9.1 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

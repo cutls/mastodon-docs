@@ -35,8 +35,8 @@ No local data is actually deleted, because emptying the database or deleting the
 **Make sure you know exactly what you are doing before running this command.** This operation is NOT reversible, and it can take a long time. The server will be in a BROKEN STATE after this command finishes. A running Sidekiq process is required, so do not shut down the server until the queues are fully cleared.
 {{< /hint >}}
 
-**Version history:**
-2.8.0 - added
+**実装履歴:**
+2.8.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -46,8 +46,8 @@ No local data is actually deleted, because emptying the database or deleting the
 
 Show the version of the currently running Mastodon instance.
 
-**Version history:**
-2.7.0 - added
+**実装履歴:**
+2.7.0 - 追加されました
 
 ## Accounts CLI {#accounts}
 
@@ -57,8 +57,8 @@ Show the version of the currently running Mastodon instance.
 
 Generate and broadcast new RSA keys, as part of security maintenance.
 
-**Version history:**
-2.5.0 - added
+**実装履歴:**
+2.5.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -69,8 +69,8 @@ Generate and broadcast new RSA keys, as part of security maintenance.
 
 Create a new user account with given USERNAME and provided --email.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -85,8 +85,8 @@ Create a new user account with given USERNAME and provided --email.
 
 Modify a user account's role, email, active status, approval mode, or 2FA requirement.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -103,8 +103,8 @@ Modify a user account's role, email, active status, approval mode, or 2FA requir
 
 Delete a user account with given USERNAME.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -114,8 +114,8 @@ Delete a user account with given USERNAME.
 
 Request a backup for a user account with given USERNAME. The backup will be created in Sidekiq asynchronously, and the user will receive an email with a link to it once it's done.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -125,8 +125,8 @@ Request a backup for a user account with given USERNAME. The backup will be crea
 
 Remove remote accounts that no longer exist. Queries every single remote account in the database to determine if it still exists on the origin server, and if it doesn't, then remove it from the database. Accounts that have had confirmed activity within the last week are excluded from the checks, in case the server is just down.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 2.8.0 - add `--dry_run`
 
 | Option | Description |
@@ -138,8 +138,8 @@ Remove remote accounts that no longer exist. Queries every single remote account
 
 Refetch remote user data and files for one or multiple accounts.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -154,8 +154,8 @@ Refetch remote user data and files for one or multiple accounts.
 
 Force all local accounts to follow a local account specified by username.
 
-**Version history:**
-2.7.0 - added
+**実装履歴:**
+2.7.0 - 追加されました
 3.0.0 - now uses USERNAME instead of ACCT
 
 | Option | Description |
@@ -168,8 +168,8 @@ Force all local accounts to follow a local account specified by username.
 
 Force all local accounts to unfollow an account specified by their address.
 
-**Version history:**
-2.7.0 - added
+**実装履歴:**
+2.7.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -181,8 +181,8 @@ Force all local accounts to unfollow an account specified by their address.
 
 Reset all follow and/or follower relationships for a local account.
 
-**Version history:**
-2.8.0 - added
+**実装履歴:**
+2.8.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -194,8 +194,8 @@ Reset all follow and/or follower relationships for a local account.
 
 Approve new registrations when instance is in approval mode.
 
-**Version history:**
-2.8.0 - added
+**実装履歴:**
+2.8.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -211,15 +211,15 @@ Approve new registrations when instance is in approval mode.
 
 Clear out the cache storage.
 
-**Version history:**
-2.8.1 - added
+**実装履歴:**
+2.8.1 - 追加されました
 
 ### `tootctl cache recount` {#cache-recount}
 
 Update hard-cached counters of TYPE by counting referenced records from scratch. It may take a very long time to finish, depending on the size of the database. Accounts will have their follower, following, and status counts refreshed. Statuses will have their reply, boost, and favourite counts refreshed.
 
-**Version history:**
-3.0.0 - added
+**実装履歴:**
+3.0.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -235,8 +235,8 @@ Update hard-cached counters of TYPE by counting referenced records from scratch.
 
 Remove all accounts from a given DOMAIN without leaving behind any records. Unlike a suspension, if the DOMAIN still exists in the wild, it means the accounts could return if they are resolved again.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 2.8.0 - add `--whitelist_mode`
 2.9.0 - remove custom emoji as well
 3.0.0 - accept multiple domains
@@ -253,8 +253,8 @@ Remove all accounts from a given DOMAIN without leaving behind any records. Unli
 
 Crawl the known fediverse by using Mastodon REST API endpoints that expose all known peers, and collect statistics from those peers, as long as those peers support those API endpoints. When no START is given, the command uses the server's own database of known peers to seed the crawl. Returns total servers, total registered users, total active users in the last week, and total users joined in the last week.
 
-**Version history:**
-2.7.0 - added
+**実装履歴:**
+2.7.0 - 追加されました
 3.0.0 - add `--exclude_suspended`
 
 | Option | Description |
@@ -272,8 +272,8 @@ Crawl the known fediverse by using Mastodon REST API endpoints that expose all k
 
 Imports custom emoji from a .tar.gz archive at a given path. The archive should contain PNG or GIF files no larger than 50KB, and the shortcode will be set equal to the filename minus the extension, with optional prefixes and/or suffixes.
 
-**Version history:**
-2.5.0 - added
+**実装履歴:**
+2.5.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -288,7 +288,7 @@ Imports custom emoji from a .tar.gz archive at a given path. The archive should 
 
 Remove all custom emoji.
 
-**Version history:**
+**実装履歴:**
 3.1.0 - add `--remote_only`
 
 | Option | Description |
@@ -296,8 +296,8 @@ Remove all custom emoji.
 | `--remote_only` | If provided, remove only from remote domains. |
 
 
-**Version history:**
-2.8.0 - added
+**実装履歴:**
+2.8.0 - 追加されました
 
 ## Feeds CLI {#feeds}
 
@@ -307,8 +307,8 @@ Remove all custom emoji.
 
 Build home and list feeds for one or all users. Feeds will be built from the database and cached in-memory with Redis. Mastodon manages home feeds for active users automatically.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -322,8 +322,8 @@ Build home and list feeds for one or all users. Feeds will be built from the dat
 
 Remove all home and list feeds from Redis.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 ## Media CLI {#media}
 
@@ -333,8 +333,8 @@ Remove all home and list feeds from Redis.
 
 Remove locally cached copies of media attachments from other servers.
 
-**Version history:**
-2.5.0 - added
+**実装履歴:**
+2.5.0 - 追加されました
 2.6.2 - show freed disk space
 
 | Option | Description |
@@ -348,8 +348,8 @@ Remove locally cached copies of media attachments from other servers.
 
 Scans for files that do not belong to existing media attachments, and remove them. Please mind that some storage providers charge for the necessary API requests to list objects. Also, this operation requires iterating over every single file individually, so it will be slow.
 
-**Version history:**
-3.1.0 - added
+**実装履歴:**
+3.1.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -360,8 +360,8 @@ Scans for files that do not belong to existing media attachments, and remove the
 
 Refetch remote media attachments from other servers. You must specify the source of media attachments with either --status, --account, or --domain. If an attachment already exists in the database, it will not be overwritten unless you use --force.
 
-**Version history:**
-3.0.0 - added
+**実装履歴:**
+3.0.0 - 追加されました
 3.0.1 - add `--force` and skip already downloaded attachments by default
 
 | Option | Description |
@@ -378,15 +378,15 @@ Refetch remote media attachments from other servers. You must specify the source
 
 Calculate disk space consumed by Mastodon.
 
-**Version history:**
-3.0.1 - added
+**実装履歴:**
+3.0.1 - 追加されました
 
 ### `tootctl media lookup` {#media-lookup}
 
 Prompts for a media URL, then looks up where the media is displayed.
 
-**Version history:**
-3.1.0 - added
+**実装履歴:**
+3.1.0 - 追加されました
 
 ## Preview Cards CLI {#preview_cards}
 
@@ -396,8 +396,8 @@ Prompts for a media URL, then looks up where the media is displayed.
 
 Remove local thumbnails for preview cards.
 
-**Version history:**
-3.0.0 - added
+**実装履歴:**
+3.0.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |
@@ -415,8 +415,8 @@ Remove local thumbnails for preview cards.
 
 Create or update an ElasticSearch index and populate it. If ElasticSearch is empty, this command will create the necessary indices and then import data from the database into those indices. This command will also upgrade indices if the underlying schema has been changed since the last run.
 
-**Version history:**
-2.8.0 - added
+**実装履歴:**
+2.8.0 - 追加されました
 3.0.0 - add `--processes` for parallelization
 
 | Option | Description |
@@ -431,15 +431,15 @@ Create or update an ElasticSearch index and populate it. If ElasticSearch is emp
 
 Opens registrations.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 ### `tootctl settings registrations close` {#settings-registrations-close}
 
 Closes registrations.
 
-**Version history:**
-2.6.0 - added
+**実装履歴:**
+2.6.0 - 追加されました
 
 ## Statuses CLI {#statuses}
 
@@ -451,8 +451,8 @@ Remove unreferenced statuses from the database, such as statuses that came from 
 
 This is a computationally heavy procedure that creates extra database indices before commencing, and removes them afterward.
 
-**Version history:**
-2.8.0 - added
+**実装履歴:**
+2.8.0 - 追加されました
 
 | Option | Description |
 | :--- | :--- |

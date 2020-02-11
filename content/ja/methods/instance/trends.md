@@ -12,11 +12,11 @@ menu:
 
 Tags that are being used more frequently within the past week.
 
-**Returns:** Array of Tag with History\
+**返り値:** Array of Tag with History\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 3.0.0 - added
+- 3.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/filters" title="View all filters" >}}
 {{< api-method-description >}}
 
-**Returns:** Filter\
+**返り値:** Filter\
 **OAuth:** User token + `read:filters`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.3 - added
+- 2.4.3 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -82,11 +82,11 @@ Invalid or missing Authorization header
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/filters/:id" title="View a single filter" >}}
 {{< api-method-description >}}
 
-**Returns:** Filter\
+**返り値:** Filter\
 **OAuth:** User token + `read:filters`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.3 - added
+- 2.4.3 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -157,11 +157,11 @@ Filter ID does not exist, or is not owned by you
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/filters" title="Create a filter" >}}
 {{< api-method-description >}}
 
-**Returns:** Filter\
+**返り値:** Filter\
 **OAuth:** User token + `write:filters`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.3 - added
+- 2.4.3 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -257,11 +257,11 @@ If phrase or context are not provided properly
 {{< api-method method="put" host="https://mastodon.example" path="/api/v1/filters/:id" title="Update a filter" >}}
 {{< api-method-description >}}
 
-**Returns:** Filter\
+**返り値:** Filter\
 **OAuth:** User token + `write:filters`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.3 - added
+- 2.4.3 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -375,11 +375,11 @@ If phrase or context are not provided properly
 {{< api-method method="delete" host="https://mastodon.example" path="/api/v1/filters/:id" title="Remove a filter" >}}
 {{< api-method-description >}}
 
-**Returns:** Filter\
+**返り値:** Filter\
 **OAuth:** User token + `write:filters`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.3 - added
+- 2.4.3 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

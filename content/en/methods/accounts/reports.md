@@ -14,10 +14,10 @@ Responses are not currently documented.
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/reports" title="File a report" >}}
 {{< api-method-description >}}
 
-**Returns:** Report\
+**返り値:** Report\
 **OAuth:** User token + `write:reports`\
-**Version history:**\
-1.1 - added
+**実装履歴:**\
+1.1 - 追加されました
 - 2.3.0 - add `forward` parameter
 
 {{< endapi-method-description >}}

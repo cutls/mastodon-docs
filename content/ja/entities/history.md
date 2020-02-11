@@ -22,19 +22,19 @@ menu:
 
 **Description:** UNIX timestamp on midnight of the given day.\
 **Type:** String \(UNIX timestamp\)\
-**Version history:** Added in 2.4.1
+**実装履歴:** Added in 2.4.1
 
 ### `uses` {#uses}
 
 **Description:** the counted usage of the tag within that day.\
 **Type:** String \(cast from an integer\)\
-**Version history:** Added in 2.4.1
+**実装履歴:** Added in 2.4.1
 
 ### `accounts` {#accounts}
 
 **Description:** the total of accounts using the tag within that day.\
 **Type:** String \(cast from an integer\)\
-**Version history:** Added in 2.4.1
+**実装履歴:** Added in 2.4.1
 
 ## See also
 

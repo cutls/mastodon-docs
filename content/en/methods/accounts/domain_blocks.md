@@ -12,11 +12,11 @@ menu:
 
 View domains the user has blocked.
 
-**Returns:** Array of strings\
+**返り値:** Array of strings\
 **OAuth:** User token + `read:blocks` or `follow`\
 **Version:**
 
-- 1.4.0 - added
+- 1.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -77,11 +77,11 @@ Block a domain to:
 - remove all followers from it
 - prevent following new users from it \(but does not remove existing follows\)
 
-**Returns:** n/a\
+**返り値:** n/a\
 **OAuth:** User token + ****`write:blocks` or `follow`\
 **Version:**
 
-- 1.4.0 - added
+- 1.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -155,11 +155,11 @@ If `domain` is not provided or contains spaces, the request will fail.
 
 Remove a domain block, if it exists in the user's array of blocked domains.
 
-**Returns:** n/a\
+**返り値:** n/a\
 **OAuth:** User token + ****`write:blocks` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 1.4.0 - added
+- 1.4.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

@@ -48,13 +48,13 @@ menu:
 
 **Description:** Parents in the thread.\
 **Type:** Array of [Status](status.md)\
-**Version history:** Added in 0.6.0
+**実装履歴:** Added in 0.6.0
 
 ### `descendants` {#descendants}
 
 **Description:** Children in the thread.\
 **Type:** Array of [Status](status.md)\
-**Version history:** Added in 0.6.0
+**実装履歴:** Added in 0.6.0
 
 ## See also
 

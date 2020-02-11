@@ -11,12 +11,12 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/timelines/public" title="Public timeline" >}}
 {{< api-method-description >}}
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** Public. Requires app token + `read:statuses` if the instance has disabled public preview.\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
-- 2.3.0 - added `only_media`
+- 0.0.0 - 追加されました
+- 2.3.0 - 追加されました `only_media`
 - 2.6.0 - add `min_id`
 - 3.0.0 - auth is required if public preview is disabled
 
@@ -79,12 +79,12 @@ Sample API call with limit=2
 
 View public statuses containing the given hashtag.
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** Public. Requires app token + `read:statuses` if the instance has disabled public preview.\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
-- 2.3.0 - added `only_media`
+- 0.0.0 - 追加されました
+- 2.3.0 - 追加されました `only_media`
 - 2.6.0 - add `min_id`
 - 3.0.0 - auth is required if public preview is disabled
 
@@ -190,11 +190,11 @@ Sample timeline for the hashtag \#cats and limit=2
 
 View statuses from followed users.
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** User + `read:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.6.0 - add `min_id`
 
 {{< endapi-method-description >}}
@@ -272,11 +272,11 @@ Home feed is regenerating
 
 View statuses in the given list timeline.
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** User token + `read:lists`\
-**Version history:**
+**実装履歴:**
 
-- 2.1.0 - added
+- 2.1.0 - 追加されました
 - 2.6.0 - add `min_id`
 
 {{< endapi-method-description >}}
@@ -345,10 +345,10 @@ Statuses in this list will be returned.
 
 View statuses with a "direct" privacy, from your account or in your notifications.
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** User token + `read:statuses`\
-**Version history:**\
-x.x.x - added
+**実装履歴:**\
+x.x.x - 追加されました
 - 2.6.0 - add `min_id`. deprecated in favor of conversations
 - 3.0.0 - removed
 

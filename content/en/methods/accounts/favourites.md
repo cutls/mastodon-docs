@@ -12,11 +12,11 @@ menu:
 
 Statuses the user has favourited.
 
-**Returns:** Array of Status\
+**返り値:** Array of Status\
 **OAuth:** User token + `read:favourites`\
 **Version:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 2.6.0 - min_id added
 
 {{< endapi-method-description >}}

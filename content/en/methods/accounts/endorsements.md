@@ -12,11 +12,11 @@ menu:
 
 Accounts that the user is currently featuring on their profile.
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** User token + `read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 2.5.0 - added
+- 2.5.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

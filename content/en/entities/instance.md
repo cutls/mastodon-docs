@@ -71,61 +71,61 @@ menu:
 
 **Description:** The domain name of the instance.\
 **Type:** String\
-**Version history:** Added in 1.1.0
+**実装履歴:** Added in 1.1.0
 
 ### `title` {#title}
 
 **Description:** The title of the website.\
 **Type:** String\
-**Version history:** Added in 1.1.0
+**実装履歴:** Added in 1.1.0
 
 ### `description` {#description}
 
 **Description:** Admin-defined description of the Mastodon site.\
 **Type:** String\
-**Version history:** Added in 1.1.0
+**実装履歴:** Added in 1.1.0
 
 ### `short_description` {#short_description}
 
 **Description:** A shorter description defined by the admin.\
 **Type:** String\
-**Version history:** Added in 2.9.2
+**実装履歴:** Added in 2.9.2
 
 ### `email` {#email}
 
 **Description:** An email that may be contacted for any inquiries.\
 **Type:** String\
-**Version history:** Added in 1.1.0
+**実装履歴:** Added in 1.1.0
 
 ### `version` {#version}
 
 **Description:** The version of Mastodon installed on the instance.\
 **Type:** String\
-**Version history:** Added in 1.3.0
+**実装履歴:** Added in 1.3.0
 
 ### `languages` {#languages}
 
 **Description:** Primary langauges of the website and its staff.\
 **Type:** Array of String \(ISO 639 Part 1-5 language codes\)\
-**Version history:** Added in 2.3.0
+**実装履歴:** Added in 2.3.0
 
 ### `registrations` {#registrations}
 
 **Description:** Whether registrations are enabled.\
 **Type:** Boolean\
-**Version history:** Added in 2.7.2
+**実装履歴:** Added in 2.7.2
 
 ### `approval_required` {#approval_required}
 
 **Description:** Whether registrations require moderator approval.\
 **Type:** Boolean\
-**Version history:** Added in 2.9.2
+**実装履歴:** Added in 2.9.2
 
 ### `urls` {#urls}
 
 **Description:** URLs of interest for clients apps.\
 **Type:** Hash \(`streaming_api`\)\
-**Version history:** Added in 1.4.2
+**実装履歴:** Added in 1.4.2
 
 #### `urls[streaming_api]` {#streaming_api}
 
@@ -135,7 +135,7 @@ Websockets address for push streaming. String \(URL\).
 
 **Description:** Statistics about how much information the instance contains.\
 **Type:** Hash \(`user_count`, `status_count`, `domain_count`\)\
-**Version history:** Added in 1.6.0
+**実装履歴:** Added in 1.6.0
 
 #### `user_count` {#user_count}
 
@@ -155,13 +155,13 @@ Domains federated with this instance. Number.
 
 **Description:** Banner image for the website.\
 **Type:** String \(URL\) or null\
-**Version history:** Added in 1.6.1
+**実装履歴:** Added in 1.6.1
 
 ### `contact_account` {#contact_account}
 
 **Description:** A user that can be contacted, as an alternative to `email`.\
 **Type:** [Account](account.md) or null\
-**Version history:** Added in 2.3.0
+**実装履歴:** Added in 2.3.0
 
 ## See also
 

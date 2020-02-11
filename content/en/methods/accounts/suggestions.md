@@ -14,11 +14,11 @@ menu:
 
 Accounts the user has had past positive interactions with, but is not yet following.
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** User token + `read`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.3 - added
+- 2.4.3 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -163,11 +163,11 @@ Bad Authorization header
 
 Remove an account from follow suggestions.
 
-**Returns:** n/a\
+**返り値:** n/a\
 **OAuth:** User token + `read`\
-**Version history:**
+**実装履歴:**
 
-- 2.4.3 - added
+- 2.4.3 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

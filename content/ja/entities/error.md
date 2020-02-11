@@ -25,7 +25,7 @@ menu:
 
 **Description:** The error message.\
 **Type:** String\
-**Version history:** Added in 0.6.0
+**実装履歴:** Added in 0.6.0
 
 ## Optional attributes
 
@@ -33,7 +33,7 @@ menu:
 
 **Description:** A longer description of the error, mainly provided with the OAuth API.\
 **Type:** String\
-**Version history:** Added in 0.6.0
+**実装履歴:** Added in 0.6.0
 
 ## Possible reasons {#reasons}
 

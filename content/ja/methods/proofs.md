@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/proofs" title="View identity proof" >}}
 {{< api-method-description >}}
 
-**Returns:** custom response defined by provider\
+**返り値:** custom response defined by provider\
 **OAuth:** Public\
-**Version history:**
+**実装履歴:**
 
-- 2.8.0 - added
+- 2.8.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

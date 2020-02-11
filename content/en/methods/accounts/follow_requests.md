@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/follow_requests" title="Pending Follows" >}}
 {{< api-method-description >}}
 
-**Returns:** Array of Account\
+**返り値:** Array of Account\
 **OAuth:** User token + `read:follows` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -70,11 +70,11 @@ Invalid or missing Authorization header
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/follow_requests/:id/authorize" title="Accept Follow" >}}
 {{< api-method-description >}}
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:follows` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 3.0.0 - now returns Relationship instead of nothing
 
 {{< endapi-method-description >}}
@@ -147,11 +147,11 @@ No pending follow request from that user ID
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/follow_requests/:id/reject" title="Reject Follow" >}}
 {{< api-method-description >}}
 
-**Returns:** Relationship\
+**返り値:** Relationship\
 **OAuth:** User token + `write:follows` or `follow`\
-**Version history:**
+**実装履歴:**
 
-- 0.0.0 - added
+- 0.0.0 - 追加されました
 - 3.0.0 - now returns Relationship instead of nothing
 
 {{< endapi-method-description >}}

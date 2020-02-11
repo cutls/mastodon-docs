@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/scheduled_statuses" title="View scheduled statuses" >}}
 {{< api-method-description >}}
 
-**Returns:** Array of ScheduledStatus\
+**返り値:** Array of ScheduledStatus\
 **OAuth:** User token + `read:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 2.7.0 - added
+- 2.7.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -84,11 +84,11 @@ Return results immediately newer than ID
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/scheduled_statuses/:id" title="View a single scheduled status" >}}
 {{< api-method-description >}}
 
-**Returns:** ScheduledStatus\
+**返り値:** ScheduledStatus\
 **OAuth:** User token + `read:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 2.7.0 - added
+- 2.7.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -158,11 +158,11 @@ Bearer &lt;user token&gt;
 {{< api-method method="put" host="https://mastodon.example" path="/api/v1/scheduled_statuses/:id" title="Schedule a status" >}}
 {{< api-method-description >}}
 
-**Returns:** ScheduledStatus\
+**返り値:** ScheduledStatus\
 **OAuth:** User token + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 2.7.0 - added
+- 2.7.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -248,11 +248,11 @@ ISO 8601 Datetime at which the status will be published. Must be at least 5 minu
 {{< api-method method="delete" host="https://mastodon.example" path="/api/v1/scheduled_statuses/:id" title="Cancel a scheduled status" >}}
 {{< api-method-description >}}
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 2.7.0 - added
+- 2.7.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

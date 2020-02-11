@@ -10,11 +10,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/featured_tags" title="View your featured tags" >}}
 {{< api-method-description >}}
 
-**Returns:**FeaturedTagの配列\
+**返り値:**FeaturedTagの配列\
 **OAuth:** User token + `read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 3.0.0 - added
+- 3.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -61,11 +61,11 @@ Invalid or missing Authorization header
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/featured_tags" title="Feature a tag" >}}
 {{< api-method-description >}}
 
-**Returns:** FeaturedTag\
+**返り値:** FeaturedTag\
 **OAuth:** User token + `write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 3.0.0 - added
+- 3.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -85,7 +85,7 @@ The hashtag to be featured.
 {{< api-method-response-example httpCode=200 >}}
 {{< api-method-response-example-description >}}
 
-A FeaturedTag will be created with the specified `name`.
+FeaturedTagはある特定の`name`を付けて作成されます。
 {{< endapi-method-response-example-description >}}
 
 
@@ -101,7 +101,7 @@ A FeaturedTag will be created with the specified `name`.
 {{< api-method-response-example httpCode=422 >}}
 {{< api-method-response-example-description >}}
 
-If `name` is not a valid hashtag, e.g. contains illegal characters or only numbers
+`name`が有効なハッシュタグで無い場合、例えば許可されていない文字や数字だけの場合
 {{< endapi-method-response-example-description >}}
 
 
@@ -117,11 +117,11 @@ If `name` is not a valid hashtag, e.g. contains illegal characters or only numbe
 {{< api-method method="delete" host="https://mastodon.example" path="/api/v1/featured_tags/:id" title="Unfeature a tag" >}}
 {{< api-method-description >}}
 
-**Returns:** empty object\
+**返り値:** 空のオブジェクト\
 **OAuth:** User token + `write:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 3.0.0 - added
+- 3.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -170,11 +170,11 @@ If the ID does not exist or is not owned by you
 
 Shows your 10 most-used tags, with usage history for the past week.
 
-**Returns:** Array of Tag with History\
+**返り値:** Array of Tag with History\
 **OAuth:** User token + `read:accounts`\
-**Version history:**
+**実装履歴:**
 
-- 3.0.0 - added
+- 3.0.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}

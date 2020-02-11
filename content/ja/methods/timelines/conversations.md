@@ -12,11 +12,11 @@ menu:
 {{< api-method method="get" host="https://mastodon.example" path="/api/v1/conversations" title="Show conversation" >}}
 {{< api-method-description >}}
 
-**Returns:** Array of Conversation\
+**返り値:** Array of Conversation\
 **OAuth:** User token + `read:statuses`\
-**Version history:**
+**実装履歴:**
 
-- 2.6.0 - added
+- 2.6.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -111,11 +111,11 @@ Invalid or missing Authorization header
 {{< api-method method="delete" host="https://mastodon.example" path="/api/v1/conversations/:id" title="Remove conversation" >}}
 {{< api-method-description >}}
 
-**Returns:** empty object\
+**返り値:** empty object\
 **OAuth:** User token + `write:conversations`\
-**Version history:**
+**実装履歴:**
 
-- 2.6.0 - added
+- 2.6.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
@@ -174,11 +174,11 @@ The conversation does not exist, or is not owned by you.
 {{< api-method method="post" host="https://mastodon.example" path="/api/v1/conversations/:id/read" title="Mark as read" >}}
 {{< api-method-description >}}
 
-**Returns:** Conversation\
+**返り値:** Conversation\
 **OAuth:** User token + `write:conversations`\
-**Version history:**
+**実装履歴:**
 
-- 2.6.0 - added
+- 2.6.0 - 追加されました
 
 {{< endapi-method-description >}}
 {{< api-method-spec >}}
