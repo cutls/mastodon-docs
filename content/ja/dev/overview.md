@@ -22,9 +22,11 @@ MastodonはRuby on Railsアプリケーションです。フロントエンド�
 `RAILS_ENV`はデフォルトで`development`に設定されています。なので、Mastodonをdevelopmentで動かすときは何も付与する必要はありません。実際は、すべてのMastodonの構成設定はdevelopment用にデフォルト値が設定されており、`.env`ファイルも何かを変更しない限り不要です。以下はdevelopmentモードとproductionモードの挙動の違いです。
 
 * Rubyコードを変更した時に自動で再読込します。変更を確認するためにRailsサーバーのプロセスを再起動する必要はないと言うことです。
-* All errors you encounter show stack traces in the browser, rather than being hidden behind a generic error page
+* 発生したすべてのエラーに対してブラウザにスタックトレースが表示されます。一般的なエラーページが表示されてエラー内容がわからないということはありません。
 * Webpack runs continuously and re-compiles JS and CSS assets when you change any of the front-end files, and the pages automatically reload
-* Caching is disabled by default
+* Webpackが継続的に動作します。JSとCSSアセットを変更時にリコンパイルし、ページを自動で再読込します。
+* キャッシュがデフォルトで無効になります。
+* Adminのアカウントが`admin@localhost:3000`、パスワードが`mastodonadmin`
 * An admin account with the e-mail `admin@localhost:3000` and password `mastodonadmin` is created automatically during `db:seed`
 
 It should be noted that the Docker configuration distributed with Mastodon is optimized for the production environment, and so is an extremely bad fit for development. The Vagrant configuration, on the other hand, is meant specifically for development and not production use.
