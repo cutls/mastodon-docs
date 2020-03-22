@@ -2,6 +2,9 @@
 title: Mastodon ドキュメント
 ---
 
+[新ドキュメント](https://new.docs.toot.app)作成中。(翻訳進捗60%)  
+このドキュメントはほぼ100%日本語に翻訳されています。
+
 Mastodonのドキュメントへようこそ。
 
 <div style="margin-bottom: 26px">
